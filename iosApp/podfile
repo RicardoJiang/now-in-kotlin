@@ -1,0 +1,5 @@
+use_frameworks! :linkage => :static
+
+target 'iosApp' do
+    pod 'composeApp', :path => '../composeApp'
+end
