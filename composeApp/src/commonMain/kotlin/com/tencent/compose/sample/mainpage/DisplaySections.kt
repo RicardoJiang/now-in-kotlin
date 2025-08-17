@@ -63,7 +63,7 @@ internal fun displaySections(): List<DisplaySection> {
         DisplaySection(
             sectionTitle = "Compose Component",
             items = listOf(
-                DisplayItem("dialog", Res.drawable.dialog) { DialogExamples() },
+                DisplayItem("dialog21", Res.drawable.dialog) { DialogExamples() },
                 DisplayItem("switch", Res.drawable.switch) { SwitchExamples() },
                 DisplayItem("sliders", Res.drawable.sliders) { SliderExamples() },
                 DisplayItem("checkbox", Res.drawable.checkbox) { CheckboxExamples() },

@@ -40,14 +40,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material.Icon
 import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -84,21 +78,6 @@ internal fun MainPage(skiaRender: Boolean = true) {
         openedExample = null
     }
     Column {
-        TopAppBar(
-            navigationIcon = {
-                if (openedExample == null) return@TopAppBar
-                Icon(
-                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = "Back",
-                    modifier = Modifier.clickable { openedExample = null }
-                )
-            },
-            title = {
-                val title = appBarTitle(openedExample, skiaRender)
-                Text(title)
-            }
-        )
-
         AnimatedContent(
             targetState = openedExample,
             transitionSpec = {
@@ -117,21 +96,11 @@ internal fun MainPage(skiaRender: Boolean = true) {
             }
         ) { target ->
             if (target == null) {
-                LazyColumn(state = listState) {
-                    items(displayItems) { displayItem ->
-                        Section(displayItem) { clickItem ->
-                            openedExample = clickItem
-                        }
-                    }
-
-                    item {
-                        Spacer(Modifier.fillMaxWidth().height(20.dp))
-                    }
-                }
+                MainScreen (
+                    onEpisodeClick = { episode ->
+                    })
             } else {
-                Box(Modifier.fillMaxSize()) {
-                    target.content()
-                }
+                target.content()
             }
         }
     }

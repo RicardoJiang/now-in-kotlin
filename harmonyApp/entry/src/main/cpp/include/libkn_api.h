@@ -68,16 +68,37 @@ typedef struct {
 } libkn_kref_com_tencent_compose_Greeting;
 typedef struct {
   libkn_KNativePtr pinned;
+} libkn_kref_kotlin_collections_List;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_tencent_compose_sample_components_BottomNavItem;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_androidx_compose_ui_graphics_vector_ImageVector;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_kotlin_Any;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_androidx_compose_material_icons_Icons_Filled;
+typedef struct {
+  libkn_KNativePtr pinned;
 } libkn_kref_com_tencent_compose_sample_mainpage_sectionItem_PieceData;
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_com_tencent_compose_sample_mainpage_sectionItem_Game;
 typedef struct {
   libkn_KNativePtr pinned;
-} libkn_kref_kotlin_Any;
+} libkn_kref_androidx_compose_runtime_snapshots_SnapshotStateList;
 typedef struct {
   libkn_KNativePtr pinned;
-} libkn_kref_androidx_compose_runtime_snapshots_SnapshotStateList;
+} libkn_kref_com_tencent_compose_sample_mainpage_Episode;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_androidx_compose_material_Typography;
 
 extern void androidx_compose_ui_arkui_ArkUIViewController_aboutToAppear(void* controllerRef);
 extern void androidx_compose_ui_arkui_ArkUIViewController_aboutToDisappear(void* controllerRef);
@@ -199,6 +220,26 @@ typedef struct {
             } Greeting;
             struct {
               struct {
+                struct {
+                  libkn_KType* (*_type)(void);
+                  libkn_kref_com_tencent_compose_sample_components_BottomNavItem (*BottomNavItem)(const char* title, libkn_kref_androidx_compose_ui_graphics_vector_ImageVector icon, const char* route);
+                  libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_icon)(libkn_kref_com_tencent_compose_sample_components_BottomNavItem thiz);
+                  const char* (*get_route)(libkn_kref_com_tencent_compose_sample_components_BottomNavItem thiz);
+                  const char* (*get_title)(libkn_kref_com_tencent_compose_sample_components_BottomNavItem thiz);
+                  const char* (*component1)(libkn_kref_com_tencent_compose_sample_components_BottomNavItem thiz);
+                  libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*component2)(libkn_kref_com_tencent_compose_sample_components_BottomNavItem thiz);
+                  const char* (*component3)(libkn_kref_com_tencent_compose_sample_components_BottomNavItem thiz);
+                  libkn_kref_com_tencent_compose_sample_components_BottomNavItem (*copy)(libkn_kref_com_tencent_compose_sample_components_BottomNavItem thiz, const char* title, libkn_kref_androidx_compose_ui_graphics_vector_ImageVector icon, const char* route);
+                  libkn_KBoolean (*equals)(libkn_kref_com_tencent_compose_sample_components_BottomNavItem thiz, libkn_kref_kotlin_Any other);
+                  libkn_KInt (*hashCode)(libkn_kref_com_tencent_compose_sample_components_BottomNavItem thiz);
+                  const char* (*toString)(libkn_kref_com_tencent_compose_sample_components_BottomNavItem thiz);
+                } BottomNavItem;
+                libkn_kref_kotlin_collections_List (*get_bottomNavItems)();
+                libkn_KInt (*com_tencent_compose_sample_components_BottomNavItem$stableprop_getter)();
+                libkn_KInt (*com_tencent_compose_sample_components_BottomNavItem$stableprop_getter_)();
+                libkn_KInt (*com_tencent_compose_sample_components_BottomNavItem$stableprop_getter__)();
+              } components;
+              struct {
                 libkn_KInt (*com_tencent_compose_sample_data_DisplayItem$stableprop_getter)();
                 libkn_KInt (*com_tencent_compose_sample_data_DisplaySection$stableprop_getter)();
               } data;
@@ -294,7 +335,85 @@ typedef struct {
                   libkn_KInt (*com_tencent_compose_sample_mainpage_sectionItem_Game$stableprop_getter______________)();
                   libkn_KInt (*com_tencent_compose_sample_mainpage_sectionItem_PieceData$stableprop_getter______________)();
                 } sectionItem;
+                struct {
+                  libkn_KType* (*_type)(void);
+                  libkn_kref_com_tencent_compose_sample_mainpage_Episode (*Episode)(const char* id, const char* title, const char* episodeNumber, const char* date, const char* duration, const char* imageUrl, libkn_kref_kotlin_collections_List tags);
+                  const char* (*get_date)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz);
+                  const char* (*get_duration)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz);
+                  const char* (*get_episodeNumber)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz);
+                  const char* (*get_id)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz);
+                  const char* (*get_imageUrl)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz);
+                  libkn_kref_kotlin_collections_List (*get_tags)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz);
+                  const char* (*get_title)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz);
+                  const char* (*component1)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz);
+                  const char* (*component2)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz);
+                  const char* (*component3)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz);
+                  const char* (*component4)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz);
+                  const char* (*component5)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz);
+                  const char* (*component6)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz);
+                  libkn_kref_kotlin_collections_List (*component7)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz);
+                  libkn_kref_com_tencent_compose_sample_mainpage_Episode (*copy)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz, const char* id, const char* title, const char* episodeNumber, const char* date, const char* duration, const char* imageUrl, libkn_kref_kotlin_collections_List tags);
+                  libkn_KBoolean (*equals)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz, libkn_kref_kotlin_Any other);
+                  libkn_KInt (*hashCode)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz);
+                  const char* (*toString)(libkn_kref_com_tencent_compose_sample_mainpage_Episode thiz);
+                } Episode;
+                struct {
+                  libkn_KType* (*_type)(void);
+                  libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport (*MonthlyReport)(libkn_KInt year, libkn_KInt month, const char* date, const char* title, const char* source, libkn_kref_kotlin_collections_List tags, libkn_KBoolean isLatest);
+                  const char* (*get_date)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz);
+                  libkn_KBoolean (*get_isLatest)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz);
+                  libkn_KInt (*get_month)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz);
+                  const char* (*get_source)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz);
+                  libkn_kref_kotlin_collections_List (*get_tags)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz);
+                  const char* (*get_title)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz);
+                  libkn_KInt (*get_year)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz);
+                  libkn_KInt (*component1)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz);
+                  libkn_KInt (*component2)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz);
+                  const char* (*component3)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz);
+                  const char* (*component4)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz);
+                  const char* (*component5)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz);
+                  libkn_kref_kotlin_collections_List (*component6)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz);
+                  libkn_KBoolean (*component7)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz);
+                  libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport (*copy)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz, libkn_KInt year, libkn_KInt month, const char* date, const char* title, const char* source, libkn_kref_kotlin_collections_List tags, libkn_KBoolean isLatest);
+                  libkn_KBoolean (*equals)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz, libkn_kref_kotlin_Any other);
+                  libkn_KInt (*hashCode)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz);
+                  const char* (*toString)(libkn_kref_com_tencent_compose_sample_mainpage_MonthlyReport thiz);
+                } MonthlyReport;
+                libkn_KInt (*com_tencent_compose_sample_mainpage_Episode$stableprop_getter)();
+                libkn_KInt (*com_tencent_compose_sample_mainpage_MonthlyReport$stableprop_getter)();
+                libkn_kref_kotlin_collections_List (*get_sampleEpisodes)();
+                libkn_KInt (*com_tencent_compose_sample_mainpage_Episode$stableprop_getter_)();
+                libkn_KInt (*com_tencent_compose_sample_mainpage_MonthlyReport$stableprop_getter_)();
+                libkn_KInt (*com_tencent_compose_sample_mainpage_Episode$stableprop_getter__)();
+                libkn_KInt (*com_tencent_compose_sample_mainpage_MonthlyReport$stableprop_getter__)();
+                libkn_KInt (*com_tencent_compose_sample_mainpage_Episode$stableprop_getter___)();
+                libkn_KInt (*com_tencent_compose_sample_mainpage_MonthlyReport$stableprop_getter___)();
+                libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_ChevronRight)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
+                libkn_KInt (*com_tencent_compose_sample_mainpage_Episode$stableprop_getter____)();
+                libkn_KInt (*com_tencent_compose_sample_mainpage_MonthlyReport$stableprop_getter____)();
+                libkn_KInt (*com_tencent_compose_sample_mainpage_Episode$stableprop_getter_____)();
+                libkn_KInt (*com_tencent_compose_sample_mainpage_MonthlyReport$stableprop_getter_____)();
               } mainpage;
+              struct {
+                libkn_KULong (*get_BorderPrimary)();
+                libkn_KULong (*get_BorderSecondary)();
+                libkn_KULong (*get_KotlinAccent)();
+                libkn_KULong (*get_KotlinDark)();
+                libkn_KULong (*get_KotlinPrimary)();
+                libkn_KULong (*get_KotlinSecondary)();
+                libkn_KULong (*get_KotlinSurface)();
+                libkn_KULong (*get_SemanticError)();
+                libkn_KULong (*get_SemanticSuccess)();
+                libkn_KULong (*get_SemanticWarning)();
+                libkn_KULong (*get_SurfaceOverlay)();
+                libkn_KULong (*get_SurfaceOverlay10)();
+                libkn_KULong (*get_SurfaceOverlay15)();
+                libkn_KULong (*get_TextDisabled)();
+                libkn_KULong (*get_TextPrimary)();
+                libkn_KULong (*get_TextSecondary)();
+                libkn_KULong (*get_TextTertiary)();
+                libkn_kref_androidx_compose_material_Typography (*get_Typography)();
+              } theme;
               void* (*get_nativeResourceManager)();
               void (*set_nativeResourceManager)(void* set);
             } sample;
@@ -317,18 +436,18 @@ typedef struct {
         struct {
           struct {
             struct {
-              libkn_KInt (*composesample_composeapp_generated_resources_Res$stableprop_getter)();
-              libkn_KInt (*composesample_composeapp_generated_resources_Res_drawable$stableprop_getter)();
-              libkn_KInt (*composesample_composeapp_generated_resources_Res_font$stableprop_getter)();
-              libkn_KInt (*composesample_composeapp_generated_resources_Res_string$stableprop_getter)();
-              libkn_KInt (*composesample_composeapp_generated_resources_Res$stableprop_getter_)();
-              libkn_KInt (*composesample_composeapp_generated_resources_Res_drawable$stableprop_getter_)();
-              libkn_KInt (*composesample_composeapp_generated_resources_Res_font$stableprop_getter_)();
-              libkn_KInt (*composesample_composeapp_generated_resources_Res_string$stableprop_getter_)();
+              libkn_KInt (*nowinkotlin_composeapp_generated_resources_Res$stableprop_getter)();
+              libkn_KInt (*nowinkotlin_composeapp_generated_resources_Res_drawable$stableprop_getter)();
+              libkn_KInt (*nowinkotlin_composeapp_generated_resources_Res_font$stableprop_getter)();
+              libkn_KInt (*nowinkotlin_composeapp_generated_resources_Res_string$stableprop_getter)();
+              libkn_KInt (*nowinkotlin_composeapp_generated_resources_Res$stableprop_getter_)();
+              libkn_KInt (*nowinkotlin_composeapp_generated_resources_Res_drawable$stableprop_getter_)();
+              libkn_KInt (*nowinkotlin_composeapp_generated_resources_Res_font$stableprop_getter_)();
+              libkn_KInt (*nowinkotlin_composeapp_generated_resources_Res_string$stableprop_getter_)();
             } resources;
           } generated;
         } composeapp;
-      } composesample;
+      } nowinkotlin;
     } root;
   } kotlin;
 } libkn_ExportedSymbols;
