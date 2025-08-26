@@ -98,10 +98,6 @@ fun HomeScreen(
                     )
                 }
                 
-                item {
-                    Spacer(modifier = Modifier.height(8.dp))
-                }
-                
                 // 播客列表
                 items(
                     items = sampleEpisodes,
