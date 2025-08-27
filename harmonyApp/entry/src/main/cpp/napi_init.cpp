@@ -56,7 +56,7 @@ static napi_value InitResourceManager(napi_env env, napi_callback_info info) {
 
     auto manager = OH_ResourceManager_InitNativeResourceManager(env, args[0]);
     auto kt = libkn_symbols();
-    kt->kotlin.root.com.tencent.compose.initResourceManager(manager);
+    kt->kotlin.root.com.jiang.nowinkotlin.initResourceManager(manager);
 
     napi_value result;
     napi_create_int32(env, 0, &result);
