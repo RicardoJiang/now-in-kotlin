@@ -37,21 +37,25 @@ struct ComposeSkiaView: UIViewControllerRepresentable {
 
 struct ContentView: View {
     var body: some View {
-        TabView {
-            // UIKit 渲染
-            ComposeView()
-                .ignoresSafeArea(.keyboard)
-                .tabItem {
-                    Label("Compose", systemImage: "rectangle.3.group.fill")
-                }
+        // Skia 渲染
+        ComposeSkiaView()
+            .ignoresSafeArea(.keyboard)
             
-            // Skia 渲染
-            ComposeSkiaView()
-                .ignoresSafeArea(.keyboard)
-                .tabItem {
-                    Label("Skia", systemImage: "s.circle.fill")
-                }
-        }
+//        TabView {
+//            // UIKit 渲染
+//            ComposeView()
+//                .ignoresSafeArea(.keyboard)
+//                .tabItem {
+//                    Label("Compose", systemImage: "rectangle.3.group.fill")
+//                }
+//            
+//            // Skia 渲染
+//            ComposeSkiaView()
+//                .ignoresSafeArea(.keyboard)
+//                .tabItem {
+//                    Label("Skia", systemImage: "s.circle.fill")
+//                }
+//        }
     }
 }
 
