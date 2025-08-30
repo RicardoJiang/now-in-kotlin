@@ -27,6 +27,21 @@
         }
       }
     },
+    {
+      "name": "debug",
+      "arkOptions": {
+        "obfuscation": {
+          "ruleOptions": {
+            "enable": false
+          }
+        }
+      },
+      "nativeLib": {
+        "debugSymbol": {
+          "strip": false
+        }
+      }
+    }
   ],
   "targets": [
     {

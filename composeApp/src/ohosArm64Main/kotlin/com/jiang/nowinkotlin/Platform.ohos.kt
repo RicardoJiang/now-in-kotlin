@@ -18,6 +18,7 @@
 package com.jiang.nowinkotlin
 
 import com.jiang.nowinkotlin.Platform
+import com.jiang.nowinkotlin.data.MonthlyReportItem
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.toKString
 import platform.ohos.OH_GetOSFullName
@@ -28,3 +29,7 @@ internal class OHOSPlatform : Platform {
 }
 
 internal actual fun getPlatform(): Platform = OHOSPlatform()
+
+internal actual fun parseMonthReport(json: String): List<MonthlyReportItem> {
+    return DeserializationOhosData.parseMonthReport(json)
+}

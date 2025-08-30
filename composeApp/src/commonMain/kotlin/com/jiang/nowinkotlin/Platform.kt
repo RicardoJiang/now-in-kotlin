@@ -17,8 +17,12 @@
 
 package com.jiang.nowinkotlin
 
+import com.jiang.nowinkotlin.data.MonthlyReportItem
+
 internal interface Platform {
     val name: String
 }
 
 internal expect fun getPlatform(): Platform
+
+internal expect fun parseMonthReport(json: String): List<MonthlyReportItem>

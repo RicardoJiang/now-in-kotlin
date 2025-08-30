@@ -65,7 +65,13 @@ typedef struct {
 } libkn_kref_kotlin_ULong;
 typedef struct {
   libkn_KNativePtr pinned;
-} libkn_kref_com_jiang_nowinkotlin_Greeting;
+} libkn_kref_com_jiang_nowinkotlin_OhosServices;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_OhosServicesProxy;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_kotlin_collections_Map;
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_kotlin_collections_List;
@@ -99,6 +105,12 @@ typedef struct {
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_androidx_compose_material_Typography;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_viewmodel_LifecycleAware;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_Greeting;
 
 extern void androidx_compose_ui_arkui_ArkUIViewController_aboutToAppear(void* controllerRef);
 extern void androidx_compose_ui_arkui_ArkUIViewController_aboutToDisappear(void* controllerRef);
@@ -133,6 +145,8 @@ extern void androidx_compose_ui_arkui_ArkUIViewController_setUIContext(void* con
 extern void androidx_compose_ui_arkui_ArkUIViewController_setXComponentRender(void* controllerRef, void* render);
 extern void androidx_compose_ui_arkui_init(void* env, void* exports);
 extern void* MainArkUIViewController(void* env);
+extern void com_tencent_tmm_knoi_initEnv(void* env, void* value, libkn_KBoolean debug);
+extern void com_tencent_tmm_knoi_initBridge();
 
 typedef struct {
   /* Service functions. */
@@ -215,9 +229,9 @@ typedef struct {
           struct {
             struct {
               libkn_KType* (*_type)(void);
-              libkn_kref_com_jiang_nowinkotlin_Greeting (*Greeting)();
-              const char* (*greet)(libkn_kref_com_jiang_nowinkotlin_Greeting thiz);
-            } Greeting;
+              libkn_kref_com_jiang_nowinkotlin_OhosServicesProxy (*OhosServicesProxy)();
+              libkn_kref_kotlin_collections_Map (*parseJson)(libkn_kref_com_jiang_nowinkotlin_OhosServicesProxy thiz, const char* json);
+            } OhosServicesProxy;
             struct {
               struct {
                 libkn_KType* (*_type)(void);
@@ -241,6 +255,7 @@ typedef struct {
             struct {
               libkn_KInt (*com_jiang_nowinkotlin_data_DisplayItem$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_data_DisplaySection$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_data_MonthlyReportItem$stableprop_getter)();
             } data;
             struct {
               struct {
@@ -413,40 +428,117 @@ typedef struct {
               libkn_KULong (*get_TextTertiary)();
               libkn_kref_androidx_compose_material_Typography (*get_Typography)();
             } theme;
+            struct {
+              struct {
+                libkn_KType* (*_type)(void);
+                void (*onCreate)(libkn_kref_com_jiang_nowinkotlin_viewmodel_LifecycleAware thiz);
+                void (*onDestroy)(libkn_kref_com_jiang_nowinkotlin_viewmodel_LifecycleAware thiz);
+              } LifecycleAware;
+              libkn_KInt (*com_jiang_nowinkotlin_viewmodel_MonthlyReportUIState$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_viewmodel_MonthlyReportViewModel$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_viewmodel_MonthlyReportUIState$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_viewmodel_MonthlyReportViewModel$stableprop_getter_)();
+            } viewmodel;
+            struct {
+              libkn_KType* (*_type)(void);
+              libkn_kref_com_jiang_nowinkotlin_Greeting (*Greeting)();
+              const char* (*greet)(libkn_kref_com_jiang_nowinkotlin_Greeting thiz);
+            } Greeting;
+            struct {
+              libkn_KType* (*_type)(void);
+              libkn_kref_kotlin_collections_Map (*parseJson)(libkn_kref_com_jiang_nowinkotlin_OhosServices thiz, const char* json);
+            } OhosServices;
+            libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter)();
+            libkn_kref_com_jiang_nowinkotlin_OhosServices (*getOhosServicesApi)();
+            libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter_)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter_)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter_)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter_)();
+            libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter__)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter__)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter__)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter__)();
+            libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter___)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter___)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter___)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter___)();
+            libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter____)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter____)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter____)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter____)();
+            libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter_____)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter_____)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter_____)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter_____)();
+            libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter______)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter______)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter______)();
-            void* (*get_nativeResourceManager)();
-            void (*set_nativeResourceManager)(void* set);
+            libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter______)();
+            libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter_______)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter_______)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter_______)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter_______)();
+            libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter________)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter________)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter________)();
+            void* (*get_nativeResourceManager)();
+            void (*set_nativeResourceManager)(void* set);
+            libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter_________)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter_________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter_________)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter_________)();
+            libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter__________)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter__________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter__________)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter__________)();
+            libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter___________)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter___________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter___________)();
-            void* (*MainArkUIViewController_)(void* env);
+            libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter___________)();
+            libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter____________)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter____________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter____________)();
-            void (*initResourceManager)(void* resourceManager);
+            libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter____________)();
+            libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter_____________)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter_____________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter_____________)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter_____________)();
+            void* (*MainArkUIViewController_)(void* env);
+            libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter______________)();
+            libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter______________)();
+            libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter______________)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter______________)();
+            void (*initResourceManager)(void* resourceManager);
+            libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter_______________)();
+            libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter_______________)();
+            libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter_______________)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter_______________)();
+            libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter________________)();
+            libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter________________)();
+            libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter________________)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter________________)();
           } nowinkotlin;
         } jiang;
+        struct {
+          struct {
+            struct {
+              struct {
+                struct {
+                  void (*registerOhosServicesProxy)();
+                } composeApp;
+                void (*initComposeApp)();
+              } modules;
+              void (*initBridge)();
+              void (*initEnvExport)(void* env, void* value, libkn_KBoolean debug);
+              void (*initialize)();
+              void (*preInitEnv)(void* env, libkn_KBoolean debug);
+            } knoi;
+          } tmm;
+        } tencent;
       } com;
       struct {
         struct {

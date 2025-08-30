@@ -24,4 +24,6 @@ plugins {
     alias(libs.plugins.composeCompiler) apply false
     alias(libs.plugins.kotlinMultiplatform) apply false
     alias(libs.plugins.cocoapods) apply false
+    id("com.google.devtools.ksp") version "2.0.21-1.0.28" apply false
+    id("com.tencent.kuiklybase.knoi.plugin").version("0.0.4").apply(false)
 }

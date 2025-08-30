@@ -34,3 +34,19 @@ internal data class DisplayItem(
     val img: DrawableResource,
     val content: @Composable () -> Unit
 )
+
+internal data class MonthlyReportItem(
+    val permalink: String,
+    val publishDate: String,
+    val tags: List<String>?,
+    val title: String
+) {
+    val year: String
+        get() = publishDate.split("T")[0].split("-")[0]
+
+    val month: String
+        get() = publishDate.split("T")[0].split("-")[1]
+
+    val displayYMD: String
+        get() = publishDate.split("T")[0]
+}

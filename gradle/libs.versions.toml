@@ -17,6 +17,8 @@ junit = "4.13.2"
 kotlin = "2.0.21-KBA-005"
 kotlinx-coroutines = "1.8.0-KBA-001"
 atomicFu = "0.23.2-KBA-001"
+network = "0.0.4"
+kotlin-stdlib-platform-ext = "0.1.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -42,6 +44,8 @@ compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview"
 compose-runtime = { module = "androidx.compose.runtime:runtime", version.ref = "compose" }
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
 compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
+network = { module = "com.tencent.kuiklybase:network", version.ref = "network" }
+kotlin-stdlib-platform-ext = { module = "com.tencent.tmm:kotlin-stdlib-platform-ext", version.ref = "kotlin-stdlib-platform-ext" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

@@ -11,6 +11,10 @@
     {
       "name": "EntryAbility_label",
       "value": "Now in Kotlin"
+    },
+    {
+      "name": "reason",
+      "value": "为正常使用 Now in Kotlin 需要使用网络"
     }
   ]
 }

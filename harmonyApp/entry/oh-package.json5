@@ -8,6 +8,7 @@
   "dependencies": {
     "libentry.so": "file:./src/main/cpp/types/libentry",
     "compose": "file:./libs/compose.har",
-    "skikobridge": "file:./libs/skikobridge.har"
+    "skikobridge": "file:./libs/skikobridge.har",
+    "@kuiklybase/knoi":"0.0.4"
   }
 }

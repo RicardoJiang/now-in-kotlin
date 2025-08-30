@@ -18,9 +18,13 @@
 package com.jiang.nowinkotlin
 
 import android.os.Build
+import com.jiang.nowinkotlin.data.MonthlyReportItem
 
 internal class AndroidPlatform : Platform {
     override val name: String = "Android ${Build.VERSION.SDK_INT}"
 }
 
 internal actual fun getPlatform(): Platform = AndroidPlatform()
+internal actual fun parseMonthReport(json: String): List<MonthlyReportItem> {
+    return DeserializationAndroidData.parseMonthReport(json)
+}

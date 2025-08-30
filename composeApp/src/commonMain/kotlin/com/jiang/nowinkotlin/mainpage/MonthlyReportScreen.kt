@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
@@ -24,6 +25,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.jiang.nowinkotlin.data.MonthlyReportItem
 import com.jiang.nowinkotlin.rememberLocalImage
 import com.jiang.nowinkotlin.theme.CursronowinkotlinTheme
 import com.jiang.nowinkotlin.theme.KotlinAccent
@@ -32,6 +34,8 @@ import com.jiang.nowinkotlin.theme.KotlinPrimary
 import com.jiang.nowinkotlin.theme.KotlinSecondary
 import com.jiang.nowinkotlin.theme.TextPrimary
 import com.jiang.nowinkotlin.theme.TextTertiary
+import com.jiang.nowinkotlin.viewmodel.MonthlyReportViewModel
+import com.jiang.nowinkotlin.viewmodel.rememberLifecycleAware
 import nowinkotlin.composeapp.generated.resources.Res
 import nowinkotlin.composeapp.generated.resources.kotlin_monthly
 import org.jetbrains.compose.resources.ExperimentalResourceApi
@@ -52,8 +56,11 @@ data class MonthlyReport(
 fun MonthlyReportScreen(
     modifier: Modifier = Modifier
 ) {
-    val monthlyReports = getMonthlyReports()
-    
+    val monthlyReportViewModel = rememberLifecycleAware { scope ->
+        MonthlyReportViewModel(scope)
+    }
+    val uiState = monthlyReportViewModel.uiState
+
     Box(
         modifier = modifier
             .fillMaxSize()
@@ -73,8 +80,9 @@ fun MonthlyReportScreen(
             }
 
             // 技术月报列表
-            items(monthlyReports) { report ->
+            itemsIndexed(uiState.monthlyReportList) { index, report ->
                 MonthlyReportItem(
+                    index = index,
                     report = report,
                     onClick = { /* TODO: 处理点击事件 */ }
                 )
@@ -122,7 +130,7 @@ private fun MonthlyTopBar() {
                     fontSize = 14.sp
                 )
             }
-            
+
             // 标题信息
             Column {
                 Text(
@@ -164,7 +172,7 @@ private fun HeroSection() {
             contentScale = ContentScale.Fit,
             modifier = Modifier.fillMaxWidth().aspectRatio(1280f / 600f)
         )
-        
+
         // 渐变覆盖层
         Box(
             modifier = Modifier
@@ -181,7 +189,7 @@ private fun HeroSection() {
                     )
                 )
         )
-        
+
         // 内容信息
         Column(
             modifier = Modifier
@@ -194,14 +202,14 @@ private fun HeroSection() {
                 color = Color.White.copy(alpha = 0.7f),
                 modifier = Modifier.padding(bottom = 4.dp)
             )
-            
+
             Text(
                 text = "Kotlin 技术月报",
                 fontSize = 18.sp,
                 fontWeight = FontWeight.SemiBold,
                 color = Color.White
             )
-            
+
             // 标签
             Row(
                 modifier = Modifier.padding(top = 8.dp),
@@ -224,7 +232,8 @@ private fun HeroSection() {
 
 @Composable
 private fun MonthlyReportItem(
-    report: MonthlyReport,
+    index: Int,
+    report: MonthlyReportItem,
     onClick: () -> Unit
 ) {
     Row(
@@ -267,18 +276,18 @@ private fun MonthlyReportItem(
                 )
             }
         }
-        
+
         // 内容信息
         Column(
             modifier = Modifier.weight(1f),
             verticalArrangement = Arrangement.spacedBy(4.dp)
         ) {
             Text(
-                text = report.date,
+                text = report.displayYMD,
                 fontSize = 13.sp,
                 color = TextTertiary
             )
-            
+
             Text(
                 text = report.title,
                 fontSize = 14.sp,
@@ -288,36 +297,33 @@ private fun MonthlyReportItem(
                 overflow = TextOverflow.Ellipsis,
                 lineHeight = 20.sp
             )
-            
+
             Text(
-                text = report.source,
+                text = "北京 KUG · 技术月报",
                 fontSize = 12.sp,
                 color = TextTertiary
             )
-            
+
             // 标签
             Row(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 modifier = Modifier.padding(top = 4.dp)
             ) {
-                if (report.isLatest) {
+                if (index == 0) {
                     TagChip(
                         text = "最新",
                         backgroundColor = KotlinSecondary.copy(alpha = 0.15f),
                         textColor = KotlinSecondary
                     )
                 }
-                
-                report.tags.forEach { tag ->
-                    TagChip(
-                        text = tag,
-                        backgroundColor = Color.White.copy(alpha = 0.1f),
-                        textColor = Color.White
-                    )
-                }
+                TagChip(
+                    text = report.year,
+                    backgroundColor = Color.White.copy(alpha = 0.1f),
+                    textColor = Color.White
+                )
             }
         }
-        
+
         // 右箭头
         Icon(
             imageVector = Icons.Default.ChevronRight,
@@ -373,17 +379,19 @@ private fun TagChip(
 }
 
 // 辅助函数：根据年份获取图标渐变色
-private fun getReportIconBrush(year: Int): Brush {
+private fun getReportIconBrush(year: String): Brush {
     return when (year) {
-        2025 -> Brush.linearGradient(
+        "2025" -> Brush.linearGradient(
             colors = listOf(KotlinPrimary, KotlinSecondary)
         )
-        2024 -> Brush.linearGradient(
+
+        "2024" -> Brush.linearGradient(
             colors = listOf(KotlinAccent, KotlinPrimary)
         )
+
         else -> Brush.linearGradient(
             colors = listOf(
-                Color.White.copy(alpha = 0.2f), 
+                Color.White.copy(alpha = 0.2f),
                 Color.White.copy(alpha = 0.1f)
             )
         )

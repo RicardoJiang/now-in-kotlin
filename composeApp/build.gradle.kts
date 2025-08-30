@@ -25,6 +25,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.cocoapods)
+    id("com.tencent.kuiklybase.knoi.plugin")
 }
 
 kotlin {
@@ -38,7 +39,6 @@ kotlin {
     listOf(
         iosX64(),
         iosArm64(),
-        iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
             baseName = "ComposeApp"
@@ -61,6 +61,20 @@ kotlin {
         binaries.sharedLib {
             baseName = "kn"
             export(libs.compose.multiplatform.export)
+            linkerOpts(
+                "-L${rootDir}/composeApp/libs/",
+                "-lpbcurlwrapper",
+                "-lc++_shared",
+                "-lc++",
+                "-lc++abi"
+            )
+            if(debuggable){
+                freeCompilerArgs += "-Xadd-light-debug=enable"
+                freeCompilerArgs += "-Xbinary=sourceInfoType=libbacktrace"
+            }else{
+                freeCompilerArgs += "-Xadd-light-debug=enable"
+                freeCompilerArgs += "-Xbinary=sourceInfoType=noop"
+            }
         }
 
         val main by compilations.getting
@@ -76,6 +90,7 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+            implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -86,6 +101,11 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.atomicFu)
+            implementation(libs.network)
+        }
+
+        iosMain.dependencies {
+            implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
         }
 
         val ohosArm64Main by getting {

@@ -41,6 +41,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -55,6 +56,7 @@ import com.jiang.nowinkotlin.backhandler.BackHandler
 import com.jiang.nowinkotlin.data.DisplayItem
 import com.jiang.nowinkotlin.data.DisplaySection
 import com.jiang.nowinkotlin.rememberLocalImage
+import com.tencent.kmm.network.service.VBTransportServiceTest
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 
 private fun appBarTitle(openedExample: DisplayItem?, skiaRender: Boolean = true): String {
@@ -75,6 +77,12 @@ internal fun MainPage(skiaRender: Boolean = true) {
     BackHandler(openedExample != null) {
         openedExample = null
     }
+
+    LaunchedEffect(Unit) {
+        // 组件初始化
+        VBTransportServiceTest.testServiceInit()
+    }
+
     Column {
         AnimatedContent(
             targetState = openedExample,
