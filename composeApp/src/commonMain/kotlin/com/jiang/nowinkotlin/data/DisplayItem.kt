@@ -35,7 +35,7 @@ internal data class DisplayItem(
     val content: @Composable () -> Unit
 )
 
-internal data class MonthlyReportItem(
+data class MonthlyReportItem(
     val permalink: String,
     val publishDate: String,
     val tags: List<String>?,

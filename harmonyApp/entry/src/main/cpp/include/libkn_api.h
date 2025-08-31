@@ -86,6 +86,9 @@ typedef struct {
 } libkn_kref_kotlin_Any;
 typedef struct {
   libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem;
+typedef struct {
+  libkn_KNativePtr pinned;
 } libkn_kref_androidx_compose_material_icons_Icons_Filled;
 typedef struct {
   libkn_KNativePtr pinned;
@@ -101,13 +104,31 @@ typedef struct {
 } libkn_kref_com_jiang_nowinkotlin_mainpage_Episode;
 typedef struct {
   libkn_KNativePtr pinned;
-} libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport;
+} libkn_kref_androidx_compose_runtime_ProvidableCompositionLocal;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_navigation_Screen;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_navigation_Navigator;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_screens_AppMainScreen;
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_androidx_compose_material_Typography;
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_com_jiang_nowinkotlin_viewmodel_LifecycleAware;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_webview_IWebView;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_webview_WebViewState;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_webview_IOSWebView;
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_com_jiang_nowinkotlin_Greeting;
@@ -253,6 +274,25 @@ typedef struct {
               libkn_KInt (*com_jiang_nowinkotlin_components_BottomNavItem$stableprop_getter__)();
             } components;
             struct {
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem (*MonthlyReportItem)(const char* permalink, const char* publishDate, libkn_kref_kotlin_collections_List tags, const char* title);
+                const char* (*get_displayYMD)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz);
+                const char* (*get_month)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz);
+                const char* (*get_permalink)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz);
+                const char* (*get_publishDate)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz);
+                libkn_kref_kotlin_collections_List (*get_tags)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz);
+                const char* (*get_title)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz);
+                const char* (*get_year)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz);
+                const char* (*component1)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz);
+                const char* (*component2)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz);
+                libkn_kref_kotlin_collections_List (*component3)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz);
+                const char* (*component4)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz);
+                libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem (*copy)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz, const char* permalink, const char* publishDate, libkn_kref_kotlin_collections_List tags, const char* title);
+                libkn_KBoolean (*equals)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz, libkn_kref_kotlin_Any other);
+                libkn_KInt (*hashCode)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz);
+                const char* (*toString)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz);
+              } MonthlyReportItem;
               libkn_KInt (*com_jiang_nowinkotlin_data_DisplayItem$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_data_DisplaySection$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_data_MonthlyReportItem$stableprop_getter)();
@@ -371,43 +411,47 @@ typedef struct {
                 libkn_KInt (*hashCode)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
                 const char* (*toString)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
               } Episode;
-              struct {
-                libkn_KType* (*_type)(void);
-                libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport (*MonthlyReport)(libkn_KInt year, libkn_KInt month, const char* date, const char* title, const char* source, libkn_kref_kotlin_collections_List tags, libkn_KBoolean isLatest);
-                const char* (*get_date)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz);
-                libkn_KBoolean (*get_isLatest)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz);
-                libkn_KInt (*get_month)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz);
-                const char* (*get_source)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz);
-                libkn_kref_kotlin_collections_List (*get_tags)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz);
-                const char* (*get_title)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz);
-                libkn_KInt (*get_year)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz);
-                libkn_KInt (*component1)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz);
-                libkn_KInt (*component2)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz);
-                const char* (*component3)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz);
-                const char* (*component4)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz);
-                const char* (*component5)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz);
-                libkn_kref_kotlin_collections_List (*component6)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz);
-                libkn_KBoolean (*component7)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz);
-                libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport (*copy)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz, libkn_KInt year, libkn_KInt month, const char* date, const char* title, const char* source, libkn_kref_kotlin_collections_List tags, libkn_KBoolean isLatest);
-                libkn_KBoolean (*equals)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz, libkn_kref_kotlin_Any other);
-                libkn_KInt (*hashCode)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz);
-                const char* (*toString)(libkn_kref_com_jiang_nowinkotlin_mainpage_MonthlyReport thiz);
-              } MonthlyReport;
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter)();
-              libkn_KInt (*com_jiang_nowinkotlin_mainpage_MonthlyReport$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter)();
               libkn_kref_kotlin_collections_List (*get_sampleEpisodes)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter_)();
-              libkn_KInt (*com_jiang_nowinkotlin_mainpage_MonthlyReport$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter_)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter__)();
-              libkn_KInt (*com_jiang_nowinkotlin_mainpage_MonthlyReport$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter__)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter___)();
-              libkn_KInt (*com_jiang_nowinkotlin_mainpage_MonthlyReport$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter___)();
               libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_ChevronRight)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter____)();
-              libkn_KInt (*com_jiang_nowinkotlin_mainpage_MonthlyReport$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter____)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter_____)();
-              libkn_KInt (*com_jiang_nowinkotlin_mainpage_MonthlyReport$stableprop_getter_____)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter_____)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter______)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter______)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter_______)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter_______)();
             } mainpage;
+            struct {
+              struct {
+                libkn_KType* (*_type)(void);
+              } Screen;
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_navigation_Navigator (*Navigator)(libkn_kref_com_jiang_nowinkotlin_navigation_Screen initialScreen);
+                libkn_kref_kotlin_collections_List (*get_stack)(libkn_kref_com_jiang_nowinkotlin_navigation_Navigator thiz);
+                void (*pop)(libkn_kref_com_jiang_nowinkotlin_navigation_Navigator thiz);
+                void (*push)(libkn_kref_com_jiang_nowinkotlin_navigation_Navigator thiz, libkn_kref_com_jiang_nowinkotlin_navigation_Screen screen);
+              } Navigator;
+              libkn_kref_androidx_compose_runtime_ProvidableCompositionLocal (*get_LocalNavigator)();
+              libkn_KInt (*com_jiang_nowinkotlin_navigation_Navigator$stableprop_getter)();
+            } navigation;
+            struct {
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_screens_AppMainScreen (*_instance)();
+              } AppMainScreen;
+              libkn_KInt (*com_jiang_nowinkotlin_screens_AppMainScreen$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_screens_WebViewScreen$stableprop_getter)();
+            } screens;
             struct {
               libkn_KULong (*get_BorderPrimary)();
               libkn_KULong (*get_BorderSecondary)();
@@ -439,6 +483,36 @@ typedef struct {
               libkn_KInt (*com_jiang_nowinkotlin_viewmodel_MonthlyReportUIState$stableprop_getter_)();
               libkn_KInt (*com_jiang_nowinkotlin_viewmodel_MonthlyReportViewModel$stableprop_getter_)();
             } viewmodel;
+            struct {
+              struct {
+                libkn_KType* (*_type)(void);
+                void (*get_webView)(libkn_kref_com_jiang_nowinkotlin_webview_IWebView thiz);
+                void (*loadUrl)(libkn_kref_com_jiang_nowinkotlin_webview_IWebView thiz, const char* url);
+              } IWebView;
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_webview_WebViewState (*WebViewState)(const char* url);
+                void (*get_nativeWebView)(libkn_kref_com_jiang_nowinkotlin_webview_WebViewState thiz);
+                const char* (*get_webUrl)(libkn_kref_com_jiang_nowinkotlin_webview_WebViewState thiz);
+                void (*set_webUrl)(libkn_kref_com_jiang_nowinkotlin_webview_WebViewState thiz, const char* set);
+              } WebViewState;
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_webview_IOSWebView (*IOSWebView)();
+                void (*get_webView)(libkn_kref_com_jiang_nowinkotlin_webview_IOSWebView thiz);
+                void (*loadUrl)(libkn_kref_com_jiang_nowinkotlin_webview_IOSWebView thiz, const char* url);
+              } IOSWebView;
+              libkn_KInt (*com_jiang_nowinkotlin_webview_IOSWebView$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_WebViewState$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_IOSWebView$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_WebViewState$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_IOSWebView$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_WebViewState$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_IOSWebView$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_WebViewState$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_IOSWebView$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_WebViewState$stableprop_getter____)();
+            } webview;
             struct {
               libkn_KType* (*_type)(void);
               libkn_kref_com_jiang_nowinkotlin_Greeting (*Greeting)();

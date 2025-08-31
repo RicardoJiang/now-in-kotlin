@@ -12,12 +12,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import com.jiang.nowinkotlin.components.KotlinBottomNavigation
+import com.jiang.nowinkotlin.data.MonthlyReportItem
 import com.jiang.nowinkotlin.theme.KotlinDark
+import com.jiang.nowinkotlin.viewmodel.MonthlyReportViewModel
+import com.jiang.nowinkotlin.viewmodel.rememberLifecycleAware
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun MainScreen(onEpisodeClick: (Episode) -> Unit) {
+fun MainScreen(
+    onEpisodeClick: (Episode) -> Unit,
+    onMonthlyReportClick: (MonthlyReportItem) -> Unit
+) {
     val pages = listOf("home", "monthly")
     val pagerState = rememberPagerState(pageCount = { pages.size })
     val scope = rememberCoroutineScope()
@@ -26,7 +32,8 @@ fun MainScreen(onEpisodeClick: (Episode) -> Unit) {
         Column(modifier = Modifier.fillMaxSize()) {
             HorizontalPager(
                 state = pagerState,
-                modifier = Modifier.weight(1f)
+                modifier = Modifier.weight(1f),
+                beyondBoundsPageCount = 1
             ) { pageIndex ->
                 when (pages[pageIndex]) {
                     "home" -> HomeScreen(
@@ -34,8 +41,9 @@ fun MainScreen(onEpisodeClick: (Episode) -> Unit) {
                         onPlayClick = onEpisodeClick,
                         // onNavigateToTab is removed
                     )
+
                     "monthly" -> MonthlyReportScreen(
-                        // onNavigateToTab is removed
+                        onMonthlyReportClick = onMonthlyReportClick
                     )
                 }
             }

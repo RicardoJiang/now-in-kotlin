@@ -27,6 +27,7 @@ import {
   layerBuilder,
   verticalListBuilder,
   horizontalListBuilder,
+  harmonyWebViewBuilder,
 } from './ComposeInterops';
 
 export function registerComposeInteropBuilders() {
@@ -38,4 +39,5 @@ export function registerComposeInteropBuilders() {
   registerComposeInteropBuilder('text', textBuilder)
   registerComposeInteropBuilder('verticalList', verticalListBuilder)
   registerComposeInteropBuilder('horizontalList', horizontalListBuilder)
+  registerComposeInteropBuilder('harmonyWebView', harmonyWebViewBuilder)
 }

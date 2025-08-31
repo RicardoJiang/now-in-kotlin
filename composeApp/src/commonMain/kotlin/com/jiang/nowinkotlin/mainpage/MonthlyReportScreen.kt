@@ -3,9 +3,16 @@ package com.jiang.nowinkotlin.mainpage
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
@@ -27,7 +34,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jiang.nowinkotlin.data.MonthlyReportItem
 import com.jiang.nowinkotlin.rememberLocalImage
-import com.jiang.nowinkotlin.theme.CursronowinkotlinTheme
 import com.jiang.nowinkotlin.theme.KotlinAccent
 import com.jiang.nowinkotlin.theme.KotlinDark
 import com.jiang.nowinkotlin.theme.KotlinPrimary
@@ -39,22 +45,11 @@ import com.jiang.nowinkotlin.viewmodel.rememberLifecycleAware
 import nowinkotlin.composeapp.generated.resources.Res
 import nowinkotlin.composeapp.generated.resources.kotlin_monthly
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.ui.tooling.preview.Preview
-
-// 技术月报数据模型
-data class MonthlyReport(
-    val year: Int,
-    val month: Int,
-    val date: String,
-    val title: String,
-    val source: String = "北京 KUG · 技术月报",
-    val tags: List<String> = emptyList(),
-    val isLatest: Boolean = false
-)
 
 @Composable
 fun MonthlyReportScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onMonthlyReportClick: (MonthlyReportItem) -> Unit
 ) {
     val monthlyReportViewModel = rememberLifecycleAware { scope ->
         MonthlyReportViewModel(scope)
@@ -84,7 +79,7 @@ fun MonthlyReportScreen(
                 MonthlyReportItem(
                     index = index,
                     report = report,
-                    onClick = { /* TODO: 处理点击事件 */ }
+                    onClick = onMonthlyReportClick
                 )
             }
         }
@@ -234,13 +229,13 @@ private fun HeroSection() {
 private fun MonthlyReportItem(
     index: Int,
     report: MonthlyReportItem,
-    onClick: () -> Unit
+    onClick: (MonthlyReportItem) -> Unit
 ) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 12.dp, vertical = 8.dp)
-            .clickable { onClick() }
+            .clickable { onClick(report) }
             .background(
                 color = Color.White.copy(alpha = 0.05f),
                 shape = RoundedCornerShape(16.dp)
@@ -395,83 +390,5 @@ private fun getReportIconBrush(year: String): Brush {
                 Color.White.copy(alpha = 0.1f)
             )
         )
-    }
-}
-
-// 数据函数：获取技术月报列表
-private fun getMonthlyReports(): List<MonthlyReport> {
-    return listOf(
-        MonthlyReport(
-            year = 2025,
-            month = 7,
-            date = "2025年7月30日",
-            title = "Kotlin 技术月报 | 2025 年 7 月",
-            tags = listOf("最新", "2025"),
-            isLatest = true
-        ),
-        MonthlyReport(
-            year = 2025,
-            month = 6,
-            date = "2025年6月30日",
-            title = "Kotlin 技术月报 | 2025 年 6 月",
-            tags = listOf("2025")
-        ),
-        MonthlyReport(
-            year = 2025,
-            month = 5,
-            date = "2025年5月30日",
-            title = "Kotlin 技术月报 | 2025 年 5 月",
-            tags = listOf("2025")
-        ),
-        MonthlyReport(
-            year = 2025,
-            month = 4,
-            date = "2025年4月30日",
-            title = "Kotlin 技术月报 | 2025 年 4 月",
-            tags = listOf("2025")
-        ),
-        MonthlyReport(
-            year = 2024,
-            month = 12,
-            date = "2024年12月30日",
-            title = "Kotlin 技术月报 | 2024 年 12 月",
-            tags = listOf("2024")
-        ),
-        MonthlyReport(
-            year = 2024,
-            month = 11,
-            date = "2024年11月30日",
-            title = "Kotlin 技术月报 | 2024 年 11 月",
-            tags = listOf("2024")
-        ),
-        MonthlyReport(
-            year = 2024,
-            month = 10,
-            date = "2024年10月30日",
-            title = "Kotlin 技术月报 | 2024 年 10 月",
-            tags = listOf("2024")
-        ),
-        MonthlyReport(
-            year = 2023,
-            month = 12,
-            date = "2023年12月30日",
-            title = "Kotlin 技术月报 | 2023 年 12 月",
-            tags = listOf("2023")
-        ),
-        MonthlyReport(
-            year = 2023,
-            month = 11,
-            date = "2023年11月30日",
-            title = "Kotlin 技术月报 | 2023 年 11 月",
-            tags = listOf("2023")
-        )
-    )
-}
-
-@Preview
-@Composable
-fun MonthlyReportScreenPreview() {
-    CursronowinkotlinTheme {
-        MonthlyReportScreen()
     }
 }

@@ -69,6 +69,24 @@ val sampleEpisodes = listOf(
         duration = "41:02",
         imageUrl = "https://picsum.photos/seed/ep3/200/200",
         tags = listOf("KMP", "Tooling")
+    ),
+    Episode(
+        id = "4",
+        title = "Jetpack Compose 性能优化与常见陷阱",
+        episodeNumber = "EP 42",
+        date = "2024-12-24",
+        duration = "36:21",
+        imageUrl = "https://picsum.photos/seed/ep2/200/200",
+        tags = listOf("Compose", "UI")
+    ),
+    Episode(
+        id = "5",
+        title = "Kotlin Multiplatform 实战与生态观察",
+        episodeNumber = "EP 41",
+        date = "2024-12-10",
+        duration = "41:02",
+        imageUrl = "https://picsum.photos/seed/ep3/200/200",
+        tags = listOf("KMP", "Tooling")
     )
 )
 

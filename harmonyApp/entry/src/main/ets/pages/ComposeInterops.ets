@@ -16,6 +16,7 @@
  */
 
 import { promptAction } from '@kit.ArkUI';
+import { webview } from '@kit.ArkWeb';
 
 
 interface ButtonArgs {
@@ -238,6 +239,27 @@ export struct horizontalList {
           })
         }
       }.scrollable(ScrollDirection.Horizontal).height('40%').width('100%')
+    }
+  }
+}
+
+interface WebViewArgs {
+  url: string
+}
+
+@Builder
+export function harmonyWebViewBuilder(args?: object) {
+  HarmonyWebView()
+}
+
+@Component
+export struct HarmonyWebView {
+  @Consume compose_args: WebViewArgs
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: this.compose_args.url, controller: this.controller })
     }
   }
 }
