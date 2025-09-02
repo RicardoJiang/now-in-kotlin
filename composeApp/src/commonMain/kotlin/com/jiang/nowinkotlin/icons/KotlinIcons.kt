@@ -79,3 +79,51 @@ public val Icons.Filled.Pause: ImageVector
     }
 
 private var _pause: ImageVector? = null
+
+public val Icons.Filled.FastForward: ImageVector
+    get() {
+        if (_fastForward != null) {
+            return _fastForward!!
+        }
+        _fastForward = materialIcon(name = "Filled.FastForward") {
+            materialPath {
+                moveTo(4.0f, 18.0f)
+                lineToRelative(8.5f, -6.0f)
+                lineTo(4.0f, 6.0f)
+                verticalLineToRelative(12.0f)
+                close()
+                moveTo(13.0f, 6.0f)
+                verticalLineToRelative(12.0f)
+                lineToRelative(8.5f, -6.0f)
+                lineTo(13.0f, 6.0f)
+                close()
+            }
+        }
+        return _fastForward!!
+    }
+
+private var _fastForward: ImageVector? = null
+
+public val Icons.Filled.FastRewind: ImageVector
+    get() {
+        if (_fastRewind != null) {
+            return _fastRewind!!
+        }
+        _fastRewind = materialIcon(name = "Filled.FastRewind") {
+            materialPath {
+                moveTo(11.0f, 18.0f)
+                lineTo(11.0f, 6.0f)
+                lineToRelative(-8.5f, 6.0f)
+                lineToRelative(8.5f, 6.0f)
+                close()
+                moveTo(11.5f, 12.0f)
+                lineToRelative(8.5f, 6.0f)
+                lineTo(20.0f, 6.0f)
+                lineToRelative(-8.5f, 6.0f)
+                close()
+            }
+        }
+        return _fastRewind!!
+    }
+
+private var _fastRewind: ImageVector? = null

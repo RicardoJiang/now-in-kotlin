@@ -14,14 +14,12 @@ import androidx.compose.ui.Modifier
 import com.jiang.nowinkotlin.components.KotlinBottomNavigation
 import com.jiang.nowinkotlin.data.MonthlyReportItem
 import com.jiang.nowinkotlin.theme.KotlinDark
-import com.jiang.nowinkotlin.viewmodel.MonthlyReportViewModel
-import com.jiang.nowinkotlin.viewmodel.rememberLifecycleAware
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun MainScreen(
-    onEpisodeClick: (Episode) -> Unit,
+    onEpisodeClick: (List<Episode>, Int) -> Unit,
     onMonthlyReportClick: (MonthlyReportItem) -> Unit
 ) {
     val pages = listOf("home", "monthly")

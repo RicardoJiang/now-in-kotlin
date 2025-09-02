@@ -17,8 +17,10 @@ junit = "4.13.2"
 kotlin = "2.0.21-KBA-005"
 kotlinx-coroutines = "1.8.0-KBA-001"
 atomicFu = "0.23.2-KBA-001"
+kotlinxSerializationJson = "1.7.3"
 network = "0.0.4"
 kotlin-stdlib-platform-ext = "0.1.0"
+media3 = "1.7.1"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -37,6 +39,11 @@ kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-c
 compose-multiplatform-export = { module = "org.jetbrains.compose.export:export", version.ref = "compose-multiplatform" }
 atomicFu = { module = "org.jetbrains.kotlinx:atomicfu", version.ref = "atomicFu" }
 
+androidx-media3-exoplayer = { group = "androidx.media3", name = "media3-exoplayer", version.ref = "media3" }
+androidx-media3-common = { group = "androidx.media3", name = "media3-common", version.ref = "media3" }
+androidx-media3-session = { group = "androidx.media3", name = "media3-session", version.ref = "media3" }
+kotlinx-coroutines-guava = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-guava", version.ref = "kotlinx-coroutines" }
+
 # AndroidX compose, only used by android target.
 compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
@@ -44,6 +51,7 @@ compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview"
 compose-runtime = { module = "androidx.compose.runtime:runtime", version.ref = "compose" }
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
 compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 network = { module = "com.tencent.kuiklybase:network", version.ref = "network" }
 kotlin-stdlib-platform-ext = { module = "com.tencent.tmm:kotlin-stdlib-platform-ext", version.ref = "kotlin-stdlib-platform-ext" }
 

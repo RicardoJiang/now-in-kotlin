@@ -74,6 +74,9 @@ typedef struct {
 } libkn_kref_kotlin_collections_Map;
 typedef struct {
   libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController;
+typedef struct {
+  libkn_KNativePtr pinned;
 } libkn_kref_kotlin_collections_List;
 typedef struct {
   libkn_KNativePtr pinned;
@@ -256,6 +259,21 @@ typedef struct {
             struct {
               struct {
                 libkn_KType* (*_type)(void);
+                void (*moveMediaItem)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_KInt currentIndex, libkn_KInt newIndex);
+                void (*next)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
+                void (*pause)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
+                void (*play)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
+                void (*previous)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
+                void (*release)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
+                void (*seekTo)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_KLong positionMs);
+                void (*setShuffleMode)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_KBoolean isOn);
+                void (*setSpeed)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_KFloat speed);
+                void (*skipTo)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_KInt musicIndex);
+              } MediaPlaybackController;
+            } audio;
+            struct {
+              struct {
+                libkn_KType* (*_type)(void);
                 libkn_kref_com_jiang_nowinkotlin_components_BottomNavItem (*BottomNavItem)(const char* title, libkn_kref_androidx_compose_ui_graphics_vector_ImageVector icon, const char* route);
                 libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_icon)(libkn_kref_com_jiang_nowinkotlin_components_BottomNavItem thiz);
                 const char* (*get_route)(libkn_kref_com_jiang_nowinkotlin_components_BottomNavItem thiz);
@@ -311,6 +329,8 @@ typedef struct {
               libkn_KInt (*com_jiang_nowinkotlin_data_MonthlyReportItem$stableprop_getter)();
             } data;
             struct {
+              libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_FastForward)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
+              libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_FastRewind)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
               libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_Pause)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
               libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_SkipNext)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
               libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_SkipPrevious)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
@@ -429,24 +449,33 @@ typedef struct {
                 libkn_KInt (*hashCode)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
                 const char* (*toString)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
               } Episode;
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter)();
               libkn_kref_kotlin_collections_List (*get_sampleEpisodes)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter_)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter_)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter__)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter__)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter___)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter___)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter___)();
               libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_ChevronRight)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter____)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter____)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter_____)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter_____)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter_____)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter______)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter______)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter______)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter_______)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter_______)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter_______)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter________)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter________)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter________)();
             } mainpage;

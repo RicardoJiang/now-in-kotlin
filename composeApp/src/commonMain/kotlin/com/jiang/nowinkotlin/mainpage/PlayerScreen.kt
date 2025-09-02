@@ -34,6 +34,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
@@ -42,21 +43,28 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.jiang.nowinkotlin.components.AsyncImage
 import com.jiang.nowinkotlin.components.SmallIconButton
 import com.jiang.nowinkotlin.components.TagChip
+import com.jiang.nowinkotlin.icons.FastForward
+import com.jiang.nowinkotlin.icons.FastRewind
 import com.jiang.nowinkotlin.icons.Pause
 import com.jiang.nowinkotlin.icons.SkipNext
 import com.jiang.nowinkotlin.icons.SkipPrevious
+import com.jiang.nowinkotlin.navigation.LocalNavigator
+import com.jiang.nowinkotlin.navigation.Screen
 import com.jiang.nowinkotlin.theme.KotlinDark
 import com.jiang.nowinkotlin.theme.KotlinPrimary
 import com.jiang.nowinkotlin.theme.KotlinSecondary
@@ -67,12 +75,36 @@ import com.jiang.nowinkotlin.theme.TextPrimary
 import com.jiang.nowinkotlin.theme.TextSecondary
 import com.jiang.nowinkotlin.theme.TextTertiary
 
+data class AudioPlayerScreen(
+    val episodes: List<Episode>,
+    val initialIndex: Int
+) : Screen {
+    @Composable
+    override fun Content() {
+        // 获取当前 CompositionLocal 中的 navigator 实例
+        val navigator = LocalNavigator.current
+
+        PlayerScreen(
+            episodes = episodes,
+            initialIndex = initialIndex,
+            onBackClick = {
+                // 当返回按钮被点击时，调用 navigator pop
+                navigator?.pop()
+            }
+        )
+    }
+}
+
 @Composable
 fun PlayerScreen(
-    episode: Episode,
+    episodes: List<Episode>,
+    initialIndex: Int,
     onBackClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    var currentIndex by remember { mutableStateOf(initialIndex) }
+    val currentEpisode = episodes[currentIndex]
+
     var isPlaying by remember { mutableStateOf(true) }
     var currentTime by remember { mutableStateOf("09:13") }
     var progress by remember { mutableFloatStateOf(0.32f) }
@@ -107,33 +139,39 @@ fun PlayerScreen(
 
             // 封面和可视化
             AlbumCoverWithVisualizer(
-                imageUrl = episode.imageUrl,
+                imageUrl = currentEpisode.imageUrl,
                 isPlaying = isPlaying
             )
 
             Spacer(modifier = Modifier.height(20.dp))
 
             // 标题和信息
-            EpisodeInfo(episode = episode)
+            EpisodeInfo(episode = currentEpisode)
 
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(10.dp))
 
             // 进度条
             PlayerProgressBar(
                 progress = progress,
                 currentTime = currentTime,
-                totalTime = episode.duration,
+                totalTime = currentEpisode.duration,
                 onSeek = { progress = it }
             )
-
-            Spacer(modifier = Modifier.height(16.dp))
 
             // 播放控制
             PlayerControls(
                 isPlaying = isPlaying,
                 onPlayPauseClick = { isPlaying = !isPlaying },
-                onPreviousClick = { },
-                onNextClick = { },
+                onPreviousClick = {
+                    if (currentIndex > 0) {
+                        currentIndex--
+                    }
+                },
+                onNextClick = {
+                    if (currentIndex < episodes.size - 1) {
+                        currentIndex++
+                    }
+                },
                 onSpeedClick = { },
                 onBookmarkClick = { }
             )
@@ -171,11 +209,12 @@ private fun PlayerTopBar(
             color = TextSecondary
         )
 
-//        SmallIconButton(
-//            icon = Icons.Default.MoreHoriz,
-//            onClick = { /* TODO: 更多选项 */ },
-//            contentDescription = "更多选项"
-//        )
+        SmallIconButton(
+            icon = Icons.Default.Star,
+            onClick = { /* TODO: 更多选项 */ },
+            contentDescription = "更多选项",
+            modifier = Modifier.alpha(0f)
+        )
     }
 }
 
@@ -189,14 +228,14 @@ private fun AlbumCoverWithVisualizer(
         contentAlignment = Alignment.BottomEnd
     ) {
         // 封面图片
-//        AsyncImage(
-//            model = imageUrl,
-//            contentDescription = "Album cover",
-//            modifier = Modifier
-//                .size(288.dp)
-//                .clip(RoundedCornerShape(24.dp)),
-//            contentScale = ContentScale.Crop
-//        )
+        AsyncImage(
+            url = imageUrl,
+            contentDescription = "Album cover",
+            modifier = Modifier
+                .size(288.dp)
+                .clip(RoundedCornerShape(24.dp)),
+            contentScale = ContentScale.Crop
+        )
 
         // 渐变遮罩
         Box(
@@ -300,7 +339,7 @@ private fun EpisodeInfo(
     episode: Episode
 ) {
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.Start
     ) {
         Text(
             text = episode.title,
@@ -341,11 +380,11 @@ private fun PlayerProgressBar(
     totalTime: String,
     onSeek: (Float) -> Unit
 ) {
-    Column {
+    Box {
         Slider(
             value = progress,
             onValueChange = onSeek,
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().padding(0.dp),
             colors = SliderDefaults.colors(
                 thumbColor = KotlinPrimary,
                 activeTrackColor = KotlinPrimary,
@@ -354,7 +393,7 @@ private fun PlayerProgressBar(
         )
 
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().padding(start = 6.dp, top = 36.dp, 6.dp, 0.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
@@ -380,30 +419,39 @@ private fun PlayerControls(
     onSpeedClick: () -> Unit,
     onBookmarkClick: () -> Unit
 ) {
-    Row(
+    Box(
         modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically
+        contentAlignment = Alignment.Center
     ) {
-        // 倍速按钮
-        Surface(
-            modifier = Modifier.clickable(onClick = onSpeedClick),
-            shape = RoundedCornerShape(8.dp),
-            color = SurfaceOverlay10
-        ) {
-            Text(
-                text = "1x",
-                fontSize = 14.sp,
-                color = TextPrimary,
-                modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
-            )
-        }
-
         // 播放控制区域
         Row(
             horizontalArrangement = Arrangement.spacedBy(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
+            // 快退
+            IconButton(
+                onClick = onPreviousClick,
+                modifier = Modifier.size(36.dp)
+            ) {
+                Surface(
+                    modifier = Modifier.size(36.dp),
+                    shape = CircleShape,
+                    color = SurfaceOverlay10
+                ) {
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.FastRewind,
+                            contentDescription = "快退",
+                            tint = TextPrimary,
+                            modifier = Modifier.size(18.dp)
+                        )
+                    }
+                }
+            }
+
             // 上一首
             IconButton(
                 onClick = onPreviousClick,
@@ -457,28 +505,28 @@ private fun PlayerControls(
                     }
                 }
             }
-        }
 
-        // 收藏按钮
-        IconButton(
-            onClick = onBookmarkClick,
-            modifier = Modifier.size(40.dp)
-        ) {
-            Surface(
-                modifier = Modifier.size(40.dp),
-                shape = CircleShape,
-                color = SurfaceOverlay10
+            // 快进
+            IconButton(
+                onClick = onPreviousClick,
+                modifier = Modifier.size(36.dp)
             ) {
-                Box(
-                    modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.Center
+                Surface(
+                    modifier = Modifier.size(36.dp),
+                    shape = CircleShape,
+                    color = SurfaceOverlay10
                 ) {
-                    Icon(
-                        imageVector = Icons.Default.Favorite,
-                        contentDescription = "收藏",
-                        tint = TextPrimary,
-                        modifier = Modifier.size(20.dp)
-                    )
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.FastForward,
+                            contentDescription = "快进",
+                            tint = TextPrimary,
+                            modifier = Modifier.size(18.dp)
+                        )
+                    }
                 }
             }
         }

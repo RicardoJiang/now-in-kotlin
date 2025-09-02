@@ -1,7 +1,7 @@
-
 package com.jiang.nowinkotlin.screens
 
 import androidx.compose.runtime.Composable
+import com.jiang.nowinkotlin.mainpage.AudioPlayerScreen
 import com.jiang.nowinkotlin.mainpage.MainScreen
 import com.jiang.nowinkotlin.mainpage.SimpleWebViewScreen
 import com.jiang.nowinkotlin.navigation.LocalNavigator
@@ -19,7 +19,14 @@ object AppMainScreen : Screen {
 
         // 调用原始的 MainScreen Composable
         MainScreen(
-            onEpisodeClick = { /* TODO */ },
+            onEpisodeClick = { episodes, index ->
+                navigator?.push(
+                    AudioPlayerScreen(
+                        episodes = episodes,
+                        initialIndex = index
+                    )
+                )
+            },
             onMonthlyReportClick = { report ->
                 // 当月报被点击时，使用 navigator push 一个新的 WebViewScreen
                 navigator?.push(

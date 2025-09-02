@@ -90,7 +90,11 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
-            implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+            implementation(libs.kotlinx.serialization.json)
+            implementation(libs.androidx.media3.common)
+            implementation(libs.androidx.media3.session)
+            implementation(libs.androidx.media3.exoplayer)
+            implementation(libs.kotlinx.coroutines.guava)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -105,7 +109,7 @@ kotlin {
         }
 
         iosMain.dependencies {
-            implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+            implementation(libs.kotlinx.serialization.json)
         }
 
         val ohosArm64Main by getting {
