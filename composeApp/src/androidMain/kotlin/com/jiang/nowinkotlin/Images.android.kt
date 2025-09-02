@@ -17,8 +17,10 @@
 
 package com.jiang.nowinkotlin
 
+import android.graphics.BitmapFactory
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.asImageBitmap
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.imageResource
@@ -27,4 +29,8 @@ import org.jetbrains.compose.resources.imageResource
 @Composable
 actual fun rememberLocalImage(id: DrawableResource): ImageBitmap {
     return imageResource(resource = id)
+}
+
+internal actual fun imageBitmapFromBytes(byteArray: ByteArray): ImageBitmap {
+    return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size).asImageBitmap()
 }

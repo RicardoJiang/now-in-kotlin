@@ -67,3 +67,7 @@ internal actual fun rememberLocalImage(id: DrawableResource): ImageBitmap {
     }
     return imageBitmap
 }
+
+internal actual fun imageBitmapFromBytes(byteArray: ByteArray): ImageBitmap {
+    return Image.makeFromEncoded(byteArray).toComposeImageBitmap()
+}

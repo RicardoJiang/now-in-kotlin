@@ -268,10 +268,23 @@ typedef struct {
                 libkn_KInt (*hashCode)(libkn_kref_com_jiang_nowinkotlin_components_BottomNavItem thiz);
                 const char* (*toString)(libkn_kref_com_jiang_nowinkotlin_components_BottomNavItem thiz);
               } BottomNavItem;
-              libkn_kref_kotlin_collections_List (*get_bottomNavItems)();
+              libkn_KInt (*com_jiang_nowinkotlin_components_AsyncImageState_Error$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_components_AsyncImageState_Loading$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_components_AsyncImageState_Success$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_components_BottomNavItem$stableprop_getter)();
+              libkn_kref_kotlin_collections_List (*get_bottomNavItems)();
+              libkn_KInt (*com_jiang_nowinkotlin_components_AsyncImageState_Error$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_components_AsyncImageState_Loading$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_components_AsyncImageState_Success$stableprop_getter_)();
               libkn_KInt (*com_jiang_nowinkotlin_components_BottomNavItem$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_components_AsyncImageState_Error$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_components_AsyncImageState_Loading$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_components_AsyncImageState_Success$stableprop_getter__)();
               libkn_KInt (*com_jiang_nowinkotlin_components_BottomNavItem$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_components_AsyncImageState_Error$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_components_AsyncImageState_Loading$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_components_AsyncImageState_Success$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_components_BottomNavItem$stableprop_getter___)();
             } components;
             struct {
               struct {
@@ -297,6 +310,11 @@ typedef struct {
               libkn_KInt (*com_jiang_nowinkotlin_data_DisplaySection$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_data_MonthlyReportItem$stableprop_getter)();
             } data;
+            struct {
+              libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_Pause)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
+              libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_SkipNext)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
+              libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_SkipPrevious)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
+            } icons;
             struct {
               struct {
                 struct {
@@ -429,6 +447,8 @@ typedef struct {
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter______)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter_______)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter_______)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter________)();
+              libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter________)();
             } mainpage;
             struct {
               struct {

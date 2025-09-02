@@ -1,0 +1,558 @@
+package com.jiang.nowinkotlin.mainpage
+
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.tween
+import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Card
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
+import androidx.compose.material.Slider
+import androidx.compose.material.SliderDefaults
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.CornerRadius
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.jiang.nowinkotlin.components.SmallIconButton
+import com.jiang.nowinkotlin.components.TagChip
+import com.jiang.nowinkotlin.icons.Pause
+import com.jiang.nowinkotlin.icons.SkipNext
+import com.jiang.nowinkotlin.icons.SkipPrevious
+import com.jiang.nowinkotlin.theme.KotlinDark
+import com.jiang.nowinkotlin.theme.KotlinPrimary
+import com.jiang.nowinkotlin.theme.KotlinSecondary
+import com.jiang.nowinkotlin.theme.SurfaceOverlay
+import com.jiang.nowinkotlin.theme.SurfaceOverlay10
+import com.jiang.nowinkotlin.theme.SurfaceOverlay15
+import com.jiang.nowinkotlin.theme.TextPrimary
+import com.jiang.nowinkotlin.theme.TextSecondary
+import com.jiang.nowinkotlin.theme.TextTertiary
+
+@Composable
+fun PlayerScreen(
+    episode: Episode,
+    onBackClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    var isPlaying by remember { mutableStateOf(true) }
+    var currentTime by remember { mutableStateOf("09:13") }
+    var progress by remember { mutableFloatStateOf(0.32f) }
+
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .background(
+                brush = Brush.radialGradient(
+                    colors = listOf(
+                        KotlinPrimary.copy(alpha = 0.26f),
+                        Color.Transparent
+                    ),
+                    center = Offset(0.5f, -0.1f),
+                    radius = 1000f
+                )
+            )
+            .background(KotlinDark)
+    ) {
+        // 顶部导航
+        PlayerTopBar(onBackClick = onBackClick)
+
+        // 内容区域
+        Column(
+            modifier = Modifier
+                .weight(1f)
+                .verticalScroll(rememberScrollState())
+                .padding(horizontal = 24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Spacer(modifier = Modifier.height(8.dp))
+
+            // 封面和可视化
+            AlbumCoverWithVisualizer(
+                imageUrl = episode.imageUrl,
+                isPlaying = isPlaying
+            )
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            // 标题和信息
+            EpisodeInfo(episode = episode)
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            // 进度条
+            PlayerProgressBar(
+                progress = progress,
+                currentTime = currentTime,
+                totalTime = episode.duration,
+                onSeek = { progress = it }
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // 播放控制
+            PlayerControls(
+                isPlaying = isPlaying,
+                onPlayPauseClick = { isPlaying = !isPlaying },
+                onPreviousClick = { },
+                onNextClick = { },
+                onSpeedClick = { },
+                onBookmarkClick = { }
+            )
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            // 节目介绍
+            EpisodeDescription()
+
+            Spacer(modifier = Modifier.height(24.dp)) // 底部留白
+        }
+    }
+}
+
+@Composable
+private fun PlayerTopBar(
+    onBackClick: () -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 24.dp),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        SmallIconButton(
+            icon = Icons.AutoMirrored.Filled.ArrowBack,
+            onClick = onBackClick,
+            contentDescription = "返回"
+        )
+
+        Text(
+            text = "正在播放",
+            fontSize = 14.sp,
+            color = TextSecondary
+        )
+
+//        SmallIconButton(
+//            icon = Icons.Default.MoreHoriz,
+//            onClick = { /* TODO: 更多选项 */ },
+//            contentDescription = "更多选项"
+//        )
+    }
+}
+
+@Composable
+private fun AlbumCoverWithVisualizer(
+    imageUrl: String,
+    isPlaying: Boolean
+) {
+    Box(
+        modifier = Modifier.size(288.dp),
+        contentAlignment = Alignment.BottomEnd
+    ) {
+        // 封面图片
+//        AsyncImage(
+//            model = imageUrl,
+//            contentDescription = "Album cover",
+//            modifier = Modifier
+//                .size(288.dp)
+//                .clip(RoundedCornerShape(24.dp)),
+//            contentScale = ContentScale.Crop
+//        )
+
+        // 渐变遮罩
+        Box(
+            modifier = Modifier
+                .size(288.dp)
+                .clip(RoundedCornerShape(24.dp))
+                .background(
+                    brush = Brush.verticalGradient(
+                        colors = listOf(
+                            Color.Transparent,
+                            Color.Black.copy(alpha = 0.6f)
+                        ),
+                        startY = 200f
+                    )
+                )
+        )
+
+        // 音频可视化器
+        if (isPlaying) {
+            AudioVisualizer(
+                modifier = Modifier
+                    .padding(12.dp)
+                    .size(32.dp)
+            )
+        }
+    }
+}
+
+@Composable
+private fun AudioVisualizer(
+    modifier: Modifier = Modifier
+) {
+    val infiniteTransition = rememberInfiniteTransition(label = "audio_visualizer")
+
+    val bar1 by infiniteTransition.animateFloat(
+        initialValue = 0.2f,
+        targetValue = 0.8f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(500, easing = LinearEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "bar1"
+    )
+
+    val bar2 by infiniteTransition.animateFloat(
+        initialValue = 0.3f,
+        targetValue = 0.9f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(620, easing = LinearEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "bar2"
+    )
+
+    val bar3 by infiniteTransition.animateFloat(
+        initialValue = 0.1f,
+        targetValue = 0.6f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(480, easing = LinearEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "bar3"
+    )
+
+    val bar4 by infiniteTransition.animateFloat(
+        initialValue = 0.4f,
+        targetValue = 1.0f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(550, easing = LinearEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "bar4"
+    )
+
+    Canvas(modifier = modifier) {
+        val barWidth = size.width / 6
+        val maxHeight = size.height
+
+        // 绘制4个音频条
+        listOf(bar1, bar2, bar3, bar4).forEachIndexed { index, height ->
+            drawRoundRect(
+                brush = Brush.verticalGradient(
+                    colors = listOf(KotlinSecondary, KotlinPrimary)
+                ),
+                topLeft = Offset(
+                    x = index * barWidth * 1.2f,
+                    y = maxHeight - (maxHeight * height)
+                ),
+                size = Size(
+                    width = barWidth * 0.8f,
+                    height = maxHeight * height
+                ),
+                cornerRadius = CornerRadius(barWidth * 0.4f)
+            )
+        }
+    }
+}
+
+@Composable
+private fun EpisodeInfo(
+    episode: Episode
+) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = episode.title,
+            fontSize = 18.sp,
+            fontWeight = FontWeight.SemiBold,
+            color = TextPrimary,
+            textAlign = TextAlign.Center,
+            lineHeight = 28.sp
+        )
+
+        Text(
+            text = "${episode.episodeNumber} · 炉边漫谈 · ${episode.duration}",
+            fontSize = 13.sp,
+            color = TextSecondary,
+            modifier = Modifier.padding(top = 4.dp)
+        )
+
+        if (episode.tags.isNotEmpty()) {
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                modifier = Modifier.padding(top = 12.dp)
+            ) {
+                episode.tags.forEach { tag ->
+                    TagChip(
+                        text = tag,
+                        isHighlighted = tag.contains("K2") || tag.contains("KMP")
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun PlayerProgressBar(
+    progress: Float,
+    currentTime: String,
+    totalTime: String,
+    onSeek: (Float) -> Unit
+) {
+    Column {
+        Slider(
+            value = progress,
+            onValueChange = onSeek,
+            modifier = Modifier.fillMaxWidth(),
+            colors = SliderDefaults.colors(
+                thumbColor = KotlinPrimary,
+                activeTrackColor = KotlinPrimary,
+                inactiveTrackColor = SurfaceOverlay15
+            )
+        )
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = currentTime,
+                fontSize = 11.sp,
+                color = TextTertiary
+            )
+            Text(
+                text = totalTime,
+                fontSize = 11.sp,
+                color = TextTertiary
+            )
+        }
+    }
+}
+
+@Composable
+private fun PlayerControls(
+    isPlaying: Boolean,
+    onPlayPauseClick: () -> Unit,
+    onPreviousClick: () -> Unit,
+    onNextClick: () -> Unit,
+    onSpeedClick: () -> Unit,
+    onBookmarkClick: () -> Unit
+) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        // 倍速按钮
+        Surface(
+            modifier = Modifier.clickable(onClick = onSpeedClick),
+            shape = RoundedCornerShape(8.dp),
+            color = SurfaceOverlay10
+        ) {
+            Text(
+                text = "1x",
+                fontSize = 14.sp,
+                color = TextPrimary,
+                modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
+            )
+        }
+
+        // 播放控制区域
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            // 上一首
+            IconButton(
+                onClick = onPreviousClick,
+                modifier = Modifier.size(48.dp)
+            ) {
+                Surface(
+                    modifier = Modifier.size(48.dp),
+                    shape = CircleShape,
+                    color = SurfaceOverlay10
+                ) {
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.SkipPrevious,
+                            contentDescription = "上一首",
+                            tint = TextPrimary,
+                            modifier = Modifier.size(24.dp)
+                        )
+                    }
+                }
+            }
+
+            // 播放/暂停按钮
+            PlayPauseButton(
+                isPlaying = isPlaying,
+                onClick = onPlayPauseClick
+            )
+
+            // 下一首
+            IconButton(
+                onClick = onNextClick,
+                modifier = Modifier.size(48.dp)
+            ) {
+                Surface(
+                    modifier = Modifier.size(48.dp),
+                    shape = CircleShape,
+                    color = SurfaceOverlay10
+                ) {
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.SkipNext,
+                            contentDescription = "下一首",
+                            tint = TextPrimary,
+                            modifier = Modifier.size(24.dp)
+                        )
+                    }
+                }
+            }
+        }
+
+        // 收藏按钮
+        IconButton(
+            onClick = onBookmarkClick,
+            modifier = Modifier.size(40.dp)
+        ) {
+            Surface(
+                modifier = Modifier.size(40.dp),
+                shape = CircleShape,
+                color = SurfaceOverlay10
+            ) {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Favorite,
+                        contentDescription = "收藏",
+                        tint = TextPrimary,
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun PlayPauseButton(
+    isPlaying: Boolean,
+    onClick: () -> Unit
+) {
+    IconButton(
+        onClick = onClick,
+        modifier = Modifier.size(64.dp)
+    ) {
+        Surface(
+            modifier = Modifier.size(64.dp),
+            shape = CircleShape,
+            color = Color.Transparent
+        ) {
+            Canvas(modifier = Modifier.size(64.dp)) {
+                drawCircle(
+                    brush = Brush.linearGradient(
+                        colors = listOf(KotlinPrimary, KotlinSecondary)
+                    )
+                )
+            }
+            Box(
+                modifier = Modifier.size(64.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    imageVector = if (isPlaying) Icons.Default.Pause else Icons.Default.PlayArrow,
+                    contentDescription = if (isPlaying) "暂停" else "播放",
+                    tint = TextPrimary,
+                    modifier = Modifier.size(28.dp)
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun EpisodeDescription() {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(12.dp),
+        backgroundColor = SurfaceOverlay
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp)
+        ) {
+            Text(
+                text = "节目介绍",
+                fontSize = 14.sp,
+                color = TextSecondary,
+                fontWeight = FontWeight.Medium,
+                modifier = Modifier.padding(bottom = 12.dp)
+            )
+
+            Text(
+                text = "《Kotlin 炉边漫谈》",
+                fontSize = 14.sp,
+                fontWeight = FontWeight.Medium,
+                color = TextPrimary,
+                modifier = Modifier.padding(bottom = 12.dp)
+            )
+
+            Text(
+                text = "是一個討論 Kotlin 相關主題的中文 Podcast，由 Android GDE 禹昂、Kotlin 開發者 Maggie 和 JetBrains 技術傳教士聖佑共同主持，除了介紹兩岸三地 Kotlin User Group 技術社群活動資訊外，還會邀請各地 Kotlin 開發者一起來聊聊 Kotlin 的應用情境。",
+                fontSize = 13.sp,
+                color = TextSecondary,
+                lineHeight = 20.sp
+            )
+        }
+    }
+}

@@ -60,14 +60,14 @@ fun EpisodeCard(
             verticalAlignment = Alignment.CenterVertically
         ) {
             // 播客封面
-//            AsyncImage(
-//                model = imageUrl,
-//                contentDescription = "Episode cover",
-//                modifier = Modifier
-//                    .size(64.dp)
-//                    .clip(RoundedCornerShape(12.dp)),
-//                contentScale = ContentScale.Crop
-//            )
+            AsyncImage(
+                url = imageUrl,
+                contentDescription = "Episode cover",
+                modifier = Modifier
+                    .size(64.dp)
+                    .clip(RoundedCornerShape(12.dp)),
+                contentScale = ContentScale.Crop
+            )
 
             // 内容区域
             Column(

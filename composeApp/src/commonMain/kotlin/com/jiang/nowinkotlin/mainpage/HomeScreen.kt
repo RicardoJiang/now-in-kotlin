@@ -67,7 +67,7 @@ val sampleEpisodes = listOf(
         episodeNumber = "EP 41",
         date = "2024-12-10",
         duration = "41:02",
-        imageUrl = "https://picsum.photos/seed/ep3/200/200",
+        imageUrl = "https://podcast.kotlin.tips/images/episodes/cover-episode17.png",
         tags = listOf("KMP", "Tooling")
     ),
     Episode(
@@ -81,6 +81,51 @@ val sampleEpisodes = listOf(
     ),
     Episode(
         id = "5",
+        title = "Kotlin Multiplatform 实战与生态观察",
+        episodeNumber = "EP 41",
+        date = "2024-12-10",
+        duration = "41:02",
+        imageUrl = "https://picsum.photos/seed/ep3/200/200",
+        tags = listOf("KMP", "Tooling")
+    ),
+    Episode(
+        id = "6",
+        title = "K2 编译器进展与 Kotlin 2.2 的稳定特性",
+        episodeNumber = "EP 43",
+        date = "2025-01-07",
+        duration = "28:14",
+        imageUrl = "https://picsum.photos/seed/ep1/200/200",
+        tags = listOf("K2", "Gradle")
+    ),
+    Episode(
+        id = "7",
+        title = "Jetpack Compose 性能优化与常见陷阱",
+        episodeNumber = "EP 42",
+        date = "2024-12-24",
+        duration = "36:21",
+        imageUrl = "https://picsum.photos/seed/ep2/200/200",
+        tags = listOf("Compose", "UI")
+    ),
+    Episode(
+        id = "8",
+        title = "Kotlin Multiplatform 实战与生态观察",
+        episodeNumber = "EP 41",
+        date = "2024-12-10",
+        duration = "41:02",
+        imageUrl = "https://picsum.photos/seed/ep3/200/200",
+        tags = listOf("KMP", "Tooling")
+    ),
+    Episode(
+        id = "9",
+        title = "Jetpack Compose 性能优化与常见陷阱",
+        episodeNumber = "EP 42",
+        date = "2024-12-24",
+        duration = "36:21",
+        imageUrl = "https://picsum.photos/seed/ep2/200/200",
+        tags = listOf("Compose", "UI")
+    ),
+    Episode(
+        id = "10",
         title = "Kotlin Multiplatform 实战与生态观察",
         episodeNumber = "EP 41",
         date = "2024-12-10",

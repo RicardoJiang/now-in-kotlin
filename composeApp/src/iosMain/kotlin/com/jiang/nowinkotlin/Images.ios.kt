@@ -25,12 +25,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.UikitImageBitmap
+import androidx.compose.ui.graphics.toComposeImageBitmap
 import com.jiang.nowinkotlin.data.MonthlyReportItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.skia.Image
 import platform.Foundation.NSBundle
 import platform.UIKit.UIImage
 
@@ -54,4 +56,8 @@ actual fun rememberLocalImage(id: DrawableResource): ImageBitmap {
 
 internal actual fun parseMonthReport(json: String): List<MonthlyReportItem> {
     return DeserializationiOSData.parseMonthReport(json)
+}
+
+internal actual fun imageBitmapFromBytes(byteArray: ByteArray): ImageBitmap {
+    return Image.makeFromEncoded(byteArray).toComposeImageBitmap()
 }
