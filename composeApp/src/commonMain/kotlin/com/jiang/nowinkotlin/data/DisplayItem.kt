@@ -50,3 +50,70 @@ data class MonthlyReportItem(
     val displayYMD: String
         get() = publishDate.split("T")[0]
 }
+
+data class Episode(
+    val index: Int,
+    val size: Int,
+    val episodeTitle: String,
+    val pubDate: String,
+    val episodeDuration: Int,
+    val imageUrl: String,
+    val audioUrl: String,
+    val description: String,
+    val tags: List<String>
+) {
+    val id: String
+        get() = index.toString()
+    val episodeNumber: String
+        get() = "EP ${size - index}"
+
+    val duration: String
+        get() {
+            val hour = episodeDuration / 3600
+            val minute = (episodeDuration % 3600) / 60
+            val second = episodeDuration % 60
+            var result = ""
+            if (hour > 0) {
+                result += if (hour < 10) {
+                    "0$hour"
+                } else {
+                    hour
+                }
+                result += ":"
+            }
+            result += if (minute < 10) {
+                "0$minute"
+            } else {
+                minute
+            }
+            result += ":"
+            result += if (second < 10) {
+                "0$second"
+            } else {
+                second
+            }
+            return result
+        }
+
+    val date: String
+        get() = pubDate.split(" ")[0]
+
+    val title: String
+        get() {
+            val titleNumber = size - index
+            return episodeTitle.replace("#$titleNumber -", "")
+                .replace("#$titleNumber ", "").trim()
+        }
+
+    val displayDescription: String
+        get() {
+            return description.replace("</p>", "")
+                .replace("<p>", "")
+                .replace("</ul>", "")
+                .replace("<ul>", "")
+                .replace("</li>", "")
+                .replace("<li>", "")
+                .replace("<br>", "")
+                .split("其他收视/听平台")[0].trim()
+        }
+}

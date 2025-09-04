@@ -28,6 +28,7 @@ import com.jiang.nowinkotlin.theme.TextPrimary
 import com.jiang.nowinkotlin.theme.TextSecondary
 import com.jiang.nowinkotlin.theme.TextTertiary
 import nowinkotlin.composeapp.generated.resources.Res
+import nowinkotlin.composeapp.generated.resources.episode_cover
 import nowinkotlin.composeapp.generated.resources.kotlin_stove
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 
@@ -35,6 +36,7 @@ import org.jetbrains.compose.resources.ExperimentalResourceApi
  * 播客卡片组件
  * 显示播客封面、标题、时长、标签等信息
  */
+@OptIn(ExperimentalResourceApi::class)
 @Composable
 fun EpisodeCard(
     title: String,
@@ -60,8 +62,16 @@ fun EpisodeCard(
             verticalAlignment = Alignment.CenterVertically
         ) {
             // 播客封面
-            AsyncImage(
-                url = imageUrl,
+//            AsyncImage(
+//                url = imageUrl,
+//                contentDescription = "Episode cover",
+//                modifier = Modifier
+//                    .size(64.dp)
+//                    .clip(RoundedCornerShape(12.dp)),
+//                contentScale = ContentScale.Crop
+//            )
+            Image(
+                bitmap = rememberLocalImage(Res.drawable.episode_cover),
                 contentDescription = "Episode cover",
                 modifier = Modifier
                     .size(64.dp)

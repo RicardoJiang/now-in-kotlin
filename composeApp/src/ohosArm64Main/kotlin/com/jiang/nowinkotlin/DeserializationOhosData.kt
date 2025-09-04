@@ -1,6 +1,7 @@
 package com.jiang.nowinkotlin
 
 import com.jiang.nowinkotlin.data.MonthlyReportItem
+import com.jiang.nowinkotlin.data.Episode
 
 internal object DeserializationOhosData {
     fun parseMonthReport(json: String): List<MonthlyReportItem> {
@@ -17,6 +18,35 @@ internal object DeserializationOhosData {
                         tags = item.get("tags") as ArrayList<String>
                     )
                 )
+            }
+        }
+        return result
+    }
+
+    fun parseKotlinStoveList(json: String): List<Episode> {
+        val hashMap = getOhosServicesApi().parseJson(json)
+        val result = mutableListOf<Episode>()
+        var index = 0
+        val size = hashMap.values.filterIsInstance<HashMap<*,*>>().size
+        hashMap.forEach {
+            val item = it.value
+            if (item is HashMap<*, *>) {
+                val audioResource = item.get("audioResource") as HashMap<*, *>
+                println("here index $index , size: $size")
+                result.add(
+                    Episode(
+                        index = index,
+                        size = size,
+                        episodeTitle = (item.get("title") ?: "").toString(),
+                        pubDate = (item.get("pubDate") ?: "").toString(),
+                        episodeDuration = (audioResource.get("duration") ?: "0").toString().toFloat().toInt(),
+                        imageUrl = (item.get("thumbnail") ?: "").toString(),
+                        audioUrl = (audioResource.get("link") ?: "").toString(),
+                        description = (item.get("description") ?: "").toString(),
+                        tags = emptyList()
+                    )
+                )
+                index++
             }
         }
         return result

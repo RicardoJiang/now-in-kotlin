@@ -92,6 +92,9 @@ typedef struct {
 } libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem;
 typedef struct {
   libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_data_Episode;
+typedef struct {
+  libkn_KNativePtr pinned;
 } libkn_kref_androidx_compose_material_icons_Icons_Filled;
 typedef struct {
   libkn_KNativePtr pinned;
@@ -102,9 +105,6 @@ typedef struct {
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_androidx_compose_runtime_snapshots_SnapshotStateList;
-typedef struct {
-  libkn_KNativePtr pinned;
-} libkn_kref_com_jiang_nowinkotlin_mainpage_Episode;
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_androidx_compose_runtime_ProvidableCompositionLocal;
@@ -259,16 +259,15 @@ typedef struct {
             struct {
               struct {
                 libkn_KType* (*_type)(void);
-                void (*moveMediaItem)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_KInt currentIndex, libkn_KInt newIndex);
                 void (*next)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
                 void (*pause)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
                 void (*play)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
+                void (*playMusics)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_kref_kotlin_collections_List musics, libkn_KInt startIndex);
+                void (*prepare)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_kref_kotlin_collections_List musics, libkn_KInt index, libkn_KLong positionMs);
                 void (*previous)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
                 void (*release)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
                 void (*seekTo)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_KLong positionMs);
-                void (*setShuffleMode)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_KBoolean isOn);
-                void (*setSpeed)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_KFloat speed);
-                void (*skipTo)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_KInt musicIndex);
+                void (*stop)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
               } MediaPlaybackController;
             } audio;
             struct {
@@ -324,8 +323,41 @@ typedef struct {
                 libkn_KInt (*hashCode)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz);
                 const char* (*toString)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz);
               } MonthlyReportItem;
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_data_Episode (*Episode)(libkn_KInt index, libkn_KInt size, const char* episodeTitle, const char* pubDate, libkn_KInt episodeDuration, const char* imageUrl, const char* audioUrl, const char* description, libkn_kref_kotlin_collections_List tags);
+                const char* (*get_audioUrl)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                const char* (*get_date)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                const char* (*get_description)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                const char* (*get_displayDescription)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                const char* (*get_duration)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                libkn_KInt (*get_episodeDuration)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                const char* (*get_episodeNumber)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                const char* (*get_episodeTitle)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                const char* (*get_id)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                const char* (*get_imageUrl)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                libkn_KInt (*get_index)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                const char* (*get_pubDate)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                libkn_KInt (*get_size)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                libkn_kref_kotlin_collections_List (*get_tags)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                const char* (*get_title)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                libkn_KInt (*component1)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                libkn_KInt (*component2)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                const char* (*component3)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                const char* (*component4)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                libkn_KInt (*component5)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                const char* (*component6)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                const char* (*component7)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                const char* (*component8)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                libkn_kref_kotlin_collections_List (*component9)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                libkn_kref_com_jiang_nowinkotlin_data_Episode (*copy)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz, libkn_KInt index, libkn_KInt size, const char* episodeTitle, const char* pubDate, libkn_KInt episodeDuration, const char* imageUrl, const char* audioUrl, const char* description, libkn_kref_kotlin_collections_List tags);
+                libkn_KBoolean (*equals)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz, libkn_kref_kotlin_Any other);
+                libkn_KInt (*hashCode)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+                const char* (*toString)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
+              } Episode;
               libkn_KInt (*com_jiang_nowinkotlin_data_DisplayItem$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_data_DisplaySection$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_data_Episode$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_data_MonthlyReportItem$stableprop_getter)();
             } data;
             struct {
@@ -427,56 +459,24 @@ typedef struct {
                 libkn_KInt (*com_jiang_nowinkotlin_mainpage_sectionItem_Game$stableprop_getter______________)();
                 libkn_KInt (*com_jiang_nowinkotlin_mainpage_sectionItem_PieceData$stableprop_getter______________)();
               } sectionItem;
-              struct {
-                libkn_KType* (*_type)(void);
-                libkn_kref_com_jiang_nowinkotlin_mainpage_Episode (*Episode)(const char* id, const char* title, const char* episodeNumber, const char* date, const char* duration, const char* imageUrl, libkn_kref_kotlin_collections_List tags);
-                const char* (*get_date)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
-                const char* (*get_duration)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
-                const char* (*get_episodeNumber)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
-                const char* (*get_id)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
-                const char* (*get_imageUrl)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
-                libkn_kref_kotlin_collections_List (*get_tags)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
-                const char* (*get_title)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
-                const char* (*component1)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
-                const char* (*component2)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
-                const char* (*component3)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
-                const char* (*component4)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
-                const char* (*component5)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
-                const char* (*component6)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
-                libkn_kref_kotlin_collections_List (*component7)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
-                libkn_kref_com_jiang_nowinkotlin_mainpage_Episode (*copy)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz, const char* id, const char* title, const char* episodeNumber, const char* date, const char* duration, const char* imageUrl, libkn_kref_kotlin_collections_List tags);
-                libkn_KBoolean (*equals)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz, libkn_kref_kotlin_Any other);
-                libkn_KInt (*hashCode)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
-                const char* (*toString)(libkn_kref_com_jiang_nowinkotlin_mainpage_Episode thiz);
-              } Episode;
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter)();
-              libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter)();
-              libkn_kref_kotlin_collections_List (*get_sampleEpisodes)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter_)();
-              libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter_)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter_)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter__)();
-              libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter__)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter__)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter___)();
-              libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter___)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter___)();
               libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_ChevronRight)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter____)();
-              libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter____)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter____)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter_____)();
-              libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter_____)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter_____)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter______)();
-              libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter______)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter______)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter_______)();
-              libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter_______)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter_______)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_AudioPlayerScreen$stableprop_getter________)();
-              libkn_KInt (*com_jiang_nowinkotlin_mainpage_Episode$stableprop_getter________)();
               libkn_KInt (*com_jiang_nowinkotlin_mainpage_NavItem$stableprop_getter________)();
             } mainpage;
             struct {
@@ -527,10 +527,18 @@ typedef struct {
                 void (*onCreate)(libkn_kref_com_jiang_nowinkotlin_viewmodel_LifecycleAware thiz);
                 void (*onDestroy)(libkn_kref_com_jiang_nowinkotlin_viewmodel_LifecycleAware thiz);
               } LifecycleAware;
+              libkn_KInt (*com_jiang_nowinkotlin_viewmodel_HomeUIState$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_viewmodel_HomeViewModel$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_viewmodel_MonthlyReportUIState$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_viewmodel_MonthlyReportViewModel$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_viewmodel_HomeUIState$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_viewmodel_HomeViewModel$stableprop_getter_)();
               libkn_KInt (*com_jiang_nowinkotlin_viewmodel_MonthlyReportUIState$stableprop_getter_)();
               libkn_KInt (*com_jiang_nowinkotlin_viewmodel_MonthlyReportViewModel$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_viewmodel_HomeUIState$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_viewmodel_HomeViewModel$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_viewmodel_MonthlyReportUIState$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_viewmodel_MonthlyReportViewModel$stableprop_getter__)();
             } viewmodel;
             struct {
               struct {

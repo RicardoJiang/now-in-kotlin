@@ -30,117 +30,15 @@ import androidx.compose.ui.unit.sp
 import com.jiang.nowinkotlin.components.EpisodeCard
 import com.jiang.nowinkotlin.components.HeroCard
 import com.jiang.nowinkotlin.components.SmallIconButton
+import com.jiang.nowinkotlin.data.Episode
 import com.jiang.nowinkotlin.theme.KotlinAccent
 import com.jiang.nowinkotlin.theme.KotlinDark
 import com.jiang.nowinkotlin.theme.KotlinPrimary
 import com.jiang.nowinkotlin.theme.KotlinSecondary
 import com.jiang.nowinkotlin.theme.TextPrimary
 import com.jiang.nowinkotlin.theme.TextTertiary
-
-data class Episode(
-    val id: String,
-    val title: String,
-    val episodeNumber: String,
-    val date: String,
-    val duration: String,
-    val imageUrl: String,
-    val audioUrl: String,
-    val tags: List<String>
-)
-
-// 示例数据
-val sampleEpisodes = listOf(
-    Episode(
-        id = "1",
-        title = "K2 编译器进展与 Kotlin 2.2 的稳定特性",
-        episodeNumber = "EP 43",
-        date = "2025-01-07",
-        duration = "28:14",
-        imageUrl = "https://picsum.photos/seed/ep1/200/200",
-        tags = listOf("K2", "Gradle"),
-        audioUrl = "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/cly32eiou08b901t22mj04ten/https%3A%2F%2Fd3mww1g1pfq2pt.cloudfront.net%2FRecord%2Fcl3lg86nt00ql01vr0tr42zh3%2Fcly32eiov08ba01t22t4515zk.mp3?v=1719843528113"
-    ),
-    Episode(
-        id = "2",
-        title = "Jetpack Compose 性能优化与常见陷阱",
-        episodeNumber = "EP 42",
-        date = "2024-12-24",
-        duration = "36:21",
-        imageUrl = "https://picsum.photos/seed/ep2/200/200",
-        tags = listOf("Compose", "UI"),
-        audioUrl = "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/clqnuemqc04fc01w6e18a6w5p/https%3A%2F%2Fd3mww1g1pfq2pt.cloudfront.net%2FRecord%2Fcl3lg86nt00ql01vr0tr42zh3%2Fclqnuemqc04fd01w66ws842wu.mp3?v=1703685643339"
-    ),
-    Episode(
-        id = "3",
-        title = "Kotlin Multiplatform 实战与生态观察",
-        episodeNumber = "EP 41",
-        date = "2024-12-10",
-        duration = "41:02",
-        imageUrl = "https://podcast.kotlin.tips/images/episodes/cover-episode17.png",
-        tags = listOf("KMP", "Tooling"),
-        audioUrl = "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/clnzno7yx06xe01y1f5xva9rv/https%3A%2F%2Fd3mww1g1pfq2pt.cloudfront.net%2FRecord%2Fcl3lg86nt00ql01vr0tr42zh3%2Fclnzno7yx06xf01y1395lcy1i.mp3?v=1697869578770"
-    ),
-    Episode(
-        id = "4",
-        title = "K2 编译器进展与 Kotlin 2.2 的稳定特性",
-        episodeNumber = "EP 43",
-        date = "2025-01-07",
-        duration = "28:14",
-        imageUrl = "https://picsum.photos/seed/ep1/200/200",
-        tags = listOf("K2", "Gradle"),
-        audioUrl = "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/cly32eiou08b901t22mj04ten/https%3A%2F%2Fd3mww1g1pfq2pt.cloudfront.net%2FRecord%2Fcl3lg86nt00ql01vr0tr42zh3%2Fcly32eiov08ba01t22t4515zk.mp3?v=1719843528113"
-    ),
-    Episode(
-        id = "5",
-        title = "Jetpack Compose 性能优化与常见陷阱",
-        episodeNumber = "EP 42",
-        date = "2024-12-24",
-        duration = "36:21",
-        imageUrl = "https://picsum.photos/seed/ep2/200/200",
-        tags = listOf("Compose", "UI"),
-        audioUrl = "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/clqnuemqc04fc01w6e18a6w5p/https%3A%2F%2Fd3mww1g1pfq2pt.cloudfront.net%2FRecord%2Fcl3lg86nt00ql01vr0tr42zh3%2Fclqnuemqc04fd01w66ws842wu.mp3?v=1703685643339"
-    ),
-    Episode(
-        id = "6",
-        title = "Kotlin Multiplatform 实战与生态观察",
-        episodeNumber = "EP 41",
-        date = "2024-12-10",
-        duration = "41:02",
-        imageUrl = "https://podcast.kotlin.tips/images/episodes/cover-episode17.png",
-        tags = listOf("KMP", "Tooling"),
-        audioUrl = "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/clnzno7yx06xe01y1f5xva9rv/https%3A%2F%2Fd3mww1g1pfq2pt.cloudfront.net%2FRecord%2Fcl3lg86nt00ql01vr0tr42zh3%2Fclnzno7yx06xf01y1395lcy1i.mp3?v=1697869578770"
-    ),
-    Episode(
-        id = "7",
-        title = "K2 编译器进展与 Kotlin 2.2 的稳定特性",
-        episodeNumber = "EP 43",
-        date = "2025-01-07",
-        duration = "28:14",
-        imageUrl = "https://picsum.photos/seed/ep1/200/200",
-        tags = listOf("K2", "Gradle"),
-        audioUrl = "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/cly32eiou08b901t22mj04ten/https%3A%2F%2Fd3mww1g1pfq2pt.cloudfront.net%2FRecord%2Fcl3lg86nt00ql01vr0tr42zh3%2Fcly32eiov08ba01t22t4515zk.mp3?v=1719843528113"
-    ),
-    Episode(
-        id = "8",
-        title = "Jetpack Compose 性能优化与常见陷阱",
-        episodeNumber = "EP 42",
-        date = "2024-12-24",
-        duration = "36:21",
-        imageUrl = "https://picsum.photos/seed/ep2/200/200",
-        tags = listOf("Compose", "UI"),
-        audioUrl = "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/clqnuemqc04fc01w6e18a6w5p/https%3A%2F%2Fd3mww1g1pfq2pt.cloudfront.net%2FRecord%2Fcl3lg86nt00ql01vr0tr42zh3%2Fclqnuemqc04fd01w66ws842wu.mp3?v=1703685643339"
-    ),
-    Episode(
-        id = "9",
-        title = "Kotlin Multiplatform 实战与生态观察",
-        episodeNumber = "EP 41",
-        date = "2024-12-10",
-        duration = "41:02",
-        imageUrl = "https://podcast.kotlin.tips/images/episodes/cover-episode17.png",
-        tags = listOf("KMP", "Tooling"),
-        audioUrl = "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/clnzno7yx06xe01y1f5xva9rv/https%3A%2F%2Fd3mww1g1pfq2pt.cloudfront.net%2FRecord%2Fcl3lg86nt00ql01vr0tr42zh3%2Fclnzno7yx06xf01y1395lcy1i.mp3?v=1697869578770"
-    ),
-)
+import com.jiang.nowinkotlin.viewmodel.HomeViewModel
+import com.jiang.nowinkotlin.viewmodel.rememberLifecycleAware
 
 @Composable
 fun HomeScreen(
@@ -148,6 +46,11 @@ fun HomeScreen(
     onPlayClick: (List<Episode>, Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val homeViewModel = rememberLifecycleAware { scope ->
+        HomeViewModel(scope)
+    }
+    val uiState = homeViewModel.uiState
+
     Box(
         modifier = modifier
             .fillMaxSize()
@@ -179,7 +82,7 @@ fun HomeScreen(
 
                 // 播客列表
                 itemsIndexed(
-                    items = sampleEpisodes,
+                    items = uiState.episodeList,
                     key = { index, it -> it.id }
                 ) { index, episode ->
                     EpisodeCard(
@@ -188,8 +91,8 @@ fun HomeScreen(
                         duration = episode.duration,
                         imageUrl = episode.imageUrl,
                         tags = episode.tags,
-                        onClick = { onEpisodeClick(sampleEpisodes, index) },
-                        onPlayClick = { onPlayClick(sampleEpisodes, index) },
+                        onClick = { onEpisodeClick(uiState.episodeList, index) },
+                        onPlayClick = { onPlayClick(uiState.episodeList, index) },
                         modifier = Modifier.padding(horizontal = 12.dp)
                     )
                 }

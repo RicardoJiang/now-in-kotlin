@@ -1,6 +1,6 @@
 package com.jiang.nowinkotlin.audio
 
-import com.jiang.nowinkotlin.mainpage.Episode
+import com.jiang.nowinkotlin.data.Episode
 
 interface MediaPlaybackController {
     fun seekTo(positionMs: Long)

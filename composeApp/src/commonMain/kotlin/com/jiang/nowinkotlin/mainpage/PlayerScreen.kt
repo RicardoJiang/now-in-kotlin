@@ -7,8 +7,8 @@ import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -32,7 +32,6 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.runtime.Composable
@@ -58,6 +57,7 @@ import androidx.compose.ui.unit.sp
 import com.jiang.nowinkotlin.components.AsyncImage
 import com.jiang.nowinkotlin.components.SmallIconButton
 import com.jiang.nowinkotlin.components.TagChip
+import com.jiang.nowinkotlin.data.Episode
 import com.jiang.nowinkotlin.icons.FastForward
 import com.jiang.nowinkotlin.icons.FastRewind
 import com.jiang.nowinkotlin.icons.Pause
@@ -65,6 +65,7 @@ import com.jiang.nowinkotlin.icons.SkipNext
 import com.jiang.nowinkotlin.icons.SkipPrevious
 import com.jiang.nowinkotlin.navigation.LocalNavigator
 import com.jiang.nowinkotlin.navigation.Screen
+import com.jiang.nowinkotlin.rememberLocalImage
 import com.jiang.nowinkotlin.theme.KotlinDark
 import com.jiang.nowinkotlin.theme.KotlinPrimary
 import com.jiang.nowinkotlin.theme.KotlinSecondary
@@ -74,6 +75,9 @@ import com.jiang.nowinkotlin.theme.SurfaceOverlay15
 import com.jiang.nowinkotlin.theme.TextPrimary
 import com.jiang.nowinkotlin.theme.TextSecondary
 import com.jiang.nowinkotlin.theme.TextTertiary
+import nowinkotlin.composeapp.generated.resources.Res
+import nowinkotlin.composeapp.generated.resources.episode_cover
+import org.jetbrains.compose.resources.ExperimentalResourceApi
 
 data class AudioPlayerScreen(
     val episodes: List<Episode>,
@@ -179,7 +183,7 @@ fun PlayerScreen(
             Spacer(modifier = Modifier.height(24.dp))
 
             // 节目介绍
-            EpisodeDescription()
+            EpisodeDescription(episode = currentEpisode)
 
             Spacer(modifier = Modifier.height(24.dp)) // 底部留白
         }
@@ -218,6 +222,7 @@ private fun PlayerTopBar(
     }
 }
 
+@OptIn(ExperimentalResourceApi::class)
 @Composable
 private fun AlbumCoverWithVisualizer(
     imageUrl: String,
@@ -228,8 +233,16 @@ private fun AlbumCoverWithVisualizer(
         contentAlignment = Alignment.BottomEnd
     ) {
         // 封面图片
-        AsyncImage(
-            url = imageUrl,
+//        AsyncImage(
+//            url = imageUrl,
+//            contentDescription = "Album cover",
+//            modifier = Modifier
+//                .size(288.dp)
+//                .clip(RoundedCornerShape(24.dp)),
+//            contentScale = ContentScale.Crop
+//        )
+        Image(
+            bitmap = rememberLocalImage(Res.drawable.episode_cover),
             contentDescription = "Album cover",
             modifier = Modifier
                 .size(288.dp)
@@ -339,7 +352,7 @@ private fun EpisodeInfo(
     episode: Episode
 ) {
     Column(
-        horizontalAlignment = Alignment.Start
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
             text = episode.title,
@@ -570,7 +583,7 @@ private fun PlayPauseButton(
 }
 
 @Composable
-private fun EpisodeDescription() {
+private fun EpisodeDescription(episode: Episode) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(12.dp),
@@ -596,7 +609,7 @@ private fun EpisodeDescription() {
             )
 
             Text(
-                text = "是一個討論 Kotlin 相關主題的中文 Podcast，由 Android GDE 禹昂、Kotlin 開發者 Maggie 和 JetBrains 技術傳教士聖佑共同主持，除了介紹兩岸三地 Kotlin User Group 技術社群活動資訊外，還會邀請各地 Kotlin 開發者一起來聊聊 Kotlin 的應用情境。",
+                text = episode.displayDescription,
                 fontSize = 13.sp,
                 color = TextSecondary,
                 lineHeight = 20.sp

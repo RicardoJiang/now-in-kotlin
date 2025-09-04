@@ -6,7 +6,7 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
 import androidx.media3.common.MimeTypes
 import androidx.media3.common.util.UnstableApi
-import com.jiang.nowinkotlin.mainpage.Episode
+import com.jiang.nowinkotlin.data.Episode
 
 @OptIn(UnstableApi::class)
 internal fun Episode.asMediaItem(): MediaItem = MediaItem.Builder()

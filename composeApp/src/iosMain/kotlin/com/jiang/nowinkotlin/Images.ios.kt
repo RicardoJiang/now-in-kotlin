@@ -54,10 +54,6 @@ actual fun rememberLocalImage(id: DrawableResource): ImageBitmap {
     return imageBitmap
 }
 
-internal actual fun parseMonthReport(json: String): List<MonthlyReportItem> {
-    return DeserializationiOSData.parseMonthReport(json)
-}
-
 internal actual fun imageBitmapFromBytes(byteArray: ByteArray): ImageBitmap {
     return Image.makeFromEncoded(byteArray).toComposeImageBitmap()
 }

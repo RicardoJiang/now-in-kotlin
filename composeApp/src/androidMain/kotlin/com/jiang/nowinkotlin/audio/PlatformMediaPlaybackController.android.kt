@@ -4,7 +4,7 @@ import android.content.ComponentName
 import android.content.Context
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
-import com.jiang.nowinkotlin.mainpage.Episode
+import com.jiang.nowinkotlin.data.Episode
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers

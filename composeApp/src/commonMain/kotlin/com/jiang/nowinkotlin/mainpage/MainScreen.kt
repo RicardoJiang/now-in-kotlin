@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import com.jiang.nowinkotlin.components.KotlinBottomNavigation
+import com.jiang.nowinkotlin.data.Episode
 import com.jiang.nowinkotlin.data.MonthlyReportItem
 import com.jiang.nowinkotlin.theme.KotlinDark
 import kotlinx.coroutines.launch
