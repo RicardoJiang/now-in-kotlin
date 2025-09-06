@@ -18,8 +18,9 @@
 package com.jiang.nowinkotlin
 
 import android.os.Build
-import com.jiang.nowinkotlin.data.MonthlyReportItem
+import androidx.compose.ui.platform.LocalContext
 import com.jiang.nowinkotlin.data.Episode
+import com.jiang.nowinkotlin.data.MonthlyReportItem
 import nowinkotlin.composeapp.generated.resources.Res
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 
@@ -46,3 +47,7 @@ internal actual suspend fun readJson(path: String): String {
 internal actual fun parseKotlinEpisodeList(json: String): List<Episode> {
     return DeserializationAndroidData.parseKotlinStoveList(json)
 }
+
+actual typealias PlatformContext = android.content.Context
+
+actual inline val LocalPlatformContext get() = LocalContext

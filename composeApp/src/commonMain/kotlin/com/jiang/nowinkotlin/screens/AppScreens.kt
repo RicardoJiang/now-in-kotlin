@@ -1,6 +1,9 @@
 package com.jiang.nowinkotlin.screens
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import com.jiang.nowinkotlin.audio.KmpAudioPlayer
 import com.jiang.nowinkotlin.mainpage.AudioPlayerScreen
 import com.jiang.nowinkotlin.mainpage.MainScreen
 import com.jiang.nowinkotlin.mainpage.SimpleWebViewScreen
@@ -16,10 +19,15 @@ object AppMainScreen : Screen {
     override fun Content() {
         // 获取当前 CompositionLocal 中的 navigator 实例
         val navigator = LocalNavigator.current
+        val playbackState by KmpAudioPlayer.playbackState.collectAsState()
 
         // 调用原始的 MainScreen Composable
         MainScreen(
             onEpisodeClick = { episodes, index ->
+                if (playbackState.currentIndex != index) {
+                    KmpAudioPlayer.playbackController.skipTo(index)
+                }
+                KmpAudioPlayer.playbackController.play()
                 navigator?.push(
                     AudioPlayerScreen(
                         episodes = episodes,

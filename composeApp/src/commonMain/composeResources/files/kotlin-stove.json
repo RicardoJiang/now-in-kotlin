@@ -6,7 +6,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode18.png",
     "description": "\n<p>2024 年由于主持群过于忙碌，令《Kotlin 炉边漫谈》停更许久，但大家别担心，节目现已重新回归。在新集数发表前，我们先来为今年的 KotlinConf 大会热身。本集是在去年大会现场录制的 KotlinConf’24 现场番外篇，阵容意外庞大，除了两位节目主持人外，还邀请到节目的老朋友 AB、美团资深开发工程师银龙及人在瑞典念书的年轻开发者卓轩，一起在丹麦哥本哈根大会现场录制本集节目。 <br><br>一众人不仅分享了在大会现场学习到的新知识，认识新朋友的故事，还有北欧的饮食、环境、文化等许多有意思的话题。如今正值 2025 KotlinConf 大会召开前夕，大家不妨透过本集特别篇的内容，回顾 KotlinConf 2024 大会的精彩瞬间。 <br><br>本集来宾：Android GDE &amp; Koin Community Lead - El Zhang (AB)、美团资深行动装置开发工程师 - 刘银龙、瑞典隆德大学硕士在校生 - 李卓轩</p>\n<ul>\n<li>番外篇开场</li>\n<li>正片开始</li>\n<li>对丹麦哥本哈根的第一印象如何？</li>\n<li>对 KotlinConf 的印象如何？</li>\n<li>本次印象深刻的议程有哪些？</li>\n<li>聊聊这次大会上的意外…</li>\n<li>聊聊大会上认识的人脉</li>\n<li>买到便宜门票的妙招</li>\n<li>其他有趣的参加经验？</li>\n</ul>\n<p> <br>其他收视/听平台 : <a href=\"https://open.firstory.me/user/kotlin-fireside-chats/platforms\" target=\"_blank\">https://open.firstory.me/user/kotlin-fireside-chats/platforms</a>  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络：podcast@kotlin.tips</p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/cm96t7a6205rr01thcvl84dz0/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/cm96t7a6305rs01thdxyd1n27.mp3?v=1744014539768",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/cm96t7a6305rs01thdxyd1n27.mp3?v=1744014539768",
       "type": "audio/mpeg",
       "length": 49093402,
       "duration": 3029
@@ -20,7 +20,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode17.png",
     "description": "\n<p>本集节目特别邀请到腾讯 QQ 团队，负责开发跨平台框架和专案开发的 Tom，请他跟我们聊聊他们团队是如何借鉴 React Native 的思路，并透过 KMP 技术，打造出基于平台原生元件、轻量安装档的跨平台框架。也会分享开发框架时曾面临的挑战、框架作者与专案开发者的差别、如何在公司内部做技术推广等实务经验。请务必听完整集才不会错过详细的框架开发秘辛！ <br></p>\n<ul>\n<li>本集来宾介绍</li>\n<li>平时在腾讯负责哪项产品以及工作内容为何？</li>\n<li>自己或团队是什么时候开始接触并使用 Kotlin？</li>\n<li>选择跨平台框架时会有哪些考量？</li>\n<li>设计框架时如何确保高效能？</li>\n<li>自行研发的跨平台框架架构详解</li>\n<li>Kotlin 开发者都爱 DSL</li>\n<li>自行研发框架的重点特色</li>\n<li>跨平台框架如何做到一致性高的 UI？</li>\n<li>跨平台框架如何缩小安装档的大小？</li>\n<li>框架效能表现数据</li>\n<li>腾讯内部在哪些产品里使用这个框架？</li>\n<li>内部使用自行研发的框架后的回馈</li>\n<li>开发框架时会面临的挑战</li>\n<li>框架作者与专案开发者的差别？</li>\n<li>对 KMP 未来的看法与期待？</li>\n<li>片尾彩蛋：框架开发背后的秘辛</li>\n</ul>\n<p> <br>其他收视/听平台 : <a href=\"https://open.firstory.me/user/kotlin-fireside-chats/platforms\" target=\"_blank\">https://open.firstory.me/user/kotlin-fireside-chats/platforms</a>  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络：<a href=\"mailto:podcast@kotlin.tips\" target=\"_blank\">podcast@kotlin.tips</a> <br></p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/cly32eiou08b901t22mj04ten/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/cly32eiov08ba01t22t4515zk.mp3?v=1719843528113",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/cly32eiov08ba01t22t4515zk.mp3?v=1719843528113",
       "type": "audio/mpeg",
       "length": 54287187,
       "duration": 3392
@@ -34,7 +34,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode16.png",
     "description": "\n<p>资安是一个神秘的主题，我们在电影中经常能看到骇客们神不知鬼不觉的窃取个人讯息，盗取银行帐户等如魔法般的神奇操作，而与此同时，资安专家们为了维护资讯安全常常与骇客进行分秒必争的激烈对抗。作为一般开发者，我们可能也只对资讯安全有著非常浅显的认识，在现实中的骇客与资安专家的对抗是什么样的情境？Kotlin 也能用于资讯安全吗？本集节目我们邀请到研究资讯安全多年的张嘉显技术长跟大家分享和 Kotlin 有关的资讯安全领域的有趣故事，欢迎大家收听！ <br></p>\n<ul>\n<li>本集来宾介绍</li>\n<li>资安领域的产业现况</li>\n<li>Kotlin 在资安领域的应用</li>\n<li>为什么现在大家不太关注防毒软体了？</li>\n<li>软体供应链</li>\n<li>资安的技术细节</li>\n<li>生物资讯安全</li>\n<li>常见安全问题的预防与骇客的渗透方式</li>\n<li>资安电影 vs 现实</li>\n<li>片尾</li>\n<li>彩蛋</li>\n</ul>\n<p> <br>其他收视/听平台 : https://open.firstory.me/user/kotlin-fireside-chats/platforms  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络：podcast@kotlin.tips  <br></p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/clsag57cm01ab01w9e26we89r/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clsag57cn01ac01w96gd9ecfo.mp3?v=1707229178594",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clsag57cn01ac01w96gd9ecfo.mp3?v=1707229178594",
       "type": "audio/mpeg",
       "length": 55276079,
       "duration": 3454
@@ -48,7 +48,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode15.png",
     "description": "\n<p>大家熟悉的 Kotlin 开发大多都是拿来写 Server-Side、双平台 Mobile，你有想过有开发者是拿 Kotlin 写 Build Tool 吗？本集节目特别邀请到人在 Meta 伦敦办公室的惠勤，请她跟我们聊聊在 Meta 的工作经验，什么机缘让她从 iOS 开发者变成 Kotlin 开发者，还从零变成编译器专家的故事。另外，结尾彩蛋还有惠勤跟我们推荐几个提高生产力的播放清单，请务必听完整集才不会错过精彩的内容！ <br></p>\n<ul>\n<li>本集来宾介绍</li>\n<li>Meta 的公司风格、工作文化及团队气氛</li>\n<li>移居到伦敦工作的原因竟然是…</li>\n<li>面试 Meta 的过程</li>\n<li>Meta 有哪些地方用到 Kotlin</li>\n<li>从零变成编译器专家</li>\n<li>做工具给使用者使用的挑战为何？</li>\n<li>Meta 团队的技术选型</li>\n<li>公司对参加技术交流活动的态度</li>\n<li>片尾彩蛋：工作之馀关注的学习管道</li>\n</ul>\n<p> <br>其他收视/听平台 : <a href=\"https://open.firstory.me/user/kotlin-fireside-chats/platforms\" target=\"_blank\">https://open.firstory.me/user/kotlin-fireside-chats/platforms</a>  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络： <a href=\"mailto:podcast@kotlin.tips\" target=\"_blank\">podcast@kotlin.tips</a> <br></p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/clqnuemqc04fc01w6e18a6w5p/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clqnuemqc04fd01w66ws842wu.mp3?v=1703685643339",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clqnuemqc04fd01w66ws842wu.mp3?v=1703685643339",
       "type": "audio/mpeg",
       "length": 64820594,
       "duration": 4051
@@ -62,7 +62,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode14.png",
     "description": "\n<p>这集是节目共同主持人禹昂在 2023 年 9 月 6 日至 8 日于上海参加 Google I/O Connect 大会及 Community Mixer 活动时录制的特别节目，其特别之处在于主持人与来宾分别来自 4 个不同的城市（禹昂（上海）、AB（新加坡）、Minna（香港）、Tim（台北））。四位在 9 月 8 日活动尾声于 Google 在上海浦东预订的饭店大厅临时录制了本集特别节目，针对三天丰富的活动行程，以不同城市的视角进行了热烈的讨论。 <br></p>\n<ul>\n<li>本集来宾介绍</li>\n<li>Google I/O Connect 活动介绍</li>\n<li>对上海行的印象与体验 - Tim</li>\n<li>对上海行的印象与体验 - Minna</li>\n<li>在 I/O Connect 活动里难忘的经历</li>\n<li>最喜欢的主题演讲和摊位</li>\n<li>活动里让人印象深刻的数据</li>\n<li>上海的风情、食物的特色及有趣的体验</li>\n</ul>\n<p> <br>AB 的新书《Android 构建与架构》发布啦！详情请见： <a href=\"https://2bab.me/zh/book/\" target=\"_blank\">https://2bab.me/zh/book/</a> <br><br>其他收视/听平台 : <a href=\"https://open.firstory.me/user/kotlin-fireside-chats/platforms\" target=\"_blank\">https://open.firstory.me/user/kotlin-fireside-chats/platforms</a>  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络： <a href=\"mailto:podcast@kotlin.tips\" target=\"_blank\">podcast@kotlin.tips</a></p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/cloy66vos03sp01v9d4evd6wz/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/cloy66vos03sq01v9aqn84318.mp3?v=1699956514456",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/cloy66vos03sq01v9aqn84318.mp3?v=1699956514456",
       "type": "audio/mpeg",
       "length": 52877829,
       "duration": 3304
@@ -76,7 +76,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode13.png",
     "description": "\n<p>说到 Modern Android Development，用 100% Kotlin 打造的 Jetpack Compose 绝对是必学必用，而想让 UI 更抢眼球，透过 Jetpack Compose 为 UI 增加动画效果现也变得轻松简单。这么好用的动画库，到底是怎么开发出来的呢？本集节目特别邀请到 Google 官方 Android 团队负责动画库的开发者 Doris，跟大家聊聊为 Android 平台开发全新 UI 动画库的背景、过程及挑战。结尾彩蛋还会跟大家分享矽谷工作经验谈，请务必听完整集才不会错过精彩的内容！ <br></p>\n<ul>\n<li>本集来宾介绍</li>\n<li>在 Google 的工作体验</li>\n<li>当初进入 Jetpack Compose 团队的契机</li>\n<li>Jetpack Compose 团队的角色分工现况</li>\n<li>身为函式库的作者在心态上有什么不同？</li>\n<li>如何收集使用者的开发情境及需求？</li>\n<li>开发动画库要有什么知识能力？</li>\n<li>开发动画库时要怎么除错、写单元测试？</li>\n<li>如何监测 Compose 的渲染时间及改善效能问题？</li>\n<li>不同跨平台 UI 框架的讨论</li>\n<li>Jetpack Compose 的未来发展重点</li>\n<li>关于 Compose for Desktop 的补充</li>\n<li>片尾彩蛋：矽谷工作经验谈</li>\n</ul>\n<p> <br>其他收视/听平台 : <a href=\"https://open.firstory.me/user/kotlin-fireside-chats/platforms\" target=\"_blank\">https://open.firstory.me/user/kotlin-fireside-chats/platforms</a>  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络：<a href=\"mailto:podcast@kotlin.tips\" target=\"_blank\">podcast@kotlin.tips</a> <br></p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/clnzno7yx06xe01y1f5xva9rv/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clnzno7yx06xf01y1395lcy1i.mp3?v=1697869578770",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clnzno7yx06xf01y1395lcy1i.mp3?v=1697869578770",
       "type": "audio/mpeg",
       "length": 70190116,
       "duration": 4386
@@ -90,7 +90,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode12.png",
     "description": "\n<p>每当聊到币圈，总会带有一点神秘感。为了揭开币圈的神秘面纱，本期节目特别邀请到人在澳洲雪梨远端工作，在加密货币公司 Crypto.com 担任 Android 开发者的 Celine (现已离职)，请她跟我们聊聊在币圈的工作经验、澳洲的生活体验及休闲娱乐、各地英文口音的趣事。这是一个以 Kotlin 为主轴的节目，也会跟 Celine 聊到她从 Java 转换到 Kotlin 的过程，以及在 Crypto.com 写 Android 的经验。另外，结尾还有澳洲推荐景点的彩点喔！请务必完整听完全集才不会漏掉精彩的内容！</p>\n<ul>\n<li>录音品质全面升级</li>\n<li>在澳洲求学及求职的故事</li>\n<li>从 Java 转换到 Kotlin 的过程及经验</li>\n<li>在 Crypto.com 写 Android 的经验</li>\n<li>对于币圈未来的看法</li>\n<li>澳洲的工作环境</li>\n<li>各地口音趣谈</li>\n<li>澳洲的休闲娱乐</li>\n<li>片尾彩蛋：澳洲推荐景点</li>\n</ul>\n<p> <br>其他收视/听平台 : <a href=\"https://open.firstory.me/user/kotlin-fireside-chats/platforms\" target=\"_blank\">https://open.firstory.me/user/kotlin-fireside-chats/platforms</a>  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络：<a href=\"mailto:podcast@kotlin.tips\" target=\"_blank\">podcast@kotlin.tips</a></p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/clmyz7k9v06pg01w4apsyh6fu/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clmyz7k9v06ph01w4bnoo7n94.mp3?v=1695652414093",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clmyz7k9v06ph01w4bnoo7n94.mp3?v=1695652414093",
       "type": "audio/mpeg",
       "length": 63903174,
       "duration": 3993
@@ -104,7 +104,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode11.png",
     "description": "\n<p>这期是延续前一期 KotlinConf’23 现场番外篇的下集，圣佑和《二分电台》的主理人 2BAB 在 KotlinConf’23 的现场认识了来自 Instacart 的 Staff Mobile Engineer 章超，三人就在 Lounge 区录起了 Podcast，分享 KotlinConf’23 的议程内容、参加体验以及在荷兰旅游的心得。 <br><br>本期来宾：二分电台主理人 - 2BAB、Instacart Staff Mobile Engineer - 章超 <br></p>\n<ul>\n<li>开场</li>\n<li>片头</li>\n<li>正片开始</li>\n<li>对荷兰阿姆斯特丹的印象</li>\n<li>第一次参与 KotlinConf 的体验</li>\n<li>聊聊印象最深刻的议程</li>\n<li>2BAB 分享自己印象最深的主题</li>\n<li>章超分享自己印象最深的主题</li>\n<li>圣佑分享自己印象最深的主题</li>\n<li>期待下次见</li>\n</ul>\n<p> <br>其他收视/听平台 : <a href=\"https://open.firstory.me/user/kotlin-fireside-chats/platforms\" target=\"_blank\">https://open.firstory.me/user/kotlin-fireside-chats/platforms</a>  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络：<a href=\"mailto:podcast@kotlin.tips\" target=\"_blank\">podcast@kotlin.tips</a> <br></p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/clks3u5cz002n01w8dn0y7l7q/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clks3u5cz002o01w86pua0a3a.mp3?v=1690882665668",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clks3u5cz002o01w86pua0a3a.mp3?v=1690882665668",
       "type": "audio/mpeg",
       "length": 10978256,
       "duration": 686
@@ -118,7 +118,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode10.png",
     "description": "\n<p>本期是 KotlinConf’23 现场番外篇的上集，圣佑和《二分电台》的主理人 2BAB 在 KotlinConf’23 的现场相遇，既然人都聚到一块了，就把握机会在现场的 Lounge 区录起了 Podcast，跟大家聊聊对欧洲城市的印象、第一次参与 KotlinConf 的经验，以及帮大家回顾了大会第一天的重点内容。 <br><br>本集特别来宾：二分电台主理人 - 2BAB <br></p>\n<ul>\n<li>远在阿姆斯特丹的路边漫谈</li>\n<li>对欧洲城市的印象</li>\n<li>好吃又好玩 KotlinConf 的经验</li>\n<li>KotlinConf 现场有什么摊位</li>\n<li>KotlinConf 为什么要发水瓶</li>\n<li>KotlinConf 的午餐社交</li>\n<li>JetBrains 摊位上随你摘的别针墙</li>\n<li>连婴儿包屁衣都有的 JetBrains 官方商店</li>\n<li>回顾 Opening Keynote 内容</li>\n<li>回顾 Adopting Kotlin at Google Scale 内容</li>\n<li>回顾 Spring + Kotlin 内容</li>\n<li>回顾 Kotlin Multiplatform Conversions at Android Jetpack Scale 内容</li>\n<li>回顾 Compose Multiplatform on iOS 内容</li>\n<li>参加实体研讨会最重要的事</li>\n<li>敬请期待下期内容</li>\n</ul>\n<p> <br>其他收视/听平台 : <a href=\"https://open.firstory.me/user/kotlin-fireside-chats/platforms\" target=\"_blank\">https://open.firstory.me/user/kotlin-fireside-chats/platforms</a>  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络：<a href=\"mailto:podcast@kotlin.tips\" target=\"_blank\">podcast@kotlin.tips</a> <br></p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/clkavvi8r018i01xa4kejdz3g/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clkavvi8r018j01xa2k5lbymv.mp3?v=1689841330998",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clkavvi8r018j01xa2k5lbymv.mp3?v=1689841330998",
       "type": "audio/mpeg",
       "length": 36449084,
       "duration": 2239
@@ -132,7 +132,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode9.png",
     "description": "\n<p>本集是一集番外篇节目，禹昂于清明节前后前往新加坡休假，约了第 4 集的来宾，也就是《二分电台》的站长 2BAB，之后又偶遇同在新加坡休假的 JetBrains 行销经理 Sue；于是三人一同在当地一家娘惹菜餐厅闲聊，录制了这集特别的路边漫谈。 <br><br>本期嘉宾：二分电台站长 - 2BAB、JetBrains 行销经理 - Sue <br></p>\n<ul>\n<li>开发者通常有几支手机</li>\n<li>新加坡旅游心得</li>\n<li>AB 在新加坡的生活经验</li>\n<li>新加坡的产业现状分享</li>\n<li>结尾</li>\n</ul>\n<p> <br>其他收视/听平台 : <a href=\"https://open.firstory.me/user/kotlin-fireside-chats/platforms\" target=\"_blank\">https://open.firstory.me/user/kotlin-fireside-chats/platforms</a>  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络：<a href=\"mailto:podcast@kotlin.tips\" target=\"_blank\">podcast@kotlin.tips</a></p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/clibabdwm00ug01q61xpo6lrn/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clibabdwn00uh01q6h8g3asun.mp3?v=1685512014022",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clibabdwn00uh01q6h8g3asun.mp3?v=1685512014022",
       "type": "audio/mpeg",
       "length": 25537350,
       "duration": 1596
@@ -146,7 +146,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode8.png",
     "description": "\n<p>本集节目很荣幸邀请到来自阿里巴巴的曹立成及来自美团的刘银龙两位嘉宾，跟我们聊聊多平台开发技术的发展历程、当时为何选定 Kotlin Multiplatform、公司内的实绩案例，并讨论各跨平台框架的挑战。 <br></p>\n<ul>\n<li>本集来宾介绍</li>\n<li>什么样的契机得知 Kotlin Multiplatform 技术并在工作上导入使用？</li>\n<li>为什么 Kotlin Multiplatform 是跨平台的最佳方案？</li>\n<li>iOS 上 Native 开发与平台限制</li>\n<li>是否需要学习多种跨平台程式语言和框架</li>\n<li>怎么看 Flutter、Kotlin Multiplatform Mobile、React Native 等跨平台框架</li>\n<li>怎么看各公司自行研发的跨平台框架</li>\n<li>观众提问：公司内如何做跨平台的技术选型？其决策与导入过程是什么？</li>\n<li>下集预告</li>\n</ul>\n<p> <br>其他收视/听平台 : <a href=\"https://open.firstory.me/user/kotlin-fireside-chats/platforms\" target=\"_blank\">https://open.firstory.me/user/kotlin-fireside-chats/platforms</a>  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络：<a href=\"mailto:podcast@kotlin.tips\" target=\"_blank\">podcast@kotlin.tips</a> <br></p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/clgxh0f8n0e2701w27eb8dqi4/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clgxh0f8n0e2801w21qo6gzy4.mp3?v=1682499977192",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clgxh0f8n0e2801w21qo6gzy4.mp3?v=1682499977192",
       "type": "audio/mpeg",
       "length": 62302893,
       "duration": 3893
@@ -160,7 +160,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode7.png",
     "description": "\n<p>本集节目特别邀请到 Google 开发者社群经理 Meg 、 Taiwan Kotlin User Group 志工同时也是 Android 开发者楚伶来到节目现场，以多元 Diversity．公平 Equity．共融 Inclusion 为主轴、两性共同参与各项社群活动，分享科技产业工作见闻及演说经验。 </p>\n<ul>\n<li>开场</li>\n<li>原来不只是三八妇女节，国际女人节的由来</li>\n<li>技术领域的性别比例和工作场域现况</li>\n<li>电影《关键少数》与 Bug 为什么叫 Bug 的典故</li>\n<li>Women Techmakers 主办的 IWD 活动</li>\n<li>两岸女性科技社群活动</li>\n<li>首次受邀上台演讲的心路历程以及社群的讲者训练计画</li>\n<li>如何排解上台演讲时的紧张感？</li>\n<li>Meg 举办活动时遇到的温暖小故事</li>\n<li>聊聊女性在科技产业是什么样的存在</li>\n<li>心灵鸡汤：解决派或同理派</li>\n</ul>\n<p> <br>其他收视/听平台 : <a href=\"https://open.firstory.me/user/kotlin-fireside-chats/platforms\" target=\"_blank\">https://open.firstory.me/user/kotlin-fireside-chats/platforms</a>  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络：<a href=\"mailto:podcast@kotlin.tips\" target=\"_blank\">podcast@kotlin.tips</a></p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/clez5v38i016601vwb6e73ve0/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clez5v38i016701vw70evaeyk.mp3?v=1678248604021",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clez5v38i016701vw70evaeyk.mp3?v=1678248604021",
       "type": "audio/mpeg",
       "length": 59870391,
       "duration": 3628
@@ -174,7 +174,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode6.png",
     "description": "\n<p>岁末年终，感谢大家陪我们度过这一季的 Kotlin 炉边漫谈节目。本集节目由三位主持人陪大家聊天，分享 2022 Kotlin 中文开发者大会幕后花絮，以及 2023 年的计画。 <br></p>\n<ul>\n<li>回顾 2022 Kotlin 中文开发者大会</li>\n<li>策办 Kotlin 中文开发者大会起心动念</li>\n<li>线上活动比较容易？主持人和直播小组都在忙什么？</li>\n<li>让禹昂贡献出毕生功力的开源专案</li>\n<li>为什么 Kotlin 炉边漫谈的发布频率如此随兴？</li>\n<li>主持群的 2023 计画</li>\n</ul>\n<p> <br>其他收视/听平台 : <a href=\"https://open.firstory.me/user/kotlin-fireside-chats/platforms\" target=\"_blank\">https://open.firstory.me/user/kotlin-fireside-chats/platforms</a>  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络：<a href=\"mailto:podcast@kotlin.tips\" target=\"_blank\">podcast@kotlin.tips</a>  <br></p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/cld1l3o2w01l501tj4tas5afn/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/cld1l3o2w01l601tj33f45ynf.mp3?v=1674041662171",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/cld1l3o2w01l601tj33f45ynf.mp3?v=1674041662171",
       "type": "audio/mpeg",
       "length": 48242146,
       "duration": 3015
@@ -188,7 +188,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode5.png",
     "description": "\n<p>提到手机开发，直觉想到的是 Android/iOS，大家还记得低功耗、低性能的 Nokia 手机曾经红极一时、引领风潮的年代吗？ <br><br>本期由 2005 年即进入手机开发领域的琦哥带我们走入历史，遍览各家手机系统的兴衰。从 2G 到 5G，从 Nokio 到 Android/iOS。琦哥严然是个活生生的手机开发编年史，不光是系统软体，对晶片演化也是如数家珍。欢迎来听琦哥聊聊他的开发经验、对提升技术广度的建议，以及如何跟不同领域的开发者沟通。 <br><br>本集来宾：携程机票高级研发总监 - 陈琦 <br></p>\n<ul>\n<li>开场</li>\n<li>细说从头 - 手机开发史</li>\n<li>痛苦的一首歌 - 远古时期手机开发的趣事</li>\n<li>Nokia 的智能手机作业系统 Symbian 是一款什么样的系统？当年有哪些有趣的故事？</li>\n<li>Symbian 的应用程式开发环境和生态是怎样的？开发者间如何交流？</li>\n<li>琦哥如何从以 C++ 为主，转移到 Android 开发和游戏开发领域？iPhone/Android 兴起及演进</li>\n<li>Android/iOS 手机游戏开发的差别</li>\n<li>什么时候接触到 Kotlin，为何看好和偏好 Kotlin 多平台开发？</li>\n<li>作为管理者该如何提升技术广度？该怎么和自己技术栈不同的开发者沟通？</li>\n<li>对未来的终端平台有哪些看法？怎么看 AR/VR/Cloud？</li>\n</ul>\n<p> <br>其他收视/听平台 : <a href=\"https://open.firstory.me/user/kotlin-fireside-chats/platforms\" target=\"_blank\">https://open.firstory.me/user/kotlin-fireside-chats/platforms</a>  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络：<a href=\"mailto:podcast@kotlin.tips\" target=\"_blank\">podcast@kotlin.tips</a> </p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/clbyhfzdg000201ra1ac3cp66/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clbyhfzdg000301ra3m6y7myj.mp3?v=1672200466480",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/clbyhfzdg000301ra3m6y7myj.mp3?v=1672200466480",
       "type": "audio/mpeg",
       "length": 82603825,
       "duration": 5162
@@ -202,7 +202,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode4.png",
     "description": "\n<p>本集来宾：二分电台站长 - AB</p>\n<ul>\n<li>开场</li>\n<li>怎么认识 Kotlin 的？为什么会想学习 Kotlin 这个语言？</li>\n<li>一开始是如何学习 Kotlin 的？给 Kotlin 初学者的建议</li>\n<li>踩坑的经验</li>\n<li>怎么会到国外工作？为什么会选择到新加坡？</li>\n<li>不同工作模式和体验</li>\n<li>开发无障碍应用程式要注意的事项</li>\n<li>异国生活如何排解寂寞？假日的联谊活动竟然是...</li>\n<li>到新加坡工作的管道，会面临哪些工作或技术上的挑战？</li>\n<li>如何准备英语演讲？</li>\n<li>如何提升英语能力？</li>\n<li>多工的 AB 为什么会开始制作 Podcast？</li>\n<li>对 Kotlin 未来的看法</li>\n<li>幕后花絮</li>\n</ul>\n<p> <br>相关资讯</p>\n<ul>\n<li>\n<a href=\"https://binary.2bab.me/\" target=\"_blank\"><strong>二分电台 (2bab.me)</strong></a> </li>\n<li><a href=\"https://ctalks.gdgcn.net/?p=666\" target=\"_blank\">《Android 国际化与设计》</a></li>\n<li>\n<a href=\"https://www.cambly.com/en/student\" target=\"_blank\"><strong>Cambly</strong></a> </li>\n</ul>\n<p> <br>其他收视/听平台 : https://open.firstory.me/user/kotlin-fireside-chats/platforms  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络：podcast@kotlin.tips</p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/cl9veqiua07wt01w67kj23d2x/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/cl9veqiua07wu01w6cxpr191t.mp3?v=1667138232231",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/cl9veqiua07wu01w6cxpr191t.mp3?v=1667138232231",
       "type": "audio/mpeg",
       "length": 58405333,
       "duration": 3650
@@ -216,7 +216,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode3.png",
     "description": "\n<p>本集来宾 : Taiwan Kotlin User Group 社群主办人 - Recca <br></p>\n<ul>\n<li>开场</li>\n<li>如何进入 Kotlin 领域，为什么会想组织 KUG</li>\n<li>PHP 和 JVM 的差异与选择</li>\n<li>如何在公司内导入 Kotlin</li>\n<li>专案、公司经营的榖仓效应</li>\n<li>社群活动的透明度、多样化，如何与志工沟通</li>\n<li>上海 (大区域) 与台湾 (小区域) 的社群是如何活动</li>\n<li>一定要会写程式才能当 KUG 志工吗？对于学习的建议、志工招募方式</li>\n<li>上海志工招募、社群活动内容和台湾大不同</li>\n<li>技术社群主办人在忙什么？</li>\n<li>圣佑的 Kotlin User Group 官方宣传</li>\n<li>吸引讲者的小奖品</li>\n<li>如何看待 Kotlin 未来的发展</li>\n<li>主持群收播后在聊什么？</li>\n</ul>\n<p> <br>加入 Taiwan Kotlon User Group 志工请联络 Recco : <a href=\"mailto:flamerecca711@gmail.com\" target=\"_blank\">flamerecca711@gmail.com</a>  <br>申请成立 Kotlin User Group 请联络圣佑 : <a href=\"mailto:shengyou.fan@jetbrains.com\" target=\"_blank\">shengyou.fan@jetbrains.com</a> <br><br>其他收视/听平台 : <a href=\"https://open.firstory.me/user/kotlin-fireside-chats/platforms\" target=\"_blank\">https://open.firstory.me/user/kotlin-fireside-chats/platforms</a>  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络：<a href=\"mailto:podcast@kotlin.tips\" target=\"_blank\">podcast@kotlin.tips</a></p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/cl6ji8a46031m01xk28ysdyeo/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/cl6ji8a46031n01xkbf88672o.mp3?v=1661251013606",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/cl6ji8a46031n01xkbf88672o.mp3?v=1661251013606",
       "type": "audio/mpeg",
       "length": 60836397,
       "duration": 3802
@@ -230,7 +230,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode2.png",
     "description": "\n<p>本集来宾 : Beijing Kotlin User Group 社群主办人 - <strong>霍丙乾 (</strong><a href=\"https://space.bilibili.com/28615855\" target=\"_blank\"><strong>bennyhuo不是算命的</strong></a><strong>)</strong> <br></p>\n<ul>\n<li>开场</li>\n<li>丙乾的 Kotlin 考古学，从编译开源专案认识 Kotlin？</li>\n<li>编译知名且复杂的开源专案 (Intellij IDEA、Hotspot 等) 对学习有什么好处？</li>\n<li>什么时候会需要自己动手编译开源专案呢？</li>\n<li>Kotlin 还没被宣布成为 Android 官方开发语言时，推动 Kotlin 的困难？</li>\n<li>早期 Kotlin 中文社群的神人们</li>\n<li>已经会 Java 还需要学 Kotlin 吗？</li>\n<li>丙乾写过多种程式语言，最推荐哪一种程式语言？</li>\n<li>创造强迫学习机会的书是怎么来的？</li>\n<li>期望更多人看得懂的新书计画</li>\n<li>曾经睁眼就是技术，技术研究和家庭如何兼顾？</li>\n<li>为什么会开始录影片？</li>\n<li>发布那么多技术影片，最受欢迎的是哪一类？</li>\n<li>开发者如何看待 Mobile 开发的未来趋势</li>\n</ul>\n<p> <br>其他收视/听平台 : <a href=\"https://open.firstory.me/user/kotlin-fireside-chats/platforms\" target=\"_blank\">https://open.firstory.me/user/kotlin-fireside-chats/platforms</a>  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络：<a href=\"mailto:podcast@kotlin.tips\" target=\"_blank\">podcast@kotlin.tips</a> <br></p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/cl5o5cqbz027h010j4q1o5ujm/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/cl5o5cqbz027i010j5vj41esy.mp3?v=1657991598747",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/cl5o5cqbz027i010j5vj41esy.mp3?v=1657991598747",
       "type": "audio/mpeg",
       "length": 62491629,
       "duration": 3905
@@ -244,7 +244,7 @@
     "thumbnail": "https://podcast.kotlin.tips/images/episodes/cover-episode1.png",
     "description": "\n<p><strong>本集内容：</strong></p>\n<ul>\n<li>Kotlin 中文开发者大会、两岸三地Kotlin User Group 介绍</li>\n<li>借由输出来学习，写过ithome铁人赛吗？</li>\n<li>Taiwan Kotlin User Group 办过哪些读书会？如何加入这个共学机制</li>\n<li>怎么开始学Kotlin？Kotlin 有哪些学习资源？</li>\n<li>有没有买过雷书？你怎么挑选技术书籍？欢迎跟我们分享</li>\n<li>两岸专业用语不同，看书时如何理解？</li>\n<li>原来玩社群也能玩到出书 (快来)</li>\n<li>Taiwan Kotlin User Group 社群志工都在玩？</li>\n</ul>\n<p> <br><strong>本集提及书籍、影片：</strong></p>\n<ul>\n<li><a href=\"https://www.tenlong.com.tw/products/9787111659624\" target=\"_blank\">Kotlin 编程实践 (Kotlin Cookbook: A Problem-Focused Approach)</a></li>\n<li><a href=\"https://www.tenlong.com.tw/products/9787111655916?list_name=srh\" target=\"_blank\">深入理解 Kotlin 协程</a></li>\n<li><a href=\"https://b23.tv/D0F5rbu\" target=\"_blank\">丙乾的考古学</a></li>\n<li><a href=\"https://tw.kotlin.tips/\" target=\"_blank\">如何加入共学</a></li>\n<li><a href=\"https://kotlinlang.org/docs/edu-tools-learner.html\" target=\"_blank\">Learning Kotlin with EduTools plugin</a></li>\n<li><a href=\"https://play.kotless.io/\" target=\"_blank\">Kotlin Playground</a></li>\n</ul>\n<p> <br>其他收视/听平台 : <a href=\"https://open.firstory.me/user/kotlin-fireside-chats/platforms\" target=\"_blank\">https://open.firstory.me/user/kotlin-fireside-chats/platforms</a>  <br><br>欢迎留言告诉我们你对这一集的想法，若对本节目有任何想法及建议，欢迎 Email 与我们联络：<a href=\"mailto:podcast@kotlin.tips\" target=\"_blank\">podcast@kotlin.tips</a> <br></p> <br><br>Powered by <a href=\"https://firstory.me/zh\">Firstory Hosting</a>\n",
     "audioResource": {
-      "link": "https://m.cdn.firstory.me/track/cl3lg86nt00ql01vr0tr42zh3/cl3rdvb8w000301wz74c42gzn/https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/cl3rdvb8w000401wz8z0n8hkx.mp3?v=1653984783505",
+      "link": "https://d3mww1g1pfq2pt.cloudfront.net/Record/cl3lg86nt00ql01vr0tr42zh3/cl3rdvb8w000401wz8z0n8hkx.mp3?v=1653984783505",
       "type": "audio/mpeg",
       "length": 93834183,
       "duration": 3909

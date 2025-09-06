@@ -1,10 +1,10 @@
-
 package com.jiang.nowinkotlin.navigation
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.ProvidableCompositionLocal
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
@@ -14,6 +14,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.zIndex
+import com.jiang.nowinkotlin.LocalPlatformContext
+import com.jiang.nowinkotlin.audio.KmpAudioPlayer
 import com.jiang.nowinkotlin.backhandler.BackHandler
 
 /**
@@ -65,6 +67,12 @@ val LocalNavigator: ProvidableCompositionLocal<Navigator?> = staticCompositionLo
 @Composable
 fun NavigatorHost(initialScreen: Screen) {
     val navigator = remember { Navigator(initialScreen) }
+
+    val context = LocalPlatformContext.current
+
+    LaunchedEffect(Unit) {
+        KmpAudioPlayer.init(context)
+    }
 
     BackHandler(navigator.stack.size > 1) {
         navigator.pop()

@@ -2,8 +2,10 @@ package com.jiang.nowinkotlin.audio
 
 import android.content.ComponentName
 import android.content.Context
+import androidx.media3.common.Player
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
+import com.jiang.nowinkotlin.PlatformContext
 import com.jiang.nowinkotlin.data.Episode
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
@@ -57,7 +59,13 @@ internal class PlatformMediaPlaybackController(
         controller.pause()
     }
 
+    override fun skipTo(musicIndex: Int) = executeAfterPrepare { controller ->
+        controller.seekToDefaultPosition(musicIndex)
+    }
+
     override fun prepare(musics: List<Episode>, index: Int, positionMs: Long) = executeAfterPrepare { controller ->
+        PlayerServiceLocator.episodeList = musics
+        controller.repeatMode = Player.REPEAT_MODE_ALL
         controller.setMediaItems(musics.map { it.asMediaItem() }, index, positionMs)
         controller.prepare()
     }
@@ -82,4 +90,8 @@ internal class PlatformMediaPlaybackController(
             action(controller)
         }
     }
+}
+
+internal actual fun createKmpAudioPlayer(context: PlatformContext): MediaPlaybackController {
+    return PlatformMediaPlaybackController(context)
 }

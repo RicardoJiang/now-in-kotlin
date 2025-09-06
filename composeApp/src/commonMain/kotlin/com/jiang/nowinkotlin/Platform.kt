@@ -17,6 +17,8 @@
 
 package com.jiang.nowinkotlin
 
+import androidx.compose.runtime.ProvidableCompositionLocal
+import com.jiang.nowinkotlin.audio.MediaPlaybackController
 import com.jiang.nowinkotlin.data.MonthlyReportItem
 import com.jiang.nowinkotlin.data.Episode
 
@@ -31,3 +33,7 @@ internal expect fun parseMonthReport(json: String): List<MonthlyReportItem>
 internal expect fun parseKotlinEpisodeList(json: String): List<Episode>
 
 internal expect suspend fun readJson(path: String): String
+
+expect val LocalPlatformContext: ProvidableCompositionLocal<PlatformContext>
+
+expect abstract class PlatformContext

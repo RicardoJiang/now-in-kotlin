@@ -1,5 +1,6 @@
 package com.jiang.nowinkotlin.audio
 
+import com.jiang.nowinkotlin.PlatformContext
 import com.jiang.nowinkotlin.data.Episode
 
 interface MediaPlaybackController {
@@ -13,6 +14,8 @@ interface MediaPlaybackController {
 
     fun pause()
 
+    fun skipTo(musicIndex: Int)
+
     fun prepare(musics: List<Episode>, index: Int, positionMs: Long)
 
     fun playMusics(musics: List<Episode>, startIndex: Int = 0)
@@ -21,3 +24,5 @@ interface MediaPlaybackController {
 
     fun release()
 }
+
+internal expect fun createKmpAudioPlayer(context: PlatformContext): MediaPlaybackController

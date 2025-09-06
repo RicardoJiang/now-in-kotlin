@@ -5,6 +5,7 @@ import androidx.annotation.OptIn
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
 import androidx.media3.common.MimeTypes
+import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import com.jiang.nowinkotlin.data.Episode
 
@@ -25,3 +26,19 @@ internal fun Episode.asMediaItem(): MediaItem = MediaItem.Builder()
             .setIsBrowsable(true)
             .build()
     ).build()
+
+val Player.playingStatus: PlayingStatus
+    get() = when {
+        playbackState == Player.STATE_READY && playWhenReady -> PlayingStatus.PLAYING
+        playbackState == Player.STATE_READY && !playWhenReady -> PlayingStatus.PAUSED
+        playbackState == Player.STATE_BUFFERING -> PlayingStatus.BUFFERING
+        playbackState == Player.STATE_IDLE -> PlayingStatus.IDLE
+        playbackState == Player.STATE_ENDED -> PlayingStatus.ENDED
+        else -> PlayingStatus.IDLE
+    }
+
+internal val MediaItem.isNetworkSource: Boolean
+    get() {
+        val uriScheme = this.localConfiguration?.uri?.scheme?.lowercase()
+        return uriScheme == "http" || uriScheme == "https"
+    }

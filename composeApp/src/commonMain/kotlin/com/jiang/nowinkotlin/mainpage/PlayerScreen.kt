@@ -7,8 +7,8 @@ import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -35,6 +35,8 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -49,11 +51,14 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.jiang.nowinkotlin.audio.KmpAudioPlayer
+import com.jiang.nowinkotlin.audio.PlaybackState
 import com.jiang.nowinkotlin.components.AsyncImage
 import com.jiang.nowinkotlin.components.SmallIconButton
 import com.jiang.nowinkotlin.components.TagChip
@@ -65,7 +70,6 @@ import com.jiang.nowinkotlin.icons.SkipNext
 import com.jiang.nowinkotlin.icons.SkipPrevious
 import com.jiang.nowinkotlin.navigation.LocalNavigator
 import com.jiang.nowinkotlin.navigation.Screen
-import com.jiang.nowinkotlin.rememberLocalImage
 import com.jiang.nowinkotlin.theme.KotlinDark
 import com.jiang.nowinkotlin.theme.KotlinPrimary
 import com.jiang.nowinkotlin.theme.KotlinSecondary
@@ -81,7 +85,7 @@ import org.jetbrains.compose.resources.ExperimentalResourceApi
 
 data class AudioPlayerScreen(
     val episodes: List<Episode>,
-    val initialIndex: Int
+    val initialIndex: Int,
 ) : Screen {
     @Composable
     override fun Content() {
@@ -106,12 +110,14 @@ fun PlayerScreen(
     onBackClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    var currentIndex by remember { mutableStateOf(initialIndex) }
-    val currentEpisode = episodes[currentIndex]
+    val playbackState by KmpAudioPlayer.playbackState.collectAsState()
+    var currentEpisode by remember { mutableStateOf(episodes.get(initialIndex)) }
 
-    var isPlaying by remember { mutableStateOf(true) }
-    var currentTime by remember { mutableStateOf("09:13") }
-    var progress by remember { mutableFloatStateOf(0.32f) }
+    LaunchedEffect(playbackState.currentIndex) {
+        if (playbackState.currentIndex != -1) {
+            currentEpisode = episodes.get(playbackState.currentIndex)
+        }
+    }
 
     Column(
         modifier = modifier
@@ -143,8 +149,8 @@ fun PlayerScreen(
 
             // 封面和可视化
             AlbumCoverWithVisualizer(
-                imageUrl = currentEpisode.imageUrl,
-                isPlaying = isPlaying
+                imageUrl = currentEpisode?.imageUrl ?: "",
+                isPlaying = playbackState.isPlaying
             )
 
             Spacer(modifier = Modifier.height(20.dp))
@@ -156,28 +162,43 @@ fun PlayerScreen(
 
             // 进度条
             PlayerProgressBar(
-                progress = progress,
-                currentTime = currentTime,
-                totalTime = currentEpisode.duration,
-                onSeek = { progress = it }
+                progress = playbackState.progress,
+                currentTime = playbackState.currentTime,
+                totalTime = currentEpisode?.duration ?: "",
+                onSeek = {
+                    KmpAudioPlayer.playbackController.seekTo((playbackState.duration * it).toLong())
+                }
             )
 
             // 播放控制
             PlayerControls(
-                isPlaying = isPlaying,
-                onPlayPauseClick = { isPlaying = !isPlaying },
-                onPreviousClick = {
-                    if (currentIndex > 0) {
-                        currentIndex--
+                isPlaying = playbackState.isPlaying,
+                onPlayPauseClick = {
+                    if (playbackState.isPlaying) {
+                        KmpAudioPlayer.playbackController.pause()
+                    } else {
+                        KmpAudioPlayer.playbackController.play()
                     }
+                },
+                onPreviousClick = {
+                    KmpAudioPlayer.playbackController.previous()
                 },
                 onNextClick = {
-                    if (currentIndex < episodes.size - 1) {
-                        currentIndex++
-                    }
+                    KmpAudioPlayer.playbackController.next()
                 },
-                onSpeedClick = { },
-                onBookmarkClick = { }
+                onFastRewind = {
+                    val targetPosition = playbackState.position - 5000
+                    KmpAudioPlayer.playbackController.seekTo(maxOf(targetPosition, 0))
+                },
+                onFastForward = {
+                    val targetPosition = playbackState.position + 5000
+                    KmpAudioPlayer.playbackController.seekTo(
+                        minOf(
+                            targetPosition,
+                            playbackState.duration
+                        )
+                    )
+                }
             )
 
             Spacer(modifier = Modifier.height(24.dp))
@@ -233,22 +254,23 @@ private fun AlbumCoverWithVisualizer(
         contentAlignment = Alignment.BottomEnd
     ) {
         // 封面图片
-//        AsyncImage(
-//            url = imageUrl,
-//            contentDescription = "Album cover",
-//            modifier = Modifier
-//                .size(288.dp)
-//                .clip(RoundedCornerShape(24.dp)),
-//            contentScale = ContentScale.Crop
-//        )
-        Image(
-            bitmap = rememberLocalImage(Res.drawable.episode_cover),
+        AsyncImage(
+            url = imageUrl,
+            placeHodler = Res.drawable.episode_cover,
             contentDescription = "Album cover",
             modifier = Modifier
                 .size(288.dp)
                 .clip(RoundedCornerShape(24.dp)),
             contentScale = ContentScale.Crop
         )
+//        Image(
+//            bitmap = rememberLocalImage(Res.drawable.episode_cover),
+//            contentDescription = "Album cover",
+//            modifier = Modifier
+//                .size(288.dp)
+//                .clip(RoundedCornerShape(24.dp)),
+//            contentScale = ContentScale.Crop
+//        )
 
         // 渐变遮罩
         Box(
@@ -349,13 +371,13 @@ private fun AudioVisualizer(
 
 @Composable
 private fun EpisodeInfo(
-    episode: Episode
+    episode: Episode?
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = episode.title,
+            text = episode?.title ?: "",
             fontSize = 18.sp,
             fontWeight = FontWeight.SemiBold,
             color = TextPrimary,
@@ -364,13 +386,13 @@ private fun EpisodeInfo(
         )
 
         Text(
-            text = "${episode.episodeNumber} · 炉边漫谈 · ${episode.duration}",
+            text = "${episode?.episodeNumber} · 炉边漫谈 · ${episode?.duration}",
             fontSize = 13.sp,
             color = TextSecondary,
             modifier = Modifier.padding(top = 4.dp)
         )
 
-        if (episode.tags.isNotEmpty()) {
+        if (episode?.tags?.isNotEmpty() == true) {
             Row(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 modifier = Modifier.padding(top = 12.dp)
@@ -393,11 +415,38 @@ private fun PlayerProgressBar(
     totalTime: String,
     onSeek: (Float) -> Unit
 ) {
+    var isUserDrag by remember { mutableStateOf(false) }
+    var currentProgress by remember { mutableFloatStateOf(0f) }
+
+    LaunchedEffect(progress) {
+        if (!isUserDrag) {
+            currentProgress = progress
+        }
+    }
+
     Box {
         Slider(
-            value = progress,
-            onValueChange = onSeek,
-            modifier = Modifier.fillMaxWidth().padding(0.dp),
+            value = currentProgress,
+            onValueChange = { value ->
+                if (isUserDrag) {
+                    currentProgress = value
+                }
+            },
+            onValueChangeFinished = {
+                if (isUserDrag) {
+                    onSeek(currentProgress)
+                    isUserDrag = false
+                }
+            },
+            modifier = Modifier.fillMaxWidth().padding(0.dp).pointerInput(isUserDrag) {
+                awaitPointerEventScope {
+                    try {
+                        awaitFirstDown(requireUnconsumed = false)
+                        isUserDrag = true
+                    } catch (_: Exception) {
+                    }
+                }
+            },
             colors = SliderDefaults.colors(
                 thumbColor = KotlinPrimary,
                 activeTrackColor = KotlinPrimary,
@@ -429,8 +478,8 @@ private fun PlayerControls(
     onPlayPauseClick: () -> Unit,
     onPreviousClick: () -> Unit,
     onNextClick: () -> Unit,
-    onSpeedClick: () -> Unit,
-    onBookmarkClick: () -> Unit
+    onFastRewind: () -> Unit,
+    onFastForward: () -> Unit
 ) {
     Box(
         modifier = Modifier.fillMaxWidth(),
@@ -443,7 +492,7 @@ private fun PlayerControls(
         ) {
             // 快退
             IconButton(
-                onClick = onPreviousClick,
+                onClick = onFastRewind,
                 modifier = Modifier.size(36.dp)
             ) {
                 Surface(
@@ -521,7 +570,7 @@ private fun PlayerControls(
 
             // 快进
             IconButton(
-                onClick = onPreviousClick,
+                onClick = onFastForward,
                 modifier = Modifier.size(36.dp)
             ) {
                 Surface(
@@ -583,7 +632,7 @@ private fun PlayPauseButton(
 }
 
 @Composable
-private fun EpisodeDescription(episode: Episode) {
+private fun EpisodeDescription(episode: Episode?) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(12.dp),
@@ -609,7 +658,7 @@ private fun EpisodeDescription(episode: Episode) {
             )
 
             Text(
-                text = episode.displayDescription,
+                text = episode?.displayDescription ?: "",
                 fontSize = 13.sp,
                 color = TextSecondary,
                 lineHeight = 20.sp

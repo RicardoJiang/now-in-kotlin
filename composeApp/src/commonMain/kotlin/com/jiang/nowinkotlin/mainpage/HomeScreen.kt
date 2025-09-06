@@ -20,6 +20,10 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -27,6 +31,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.jiang.nowinkotlin.audio.KmpAudioPlayer
+import com.jiang.nowinkotlin.audio.PlaybackState
 import com.jiang.nowinkotlin.components.EpisodeCard
 import com.jiang.nowinkotlin.components.HeroCard
 import com.jiang.nowinkotlin.components.SmallIconButton
@@ -50,6 +56,13 @@ fun HomeScreen(
         HomeViewModel(scope)
     }
     val uiState = homeViewModel.uiState
+
+
+    LaunchedEffect(uiState.episodeList) {
+        if (uiState.episodeList.isNotEmpty()) {
+            KmpAudioPlayer.playbackController.prepare(uiState.episodeList, 0, 0)
+        }
+    }
 
     Box(
         modifier = modifier
