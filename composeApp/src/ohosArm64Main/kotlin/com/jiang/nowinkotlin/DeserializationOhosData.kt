@@ -32,7 +32,6 @@ internal object DeserializationOhosData {
             val item = it.value
             if (item is HashMap<*, *>) {
                 val audioResource = item.get("audioResource") as HashMap<*, *>
-                println("here index $index , size: $size")
                 result.add(
                     Episode(
                         index = index,

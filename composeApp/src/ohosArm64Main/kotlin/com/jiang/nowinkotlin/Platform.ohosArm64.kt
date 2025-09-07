@@ -17,6 +17,7 @@
 
 package com.jiang.nowinkotlin
 
+import androidx.compose.runtime.staticCompositionLocalOf
 import com.jiang.nowinkotlin.data.MonthlyReportItem
 import com.jiang.nowinkotlin.data.Episode
 import kotlinx.cinterop.ExperimentalForeignApi
@@ -62,3 +63,11 @@ internal actual suspend fun readJson(path: String): String {
 internal actual fun parseKotlinEpisodeList(json: String): List<Episode> {
     return DeserializationOhosData.parseKotlinStoveList(json)
 }
+
+actual abstract class PlatformContext private constructor() {
+    companion object {
+        val INSTANCE = object : PlatformContext() {}
+    }
+}
+
+actual val LocalPlatformContext = staticCompositionLocalOf { PlatformContext.INSTANCE }

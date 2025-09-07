@@ -68,16 +68,88 @@ typedef struct {
 } libkn_kref_com_jiang_nowinkotlin_OhosServices;
 typedef struct {
   libkn_KNativePtr pinned;
+} libkn_kref_androidx_compose_runtime_ProvidableCompositionLocal;
+typedef struct {
+  libkn_KNativePtr pinned;
 } libkn_kref_com_jiang_nowinkotlin_OhosServicesProxy;
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_kotlin_collections_Map;
 typedef struct {
   libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_OhosAVPlayer;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_OhosAVPlayerProxy;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_OhosStateListenerProvider;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_kotlin_Array;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_kotlin_reflect_KClass;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_kotlin_Any;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_MediaCommandHandlerProvider;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_KmpAudioPlayer;
+typedef struct {
+  libkn_KNativePtr pinned;
 } libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController;
 typedef struct {
   libkn_KNativePtr pinned;
+} libkn_kref_kotlinx_coroutines_flow_StateFlow;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_PlatformContext;
+typedef struct {
+  libkn_KNativePtr pinned;
 } libkn_kref_kotlin_collections_List;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_PlayingStatus;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_PlayingStatus_PLAYING;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_PlayingStatus_PAUSED;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_PlayingStatus_BUFFERING;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_PlayingStatus_IDLE;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_PlayingStatus_ENDED;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_data_Episode;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_OhosStateListener;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_MediaCommandHandler;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_OhosPlayerStateManager;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_audio_PlaylistManager;
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_com_jiang_nowinkotlin_components_BottomNavItem;
@@ -86,13 +158,7 @@ typedef struct {
 } libkn_kref_androidx_compose_ui_graphics_vector_ImageVector;
 typedef struct {
   libkn_KNativePtr pinned;
-} libkn_kref_kotlin_Any;
-typedef struct {
-  libkn_KNativePtr pinned;
 } libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem;
-typedef struct {
-  libkn_KNativePtr pinned;
-} libkn_kref_com_jiang_nowinkotlin_data_Episode;
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_androidx_compose_material_icons_Icons_Filled;
@@ -107,13 +173,13 @@ typedef struct {
 } libkn_kref_androidx_compose_runtime_snapshots_SnapshotStateList;
 typedef struct {
   libkn_KNativePtr pinned;
-} libkn_kref_androidx_compose_runtime_ProvidableCompositionLocal;
-typedef struct {
-  libkn_KNativePtr pinned;
 } libkn_kref_com_jiang_nowinkotlin_navigation_Screen;
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_com_jiang_nowinkotlin_navigation_Navigator;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_network_KmpNetworkHelper;
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_com_jiang_nowinkotlin_screens_AppMainScreen;
@@ -135,6 +201,9 @@ typedef struct {
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_com_jiang_nowinkotlin_Greeting;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_PlatformContext_Companion;
 
 extern void androidx_compose_ui_arkui_ArkUIViewController_aboutToAppear(void* controllerRef);
 extern void androidx_compose_ui_arkui_ArkUIViewController_aboutToDisappear(void* controllerRef);
@@ -259,16 +328,255 @@ typedef struct {
             struct {
               struct {
                 libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_audio_OhosAVPlayerProxy (*OhosAVPlayerProxy)();
+                libkn_KLong (*currentTime)(libkn_kref_com_jiang_nowinkotlin_audio_OhosAVPlayerProxy thiz);
+                libkn_KLong (*duration)(libkn_kref_com_jiang_nowinkotlin_audio_OhosAVPlayerProxy thiz);
+                void (*pause)(libkn_kref_com_jiang_nowinkotlin_audio_OhosAVPlayerProxy thiz);
+                void (*play)(libkn_kref_com_jiang_nowinkotlin_audio_OhosAVPlayerProxy thiz);
+                void (*prepareAndPlay)(libkn_kref_com_jiang_nowinkotlin_audio_OhosAVPlayerProxy thiz, libkn_KInt index, const char* title, const char* audioUrl, const char* imageUrl, libkn_KBoolean playImmediately);
+                void (*seekTo)(libkn_kref_com_jiang_nowinkotlin_audio_OhosAVPlayerProxy thiz, libkn_KLong positionMs);
+              } OhosAVPlayerProxy;
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_audio_OhosStateListenerProvider (*OhosStateListenerProvider)();
+                libkn_KInt (*getMinParamsSize)(libkn_kref_com_jiang_nowinkotlin_audio_OhosStateListenerProvider thiz, const char* method);
+                libkn_kref_kotlin_Array (*getParamsTypeList)(libkn_kref_com_jiang_nowinkotlin_audio_OhosStateListenerProvider thiz, const char* method);
+                libkn_kref_kotlin_reflect_KClass (*getReturnType)(libkn_kref_com_jiang_nowinkotlin_audio_OhosStateListenerProvider thiz, const char* method);
+                libkn_kref_kotlin_Any (*invoke)(libkn_kref_com_jiang_nowinkotlin_audio_OhosStateListenerProvider thiz, const char* method, libkn_kref_kotlin_Array params);
+              } OhosStateListenerProvider;
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_audio_MediaCommandHandlerProvider (*MediaCommandHandlerProvider)();
+                libkn_KInt (*getMinParamsSize)(libkn_kref_com_jiang_nowinkotlin_audio_MediaCommandHandlerProvider thiz, const char* method);
+                libkn_kref_kotlin_Array (*getParamsTypeList)(libkn_kref_com_jiang_nowinkotlin_audio_MediaCommandHandlerProvider thiz, const char* method);
+                libkn_kref_kotlin_reflect_KClass (*getReturnType)(libkn_kref_com_jiang_nowinkotlin_audio_MediaCommandHandlerProvider thiz, const char* method);
+                libkn_kref_kotlin_Any (*invoke)(libkn_kref_com_jiang_nowinkotlin_audio_MediaCommandHandlerProvider thiz, const char* method, libkn_kref_kotlin_Array params);
+              } MediaCommandHandlerProvider;
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_audio_KmpAudioPlayer (*_instance)();
+                libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController (*get_playbackController)(libkn_kref_com_jiang_nowinkotlin_audio_KmpAudioPlayer thiz);
+                libkn_kref_kotlinx_coroutines_flow_StateFlow (*get_playbackState)(libkn_kref_com_jiang_nowinkotlin_audio_KmpAudioPlayer thiz);
+                void (*init)(libkn_kref_com_jiang_nowinkotlin_audio_KmpAudioPlayer thiz, libkn_kref_com_jiang_nowinkotlin_PlatformContext context);
+              } KmpAudioPlayer;
+              struct {
+                libkn_KType* (*_type)(void);
                 void (*next)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
                 void (*pause)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
                 void (*play)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
-                void (*playMusics)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_kref_kotlin_collections_List musics, libkn_KInt startIndex);
                 void (*prepare)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_kref_kotlin_collections_List musics, libkn_KInt index, libkn_KLong positionMs);
                 void (*previous)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
                 void (*release)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
                 void (*seekTo)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_KLong positionMs);
+                void (*skipTo)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_KInt musicIndex);
                 void (*stop)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
               } MediaPlaybackController;
+              struct {
+                struct {
+                  libkn_kref_com_jiang_nowinkotlin_audio_PlayingStatus (*get)(); /* enum entry for PLAYING. */
+                } PLAYING;
+                struct {
+                  libkn_kref_com_jiang_nowinkotlin_audio_PlayingStatus (*get)(); /* enum entry for PAUSED. */
+                } PAUSED;
+                struct {
+                  libkn_kref_com_jiang_nowinkotlin_audio_PlayingStatus (*get)(); /* enum entry for BUFFERING. */
+                } BUFFERING;
+                struct {
+                  libkn_kref_com_jiang_nowinkotlin_audio_PlayingStatus (*get)(); /* enum entry for IDLE. */
+                } IDLE;
+                struct {
+                  libkn_kref_com_jiang_nowinkotlin_audio_PlayingStatus (*get)(); /* enum entry for ENDED. */
+                } ENDED;
+                libkn_KType* (*_type)(void);
+              } PlayingStatus;
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState (*PlaybackState)(libkn_kref_com_jiang_nowinkotlin_data_Episode episode, libkn_kref_com_jiang_nowinkotlin_audio_PlayingStatus playingStatus, libkn_KInt currentIndex, libkn_KBoolean hasPrevious, libkn_KBoolean hasNext, libkn_KLong position, libkn_KLong duration);
+                libkn_KInt (*get_currentIndex)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                const char* (*get_currentTime)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                libkn_KLong (*get_duration)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                libkn_kref_com_jiang_nowinkotlin_data_Episode (*get_episode)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                libkn_KBoolean (*get_hasNext)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                libkn_KBoolean (*get_hasPrevious)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                libkn_KBoolean (*get_isPlaying)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                libkn_kref_com_jiang_nowinkotlin_audio_PlayingStatus (*get_playingStatus)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                libkn_KLong (*get_position)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                libkn_KFloat (*get_progress)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                const char* (*get_totalTime)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                libkn_kref_com_jiang_nowinkotlin_data_Episode (*component1)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                libkn_kref_com_jiang_nowinkotlin_audio_PlayingStatus (*component2)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                libkn_KInt (*component3)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                libkn_KBoolean (*component4)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                libkn_KBoolean (*component5)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                libkn_KLong (*component6)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                libkn_KLong (*component7)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState (*copy)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz, libkn_kref_com_jiang_nowinkotlin_data_Episode episode, libkn_kref_com_jiang_nowinkotlin_audio_PlayingStatus playingStatus, libkn_KInt currentIndex, libkn_KBoolean hasPrevious, libkn_KBoolean hasNext, libkn_KLong position, libkn_KLong duration);
+                libkn_KBoolean (*equals)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz, libkn_kref_kotlin_Any other);
+                libkn_KInt (*hashCode)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+                const char* (*toString)(libkn_kref_com_jiang_nowinkotlin_audio_PlaybackState thiz);
+              } PlaybackState;
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_KLong (*currentTime)(libkn_kref_com_jiang_nowinkotlin_audio_OhosAVPlayer thiz);
+                libkn_KLong (*duration)(libkn_kref_com_jiang_nowinkotlin_audio_OhosAVPlayer thiz);
+                void (*pause)(libkn_kref_com_jiang_nowinkotlin_audio_OhosAVPlayer thiz);
+                void (*play)(libkn_kref_com_jiang_nowinkotlin_audio_OhosAVPlayer thiz);
+                void (*prepareAndPlay)(libkn_kref_com_jiang_nowinkotlin_audio_OhosAVPlayer thiz, libkn_KInt index, const char* title, const char* audioUrl, const char* imageUrl, libkn_KBoolean playImmediately);
+                void (*seekTo)(libkn_kref_com_jiang_nowinkotlin_audio_OhosAVPlayer thiz, libkn_KLong positionMs);
+              } OhosAVPlayer;
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_audio_OhosStateListener (*OhosStateListener)();
+                void (*updatePlaybackState)(libkn_kref_com_jiang_nowinkotlin_audio_OhosStateListener thiz, libkn_KBoolean isPlaying, libkn_KLong positionMs, libkn_KLong duration);
+              } OhosStateListener;
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_audio_MediaCommandHandler (*MediaCommandHandler)();
+                void (*onNext)(libkn_kref_com_jiang_nowinkotlin_audio_MediaCommandHandler thiz);
+                void (*onPrevious)(libkn_kref_com_jiang_nowinkotlin_audio_MediaCommandHandler thiz);
+              } MediaCommandHandler;
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_audio_OhosPlayerStateManager (*OhosPlayerStateManager)();
+                void (*cleanup)(libkn_kref_com_jiang_nowinkotlin_audio_OhosPlayerStateManager thiz);
+                libkn_KLong (*getCurrentPosition)(libkn_kref_com_jiang_nowinkotlin_audio_OhosPlayerStateManager thiz);
+                libkn_KLong (*getDuration)(libkn_kref_com_jiang_nowinkotlin_audio_OhosPlayerStateManager thiz);
+                void (*initializePlayer)(libkn_kref_com_jiang_nowinkotlin_audio_OhosPlayerStateManager thiz, libkn_KLong positionMs);
+                void (*pause)(libkn_kref_com_jiang_nowinkotlin_audio_OhosPlayerStateManager thiz);
+                void (*play)(libkn_kref_com_jiang_nowinkotlin_audio_OhosPlayerStateManager thiz);
+                void (*prepareAndPlay)(libkn_kref_com_jiang_nowinkotlin_audio_OhosPlayerStateManager thiz, libkn_KInt index, const char* title, const char* audioUrl, const char* imageUrl, libkn_KBoolean playImmediately);
+                void (*setPosition)(libkn_kref_com_jiang_nowinkotlin_audio_OhosPlayerStateManager thiz, libkn_KLong positionMs);
+                void (*stop)(libkn_kref_com_jiang_nowinkotlin_audio_OhosPlayerStateManager thiz);
+              } OhosPlayerStateManager;
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController (*PlatformMediaPlaybackController)();
+                void (*next)(libkn_kref_com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController thiz);
+                void (*pause)(libkn_kref_com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController thiz);
+                void (*play)(libkn_kref_com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController thiz);
+                void (*prepare)(libkn_kref_com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController thiz, libkn_kref_kotlin_collections_List musics, libkn_KInt index, libkn_KLong positionMs);
+                void (*previous)(libkn_kref_com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController thiz);
+                void (*release)(libkn_kref_com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController thiz);
+                void (*seekTo)(libkn_kref_com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController thiz, libkn_KLong positionMs);
+                void (*skipTo)(libkn_kref_com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController thiz, libkn_KInt musicIndex);
+                void (*stop)(libkn_kref_com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController thiz);
+              } PlatformMediaPlaybackController;
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_audio_PlaylistManager (*_instance)();
+                libkn_KInt (*get_currentIndex)(libkn_kref_com_jiang_nowinkotlin_audio_PlaylistManager thiz);
+                void (*clear)(libkn_kref_com_jiang_nowinkotlin_audio_PlaylistManager thiz);
+                libkn_kref_com_jiang_nowinkotlin_data_Episode (*getCurrentMusic)(libkn_kref_com_jiang_nowinkotlin_audio_PlaylistManager thiz);
+                libkn_kref_kotlin_Int (*getNextIndex)(libkn_kref_com_jiang_nowinkotlin_audio_PlaylistManager thiz);
+                libkn_kref_kotlin_collections_List (*getPlaylist)(libkn_kref_com_jiang_nowinkotlin_audio_PlaylistManager thiz);
+                libkn_kref_kotlin_Int (*getPreviousIndex)(libkn_kref_com_jiang_nowinkotlin_audio_PlaylistManager thiz);
+                libkn_KBoolean (*hasNext)(libkn_kref_com_jiang_nowinkotlin_audio_PlaylistManager thiz);
+                libkn_KBoolean (*hasPrevious)(libkn_kref_com_jiang_nowinkotlin_audio_PlaylistManager thiz);
+                void (*setCurrentIndex)(libkn_kref_com_jiang_nowinkotlin_audio_PlaylistManager thiz, libkn_KInt index);
+                void (*updatePlaylist)(libkn_kref_com_jiang_nowinkotlin_audio_PlaylistManager thiz, libkn_kref_kotlin_collections_List musics, libkn_KInt startIndex);
+              } PlaylistManager;
+              libkn_KInt (*com_jiang_nowinkotlin_audio_KmpAudioPlayer$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandler$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandlerProvider$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosAVPlayerProxy$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosPlayerStateManager$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListener$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListenerProvider$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackState$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackStateManager$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaylistManager$stableprop_getter)();
+              libkn_kref_com_jiang_nowinkotlin_audio_OhosAVPlayer (*getOhosAVPlayerApi)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_KmpAudioPlayer$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandler$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandlerProvider$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosAVPlayerProxy$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosPlayerStateManager$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListener$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListenerProvider$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackState$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackStateManager$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaylistManager$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_KmpAudioPlayer$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandler$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandlerProvider$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosAVPlayerProxy$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosPlayerStateManager$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListener$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListenerProvider$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackState$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackStateManager$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaylistManager$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_KmpAudioPlayer$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandler$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandlerProvider$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosAVPlayerProxy$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosPlayerStateManager$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListener$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListenerProvider$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackState$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackStateManager$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaylistManager$stableprop_getter___)();
+              libkn_KInt (*get_CURRENT_INDEX_UNSET)();
+              libkn_KLong (*get_TIME_UNSET)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_KmpAudioPlayer$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandler$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandlerProvider$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosAVPlayerProxy$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosPlayerStateManager$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListener$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListenerProvider$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackState$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackStateManager$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaylistManager$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_KmpAudioPlayer$stableprop_getter_____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandler$stableprop_getter_____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandlerProvider$stableprop_getter_____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosAVPlayerProxy$stableprop_getter_____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosPlayerStateManager$stableprop_getter_____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListener$stableprop_getter_____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListenerProvider$stableprop_getter_____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController$stableprop_getter_____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackState$stableprop_getter_____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackStateManager$stableprop_getter_____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaylistManager$stableprop_getter_____)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_KmpAudioPlayer$stableprop_getter______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandler$stableprop_getter______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandlerProvider$stableprop_getter______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosAVPlayerProxy$stableprop_getter______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosPlayerStateManager$stableprop_getter______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListener$stableprop_getter______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListenerProvider$stableprop_getter______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController$stableprop_getter______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackState$stableprop_getter______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackStateManager$stableprop_getter______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaylistManager$stableprop_getter______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_KmpAudioPlayer$stableprop_getter_______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandler$stableprop_getter_______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandlerProvider$stableprop_getter_______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosAVPlayerProxy$stableprop_getter_______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosPlayerStateManager$stableprop_getter_______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListener$stableprop_getter_______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListenerProvider$stableprop_getter_______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController$stableprop_getter_______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackState$stableprop_getter_______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackStateManager$stableprop_getter_______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaylistManager$stableprop_getter_______)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_KmpAudioPlayer$stableprop_getter________)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandler$stableprop_getter________)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_MediaCommandHandlerProvider$stableprop_getter________)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosAVPlayerProxy$stableprop_getter________)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosPlayerStateManager$stableprop_getter________)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListener$stableprop_getter________)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_OhosStateListenerProvider$stableprop_getter________)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController$stableprop_getter________)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackState$stableprop_getter________)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaybackStateManager$stableprop_getter________)();
+              libkn_KInt (*com_jiang_nowinkotlin_audio_PlaylistManager$stableprop_getter________)();
             } audio;
             struct {
               struct {
@@ -496,6 +804,13 @@ typedef struct {
             struct {
               struct {
                 libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_network_KmpNetworkHelper (*_instance)();
+              } KmpNetworkHelper;
+              libkn_KInt (*com_jiang_nowinkotlin_network_KmpNetworkHelper$stableprop_getter)();
+            } network;
+            struct {
+              struct {
+                libkn_KType* (*_type)(void);
                 libkn_kref_com_jiang_nowinkotlin_screens_AppMainScreen (*_instance)();
               } AppMainScreen;
               libkn_KInt (*com_jiang_nowinkotlin_screens_AppMainScreen$stableprop_getter)();
@@ -579,79 +894,105 @@ typedef struct {
               libkn_KType* (*_type)(void);
               libkn_kref_kotlin_collections_Map (*parseJson)(libkn_kref_com_jiang_nowinkotlin_OhosServices thiz, const char* json);
             } OhosServices;
+            struct {
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_PlatformContext_Companion (*_instance)();
+                libkn_kref_com_jiang_nowinkotlin_PlatformContext (*get_INSTANCE)(libkn_kref_com_jiang_nowinkotlin_PlatformContext_Companion thiz);
+              } Companion;
+              libkn_KType* (*_type)(void);
+            } PlatformContext;
             libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter)();
+            libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter)();
             libkn_kref_com_jiang_nowinkotlin_OhosServices (*getOhosServicesApi)();
             libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter_)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter_)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter_)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter_)();
+            libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter_)();
             libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter__)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter__)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter__)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter__)();
+            libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter__)();
             libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter___)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter___)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter___)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter___)();
+            libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter___)();
             libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter____)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter____)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter____)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter____)();
+            libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter____)();
             libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter_____)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter_____)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter_____)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter_____)();
+            libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter_____)();
             libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter______)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter______)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter______)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter______)();
+            libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter______)();
             libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter_______)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter_______)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter_______)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter_______)();
+            libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter_______)();
             libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter________)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter________)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter________)();
+            libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter________)();
             void* (*get_nativeResourceManager)();
             void (*set_nativeResourceManager)(void* set);
             libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter_________)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter_________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter_________)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter_________)();
+            libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter_________)();
             libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter__________)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter__________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter__________)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter__________)();
+            libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter__________)();
             libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter___________)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter___________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter___________)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter___________)();
+            libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter___________)();
             libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter____________)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter____________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter____________)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter____________)();
+            libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter____________)();
             libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter_____________)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter_____________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter_____________)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter_____________)();
+            libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter_____________)();
             void* (*MainArkUIViewController_)(void* env);
             libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter______________)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter______________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter______________)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter______________)();
+            libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter______________)();
             void (*initResourceManager)(void* resourceManager);
             libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter_______________)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter_______________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter_______________)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter_______________)();
+            libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter_______________)();
+            libkn_kref_androidx_compose_runtime_ProvidableCompositionLocal (*get_LocalPlatformContext)();
             libkn_KInt (*com_jiang_nowinkotlin_DeserializationOhosData$stableprop_getter________________)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter________________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter________________)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter________________)();
+            libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter________________)();
           } nowinkotlin;
         } jiang;
         struct {
@@ -659,7 +1000,10 @@ typedef struct {
             struct {
               struct {
                 struct {
+                  void (*registerOhosAVPlayerProxy)();
                   void (*registerOhosServicesProxy)();
+                  void (*registerMediaCommandHandlerProvider)();
+                  void (*registerOhosStateListenerProvider)();
                 } composeApp;
                 void (*initComposeApp)();
               } modules;

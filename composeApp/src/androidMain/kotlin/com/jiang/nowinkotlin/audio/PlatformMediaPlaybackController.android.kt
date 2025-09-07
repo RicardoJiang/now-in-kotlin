@@ -70,11 +70,6 @@ internal class PlatformMediaPlaybackController(
         controller.prepare()
     }
 
-    override fun playMusics(musics: List<Episode>, startIndex: Int) = executeAfterPrepare { controller ->
-        prepare(musics, startIndex, 0)
-        controller.play()
-    }
-
     override fun stop() = executeAfterPrepare { controller ->
         controller.stop()
         controller.release()

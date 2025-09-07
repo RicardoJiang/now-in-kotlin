@@ -17,6 +17,8 @@
 
 import { Compose } from 'compose';
 import { MainArkUIViewController } from 'libentry.so';
+import { ProviderFeature } from '../controller/ProviderManager';
+import { OhosAVPlayerImpl } from '../knoi/OhosAVPlayerImpl';
 import { registerComposeInteropBuilders } from './ComposeSample';
 
 registerComposeInteropBuilders();
@@ -26,12 +28,21 @@ registerComposeInteropBuilders();
 struct Index {
   private controller = MainArkUIViewController()
 
+  async aboutToAppear() {
+    OhosAVPlayerImpl.provider =  await ProviderFeature.getInstance();
+  }
+
+  aboutToDisappear(): void {
+    OhosAVPlayerImpl.provider?.unInit()
+  }
+
   onPageShow(): void {
     this.controller.onPageShow()
   }
 
   onPageHide(): void {
     this.controller.onPageHide()
+    OhosAVPlayerImpl.provider?.startContinuousTask();
   }
 
   onBackPress(): boolean | void {

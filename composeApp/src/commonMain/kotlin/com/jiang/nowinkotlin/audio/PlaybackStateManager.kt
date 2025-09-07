@@ -65,7 +65,7 @@ data class PlaybackState(
 
     val progress: Float
         get() {
-            if (position<=0){
+            if (position <= 0) {
                 return 0f
             }
             return position * 1.0f / duration

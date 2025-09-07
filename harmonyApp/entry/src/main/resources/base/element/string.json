@@ -15,6 +15,10 @@
     {
       "name": "reason",
       "value": "为正常使用 Now in Kotlin 需要使用网络"
+    },
+    {
+      "name": "reason_background",
+      "value": "为正常使用音频播放功能"
     }
   ]
 }

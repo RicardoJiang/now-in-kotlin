@@ -21,15 +21,21 @@ import { window } from '@kit.ArkUI';
 import { initResourceManager } from 'libentry.so';
 import { registerServiceProvider, setup } from '@kuiklybase/knoi';
 import { OhosServicesImpl } from '../knoi/OhosServicesImpl';
+import { OhosAVPlayerImpl } from '../knoi/OhosAVPlayerImpl';
+import GlobalContext from '../controller/GlobalContextUtils';
+import Constants from '../controller/Constants';
 
 const DOMAIN = 0x0000;
 
 setup("libkn.so", true)
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    AppStorage.setOrCreate('context', this.context);
+    GlobalContext.getContext().setObject(Constants.CONTEXT, this.context);
     this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
     initResourceManager(this.context.resourceManager)
     registerServiceProvider("OhosServices", false, OhosServicesImpl)
+    registerServiceProvider("OhosAVPlayer", true, OhosAVPlayerImpl)
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
   }
 

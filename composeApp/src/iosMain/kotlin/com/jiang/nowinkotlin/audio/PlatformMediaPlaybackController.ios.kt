@@ -55,16 +55,6 @@ internal class PlatformMediaPlaybackController(
         playlistManager.getCurrentMusic()?.let { setMusic(it, false) }
     }
 
-    override fun playMusics(musics: List<Episode>, startIndex: Int) {
-        if (initialized == false) {
-            initController()
-        }
-
-        playlistManager.updatePlaylist(musics, startIndex)
-        playerStateManager.initializePlayer(0)
-        playlistManager.getCurrentMusic()?.let { setMusic(it, true) }
-    }
-
     private fun setMusic(music: Episode, playImmediately: Boolean = true) {
         scope.launch {
             prepareMusic()

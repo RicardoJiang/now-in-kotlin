@@ -49,7 +49,7 @@ var nativeResourceManager: NativeResourceManager = null
 private val emptyImageBitmap: ImageBitmap by lazy { ImageBitmap(1, 1) }
 
 @Composable
-internal actual fun (id: DrawableResource): ImageBitmap {
+internal actual fun rememberLocalImage(id: DrawableResource): ImageBitmap {
     var imageBitmap: ImageBitmap by remember { mutableStateOf(emptyImageBitmap) }
     LaunchedEffect(Unit) {
         withContext(Dispatchers.IO) {
