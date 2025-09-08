@@ -30,7 +30,7 @@ struct Index {
   private controller = MainArkUIViewController()
 
   async aboutToAppear() {
-    OhosAVPlayerImpl.provider =  await ProviderFeature.getInstance();
+
   }
 
   aboutToDisappear(): void {
