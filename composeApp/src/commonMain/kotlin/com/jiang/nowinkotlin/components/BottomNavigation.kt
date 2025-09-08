@@ -17,6 +17,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.jiang.nowinkotlin.icons.Newspaper
+import com.jiang.nowinkotlin.icons.Whatshot
 import com.jiang.nowinkotlin.theme.KotlinDark
 import com.jiang.nowinkotlin.theme.KotlinSecondary
 import com.jiang.nowinkotlin.theme.TextPrimary
@@ -30,12 +32,12 @@ data class BottomNavItem(
 val bottomNavItems = listOf(
     BottomNavItem(
         title = "炉边漫谈",
-        icon = Icons.Default.Star,
+        icon = Icons.Default.Whatshot,
         route = "home"
     ),
     BottomNavItem(
         title = "技术月报",
-        icon = Icons.Default.Person,
+        icon = Icons.Default.Newspaper,
         route = "monthly"
     )
 )
@@ -50,7 +52,7 @@ fun KotlinBottomNavigation(
         modifier = modifier
             .fillMaxWidth()
             .background(KotlinDark.copy(alpha = 0.9f))
-            .padding(horizontal = 32.dp, vertical = 8.dp),
+            .padding(horizontal = 32.dp, vertical = 4.dp),
         color = Color.Transparent
     ) {
         Row(

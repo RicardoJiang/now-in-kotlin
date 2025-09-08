@@ -671,9 +671,11 @@ typedef struct {
             struct {
               libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_FastForward)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
               libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_FastRewind)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
+              libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_Newspaper)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
               libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_Pause)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
               libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_SkipNext)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
               libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_SkipPrevious)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
+              libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_Whatshot)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
             } icons;
             struct {
               struct {

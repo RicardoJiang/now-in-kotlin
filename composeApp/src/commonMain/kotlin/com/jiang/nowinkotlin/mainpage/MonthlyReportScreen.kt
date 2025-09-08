@@ -33,6 +33,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jiang.nowinkotlin.data.MonthlyReportItem
+import com.jiang.nowinkotlin.icons.Newspaper
+import com.jiang.nowinkotlin.icons.Whatshot
 import com.jiang.nowinkotlin.rememberLocalImage
 import com.jiang.nowinkotlin.theme.KotlinAccent
 import com.jiang.nowinkotlin.theme.KotlinDark
@@ -99,7 +101,7 @@ private fun MonthlyTopBar() {
                     )
                 )
             )
-            .padding(top = 24.dp, bottom = 12.dp, start = 20.dp, end = 20.dp),
+            .padding(top = 16.dp, bottom = 12.dp, start = 20.dp, end = 20.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -120,9 +122,11 @@ private fun MonthlyTopBar() {
                     ),
                 contentAlignment = Alignment.Center
             ) {
-                Text(
-                    text = "📰",
-                    fontSize = 14.sp
+                Icon(
+                    imageVector = Icons.Default.Newspaper,
+                    contentDescription = "Now in Kotlin Logo",
+                    tint = TextPrimary,
+                    modifier = Modifier.size(20.dp)
                 )
             }
 

@@ -229,7 +229,7 @@ private fun PlayerTopBar(
         )
 
         Text(
-            text = "正在播放",
+            text = "Kotlin 炉边漫谈",
             fontSize = 14.sp,
             color = TextSecondary
         )

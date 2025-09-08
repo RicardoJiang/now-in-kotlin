@@ -334,7 +334,7 @@ export class ProviderFeature {
   async play(): Promise<void> {
     Logger.info(TAG, `Start do play task`);
     this.clickPlayedAlready = true
-    if (this.avPlayer?.state === AVPlayerState.PLAYING) {
+    if (this.avPlayer?.state === AVPlayerState.PLAYING || this.avPlayer?.state === AVPlayerState.IDLE) {
       return
     }
     await this.localPlayOrPause();

@@ -20,6 +20,7 @@ import { MainArkUIViewController } from 'libentry.so';
 import { ProviderFeature } from '../controller/ProviderManager';
 import { OhosAVPlayerImpl } from '../knoi/OhosAVPlayerImpl';
 import { registerComposeInteropBuilders } from './ComposeSample';
+import { WindowHelper } from './WindowHelper';
 
 registerComposeInteropBuilders();
 
@@ -34,9 +35,11 @@ struct Index {
 
   aboutToDisappear(): void {
     OhosAVPlayerImpl.provider?.unInit()
+    WindowHelper.updateStatusBarColor()
   }
 
   onPageShow(): void {
+    WindowHelper.updateStatusBarColor()
     this.controller.onPageShow()
   }
 
@@ -61,5 +64,7 @@ struct Index {
         }
       ).width('100%').height('100%')
     }.width('100%').height('100%')
+    .backgroundColor('#FF0B1220')
+    .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])
   }
 }

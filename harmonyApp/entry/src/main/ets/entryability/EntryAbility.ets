@@ -24,11 +24,13 @@ import { OhosServicesImpl } from '../knoi/OhosServicesImpl';
 import { OhosAVPlayerImpl } from '../knoi/OhosAVPlayerImpl';
 import GlobalContext from '../controller/GlobalContextUtils';
 import Constants from '../controller/Constants';
+import { WindowHelper } from '../pages/WindowHelper';
 
 const DOMAIN = 0x0000;
 
 setup("libkn.so", true)
 export default class EntryAbility extends UIAbility {
+
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     AppStorage.setOrCreate('context', this.context);
     GlobalContext.getContext().setObject(Constants.CONTEXT, this.context);
@@ -43,9 +45,10 @@ export default class EntryAbility extends UIAbility {
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onDestroy');
   }
 
-  onWindowStageCreate(windowStage: window.WindowStage): void {
+  async onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    WindowHelper.windowClass = await windowStage.getMainWindow();
 
     windowStage.loadContent('pages/Index', (err) => {
       if (err.code) {

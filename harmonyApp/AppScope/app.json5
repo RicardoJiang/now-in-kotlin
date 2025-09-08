@@ -1,7 +1,7 @@
 {
   "app": {
-    "bundleName": "com.tencent.compose",
-    "vendor": "example",
+    "bundleName": "com.jiang.nowinkotlin",
+    "vendor": "huawei",
     "versionCode": 1000000,
     "versionName": "1.0.0",
     "icon": "$media:layered_image",

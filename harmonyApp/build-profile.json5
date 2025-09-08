@@ -5,13 +5,13 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "/Users/jiangjunxiang/.ohos/config/default_harmonyApp_071Pd93l0kWXYOoZxqakG0OxOAFHxzBurjD9rCmp7Mw=.cer",
+          "certpath": "/Users/jiangjunxiang/.ohos/config/default_harmonyApp_iCUcx3l_BBl_n-69WFweKGulGx89lpQm5DhMVzZsvlQ=.cer",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001BAB624A523F3D113E34A05698CF5091F1F67E78080432177373EFAB586E50D00AD3A52D118AEC65",
-          "profile": "/Users/jiangjunxiang/.ohos/config/default_harmonyApp_071Pd93l0kWXYOoZxqakG0OxOAFHxzBurjD9rCmp7Mw=.p7b",
+          "keyPassword": "0000001AC3489F21F94CD3D1959EF5F472D5D82965580DED3425002554876F738C340C380AFF9358DAA9",
+          "profile": "/Users/jiangjunxiang/.ohos/config/default_harmonyApp_iCUcx3l_BBl_n-69WFweKGulGx89lpQm5DhMVzZsvlQ=.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "/Users/jiangjunxiang/.ohos/config/default_harmonyApp_071Pd93l0kWXYOoZxqakG0OxOAFHxzBurjD9rCmp7Mw=.p12",
-          "storePassword": "0000001B49B847FF433BFB35B9AAFF75E168795D60FE26F35790BE9EEF25A1FFF9DC878E206173117F307F"
+          "storeFile": "/Users/jiangjunxiang/.ohos/config/default_harmonyApp_iCUcx3l_BBl_n-69WFweKGulGx89lpQm5DhMVzZsvlQ=.p12",
+          "storePassword": "0000001AAB9ECCB350E107CA6C90F96BD42C92324AE15F60634970C09A39B9BD97D889A2127611EA8584"
         }
       }
     ],

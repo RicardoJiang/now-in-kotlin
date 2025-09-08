@@ -37,6 +37,7 @@ import com.jiang.nowinkotlin.components.EpisodeCard
 import com.jiang.nowinkotlin.components.HeroCard
 import com.jiang.nowinkotlin.components.SmallIconButton
 import com.jiang.nowinkotlin.data.Episode
+import com.jiang.nowinkotlin.icons.Whatshot
 import com.jiang.nowinkotlin.theme.KotlinAccent
 import com.jiang.nowinkotlin.theme.KotlinDark
 import com.jiang.nowinkotlin.theme.KotlinPrimary
@@ -128,7 +129,7 @@ private fun TopNavigationBar() {
                     )
                 )
             )
-            .padding(top = 24.dp, bottom = 12.dp, start = 20.dp, end = 20.dp)
+            .padding(top = 16.dp, bottom = 12.dp, start = 20.dp, end = 20.dp)
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -161,7 +162,7 @@ private fun TopNavigationBar() {
                         contentAlignment = Alignment.Center
                     ) {
                         Icon(
-                            imageVector = Icons.Default.Star,
+                            imageVector = Icons.Default.Whatshot,
                             contentDescription = "Now in Kotlin Logo",
                             tint = TextPrimary,
                             modifier = Modifier.size(20.dp)
@@ -184,13 +185,6 @@ private fun TopNavigationBar() {
                     )
                 }
             }
-
-            // 右侧：搜索按钮
-            SmallIconButton(
-                icon = Icons.Default.Search,
-                onClick = { /* TODO: 实现搜索功能 */ },
-                contentDescription = "搜索"
-            )
         }
     }
 }
