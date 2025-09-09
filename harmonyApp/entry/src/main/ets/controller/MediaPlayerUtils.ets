@@ -56,6 +56,9 @@ export default class MediaPlayer {
       this.avPlayer?.reset();
     });
     this.avPlayer?.on('stateChange', async (state, _) => {
+      if (this.avPlayer?.url != this.curUrl) {
+        return
+      }
       this.state = state;
       Logger.info(TAG, 'AVPlayer state: ' + JSON.stringify(state) + "," + this.avPlayer?.url?.split("?")[1]);
       this.onStateChange(state)
@@ -118,7 +121,10 @@ export default class MediaPlayer {
   /**
    * Play a local resource.
    */
+  private curUrl: string = ''
+
   async loadFromUrl(url: string): Promise<void> {
+    this.curUrl = url
     this.callbackMap = {};
     Logger.info(TAG, 'loadFromUrl: ' + url + ' state: ' + this.state);
     if (!this.avPlayer) {
@@ -130,6 +136,10 @@ export default class MediaPlayer {
       Logger.info(TAG, 'avPlayer.reset called');
     }
     try {
+      if (url != this.curUrl) {
+        Logger.info(TAG, 'not equal:'+(url?.split("?")[1]) + ","+ (this.curUrl?.split("?")[1]))
+        return
+      }
       Logger.info(TAG, "set url when state:" + this.avPlayer.state + ',' + url?.split("?")[1])
       this.avPlayer.url = url
     } catch (error) {
