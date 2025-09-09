@@ -57,6 +57,7 @@ export default class MediaPlayer {
     });
     this.avPlayer?.on('stateChange', async (state, _) => {
       if (this.avPlayer?.url != this.curUrl) {
+        Logger.info(TAG, 'Not curUrl stateChange ' + state)
         return
       }
       this.state = state;
