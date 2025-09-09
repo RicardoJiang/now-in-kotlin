@@ -57,12 +57,11 @@ export default class MediaPlayer {
     });
     this.avPlayer?.on('stateChange', async (state, _) => {
       this.state = state;
-      Logger.info(TAG, 'AVPlayer state: ' + JSON.stringify(state));
+      Logger.info(TAG, 'AVPlayer state: ' + JSON.stringify(state) + "," + this.avPlayer?.url?.split("?")[1]);
       this.onStateChange(state)
       switch (state) {
         case AVPlayerState.IDLE:
           Logger.info(TAG, 'AVPlayer state idle called.');
-          this.callbackMap = {};
           break;
         case AVPlayerState.INITIALIZED:
           Logger.info(TAG, 'AVPlayer state initialized called, callbackMap = ' + JSON.stringify(this.callbackMap));
@@ -72,11 +71,8 @@ export default class MediaPlayer {
           await this.avPlayer?.prepare();
           break;
         case AVPlayerState.PREPARED:
-          Logger.info(TAG,
-            'AVPlayer state prepared called callbackMap ' + JSON.stringify(this.callbackMap[AVPlayerState.PREPARED]));
           if (this.callbackMap[AVPlayerState.PREPARED]) {
-            Logger.info(TAG,
-              'AVPlayer state prepared called callbackMap ' + JSON.stringify(this.callbackMap[AVPlayerState.PREPARED]));
+            Logger.info(TAG, 'AVPlayer state prepared called callbackMap');
             let callbackPre: Function = this.callbackMap[AVPlayerState.PREPARED] as Function;
             callbackPre();
             this.callbackMap[AVPlayerState.PREPARED] = null;
@@ -108,7 +104,6 @@ export default class MediaPlayer {
   }
 
   public on(event: string, callback: Function): void {
-    Logger.info(TAG, 'AVPlayer on callback event ' + event);
     this.callbackMap[event] = callback;
   }
 
@@ -124,6 +119,7 @@ export default class MediaPlayer {
    * Play a local resource.
    */
   async loadFromUrl(url: string): Promise<void> {
+    this.callbackMap = {};
     Logger.info(TAG, 'loadFromUrl: ' + url + ' state: ' + this.state);
     if (!this.avPlayer) {
       Logger.error(TAG, 'no avplayer');
@@ -134,6 +130,7 @@ export default class MediaPlayer {
       Logger.info(TAG, 'avPlayer.reset called');
     }
     try {
+      Logger.info(TAG, "set url when state:" + this.avPlayer.state + ',' + url?.split("?")[1])
       this.avPlayer.url = url
     } catch (error) {
       Logger.error(TAG, 'resourceManager getRawFd error: ' + JSON.stringify(error));

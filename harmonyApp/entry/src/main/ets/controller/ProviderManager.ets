@@ -378,6 +378,11 @@ export class ProviderFeature {
    * In-app progress bar.
    */
   async seek(currentPosition: number): Promise<void> {
+    const curState = this.avPlayer?.state
+    if (curState != AVPlayerState.PREPARED && curState != AVPlayerState.PLAYING && curState != AVPlayerState.PAUSED &&
+      curState != AVPlayerState.COMPLETED) {
+      return
+    }
     Logger.info(TAG, `on seek , do seek task to: ` + currentPosition);
     this.avPlayer?.seek(currentPosition);
     this.currentState.position = {
@@ -396,7 +401,7 @@ export class ProviderFeature {
     await this.mediaPlayerUtil.loadFromUrl(episode.audioUrl);
     // The avplayer is ready to play.
     this.mediaPlayerUtil.on('prepared', () => {
-      Logger.info(TAG, 'AVPlayer state prepared, start play:' + playImmediately);
+      Logger.info(TAG, `AVPlayer state prepared ${episode.index}, start play:` + playImmediately);
       this.duration = this.mediaPlayerUtil.getDuration()
       if (playImmediately || this.clickPlayedAlready) {
         this.setAVMetadataToController(episode, this.duration);
