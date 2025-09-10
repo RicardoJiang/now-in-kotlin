@@ -48,8 +48,8 @@ class PlatformMediaPlaybackController : MediaPlaybackController {
         playerStateManager.pause()
     }
 
-    override fun skipTo(musicIndex: Int) {
-        if (musicIndex != PlaylistManager.currentIndex) {
+    override fun skipTo(musicIndex: Int, playImmediately: Boolean) {
+        if (musicIndex != PlaylistManager.currentIndex || !PlaybackStateManager.playbackState.isPlaying) {
             PlaylistManager.setCurrentIndex(musicIndex)
             PlaylistManager.getCurrentMusic()?.let { setMusic(it) }
         }
@@ -67,8 +67,8 @@ class PlatformMediaPlaybackController : MediaPlaybackController {
         }
 
         PlaylistManager.updatePlaylist(musics, index)
-        playerStateManager.initializePlayer(positionMs)
-        PlaylistManager.getCurrentMusic()?.let { setMusic(it, false) }
+//        playerStateManager.initializePlayer(positionMs)
+//        PlaylistManager.getCurrentMusic()?.let { setMusic(it, false) }
     }
 
     private fun initController() {

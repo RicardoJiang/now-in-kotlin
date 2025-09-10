@@ -24,10 +24,9 @@ object AppMainScreen : Screen {
         // 调用原始的 MainScreen Composable
         MainScreen(
             onEpisodeClick = { episodes, index ->
-                if (playbackState.currentIndex != index) {
-                    KmpAudioPlayer.playbackController.skipTo(index)
+                if (playbackState.currentIndex != index || playbackState.isPlaying.not()) {
+                    KmpAudioPlayer.playbackController.skipTo(index, true)
                 }
-                KmpAudioPlayer.playbackController.play()
                 navigator?.push(
                     AudioPlayerScreen(
                         episodes = episodes,

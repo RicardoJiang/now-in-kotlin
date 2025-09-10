@@ -14,7 +14,7 @@ interface MediaPlaybackController {
 
     fun pause()
 
-    fun skipTo(musicIndex: Int)
+    fun skipTo(musicIndex: Int, playImmediately: Boolean)
 
     fun prepare(musics: List<Episode>, index: Int, positionMs: Long)
 

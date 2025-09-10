@@ -52,7 +52,7 @@ internal class PlatformMediaPlaybackController(
 
         playlistManager.updatePlaylist(musics, index)
         playerStateManager.initializePlayer(positionMs)
-        playlistManager.getCurrentMusic()?.let { setMusic(it, false) }
+//        playlistManager.getCurrentMusic()?.let { setMusic(it, false) }
     }
 
     private fun setMusic(music: Episode, playImmediately: Boolean = true) {
@@ -146,8 +146,8 @@ internal class PlatformMediaPlaybackController(
         }
     }
 
-    override fun skipTo(musicIndex: Int) {
-        if (musicIndex != playlistManager.currentIndex) {
+    override fun skipTo(musicIndex: Int, playImmediately: Boolean) {
+        if (musicIndex != playlistManager.currentIndex || playerStateManager.currentPlaybackStatus != PlayingStatus.PLAYING) {
             playlistManager.setCurrentIndex(musicIndex)
             playlistManager.getCurrentMusic()?.let { setMusic(it) }
         }

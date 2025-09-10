@@ -368,7 +368,7 @@ typedef struct {
                 void (*previous)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
                 void (*release)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
                 void (*seekTo)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_KLong positionMs);
-                void (*skipTo)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_KInt musicIndex);
+                void (*skipTo)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz, libkn_KInt musicIndex, libkn_KBoolean playImmediately);
                 void (*stop)(libkn_kref_com_jiang_nowinkotlin_audio_MediaPlaybackController thiz);
               } MediaPlaybackController;
               struct {
@@ -458,7 +458,7 @@ typedef struct {
                 void (*previous)(libkn_kref_com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController thiz);
                 void (*release)(libkn_kref_com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController thiz);
                 void (*seekTo)(libkn_kref_com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController thiz, libkn_KLong positionMs);
-                void (*skipTo)(libkn_kref_com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController thiz, libkn_KInt musicIndex);
+                void (*skipTo)(libkn_kref_com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController thiz, libkn_KInt musicIndex, libkn_KBoolean playImmediately);
                 void (*stop)(libkn_kref_com_jiang_nowinkotlin_audio_PlatformMediaPlaybackController thiz);
               } PlatformMediaPlaybackController;
               struct {

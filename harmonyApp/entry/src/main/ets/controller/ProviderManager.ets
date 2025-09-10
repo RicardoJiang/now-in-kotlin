@@ -47,6 +47,7 @@ export class ProviderFeature {
   private avPlayer?: media.AVPlayer;
   currentTime: number = 0;
   duration: number = 0;
+  curEpisode?: Episode = undefined
 
   static async getInstance(): Promise<ProviderFeature> {
     Logger.info(TAG, ' provider getInstance');
@@ -332,8 +333,14 @@ export class ProviderFeature {
   private clickPlayedAlready = false
 
   async play(): Promise<void> {
-    Logger.info(TAG, `Start do play task`);
+    Logger.info(TAG, `Start do play task:` + this.avPlayer?.state);
     this.clickPlayedAlready = true
+    if (this.avPlayer?.state === AVPlayerState.IDLE) {
+      if (this.curEpisode) {
+        this.handleNewItem(this.curEpisode, true)
+        return
+      }
+    }
     if (this.avPlayer?.state === AVPlayerState.PLAYING || this.avPlayer?.state === AVPlayerState.IDLE) {
       return
     }
@@ -398,6 +405,7 @@ export class ProviderFeature {
   async handleNewItem(episode: Episode, playImmediately: boolean): Promise<void> {
     Logger.info(TAG, ' handleNewItem itemId: ' + episode.index);
     this.currentTime = 0
+    this.curEpisode = episode
     await this.mediaPlayerUtil.loadFromUrl(episode.audioUrl);
     // The avplayer is ready to play.
     this.mediaPlayerUtil.on('prepared', () => {

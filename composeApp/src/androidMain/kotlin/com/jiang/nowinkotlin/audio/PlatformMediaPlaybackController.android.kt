@@ -59,8 +59,11 @@ internal class PlatformMediaPlaybackController(
         controller.pause()
     }
 
-    override fun skipTo(musicIndex: Int) = executeAfterPrepare { controller ->
+    override fun skipTo(musicIndex: Int, playImmediately: Boolean) = executeAfterPrepare { controller ->
         controller.seekToDefaultPosition(musicIndex)
+        if (playImmediately) {
+            controller.play()
+        }
     }
 
     override fun prepare(musics: List<Episode>, index: Int, positionMs: Long) = executeAfterPrepare { controller ->

@@ -5,7 +5,7 @@ import com.jiang.nowinkotlin.data.Episode
 // Playlist Manager
 object PlaylistManager {
     private val playlist = mutableListOf<Episode>()
-    var currentIndex = 0
+    var currentIndex = -1
         private set
 
     fun getCurrentMusic(): Episode? = playlist.getOrNull(currentIndex)
@@ -14,7 +14,7 @@ object PlaylistManager {
     fun updatePlaylist(musics: List<Episode>, startIndex: Int) {
         playlist.clear()
         playlist.addAll(musics)
-        currentIndex = startIndex.coerceIn(0, playlist.lastIndex)
+//        currentIndex = startIndex.coerceIn(0, playlist.lastIndex)
     }
 
     fun getNextIndex(): Int? = when {
