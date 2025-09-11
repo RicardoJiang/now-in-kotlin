@@ -59,7 +59,7 @@ private fun TopNavigationBar(onBackClick: () -> Unit, title: String) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(top = 24.dp, bottom = 12.dp, start = 20.dp, end = 20.dp),
+            .padding(top = 16.dp, bottom = 12.dp, start = 16.dp, end = 16.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {

@@ -58,7 +58,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jiang.nowinkotlin.audio.KmpAudioPlayer
-import com.jiang.nowinkotlin.audio.PlaybackState
 import com.jiang.nowinkotlin.components.AsyncImage
 import com.jiang.nowinkotlin.components.SmallIconButton
 import com.jiang.nowinkotlin.components.TagChip
@@ -218,7 +217,7 @@ private fun PlayerTopBar(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 24.dp),
+            .padding(horizontal = 16.dp, vertical = 16.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {

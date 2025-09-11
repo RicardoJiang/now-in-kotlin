@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
@@ -34,7 +35,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jiang.nowinkotlin.data.MonthlyReportItem
 import com.jiang.nowinkotlin.icons.Newspaper
-import com.jiang.nowinkotlin.icons.Whatshot
 import com.jiang.nowinkotlin.rememberLocalImage
 import com.jiang.nowinkotlin.theme.KotlinAccent
 import com.jiang.nowinkotlin.theme.KotlinDark
@@ -63,26 +63,30 @@ fun MonthlyReportScreen(
             .fillMaxSize()
             .background(KotlinDark)
     ) {
-        LazyColumn(
+        Column(
             modifier = Modifier.fillMaxSize()
         ) {
             // 顶部导航栏
-            item {
-                MonthlyTopBar()
-            }
+            MonthlyTopBar()
 
-            // 头图部分
-            item {
-                HeroSection()
-            }
+            LazyColumn(
+                modifier = Modifier.weight(1f), // 使用 weight 而不是 fillMaxSize
+                contentPadding = PaddingValues(bottom = 80.dp), // 为底部导航留空间
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                // 头图部分
+                item {
+                    HeroSection()
+                }
 
-            // 技术月报列表
-            itemsIndexed(uiState.monthlyReportList) { index, report ->
-                MonthlyReportItem(
-                    index = index,
-                    report = report,
-                    onClick = onMonthlyReportClick
-                )
+                // 技术月报列表
+                itemsIndexed(uiState.monthlyReportList) { index, report ->
+                    MonthlyReportItem(
+                        index = index,
+                        report = report,
+                        onClick = onMonthlyReportClick
+                    )
+                }
             }
         }
     }
