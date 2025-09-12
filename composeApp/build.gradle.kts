@@ -126,7 +126,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.tencent.compose"
+    namespace = "com.jiang.nowinkotlin"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
@@ -141,9 +141,21 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    signingConfigs{
+        create("release") {
+            val keyStoreFile = file(System.getenv("SIGNING_KEY_STORE_PATH") ?: "${project.rootDir}/nowinkotlin.jks")
+            if (keyStoreFile.exists()) {
+                storeFile = keyStoreFile
+                storePassword = System.getenv("SIGNING_KEY_STORE_PASSWORD")
+                keyAlias = System.getenv("SIGNING_KEY_ALIAS")
+                keyPassword = System.getenv("SIGNING_KEY_PASSWORD")
+            }
+        }
+    }
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
