@@ -161,6 +161,42 @@ typedef struct {
 } libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem;
 typedef struct {
   libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem_$serializer;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_kotlinx_serialization_descriptors_SerialDescriptor;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_kotlinx_serialization_encoding_Decoder;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_kotlinx_serialization_encoding_Encoder;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem_Companion;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_kotlinx_serialization_KSerializer;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel_$serializer;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel_Companion;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel_$serializer;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel_Companion;
+typedef struct {
+  libkn_KNativePtr pinned;
 } libkn_kref_androidx_compose_material_icons_Icons_Filled;
 typedef struct {
   libkn_KNativePtr pinned;
@@ -613,6 +649,19 @@ typedef struct {
             } components;
             struct {
               struct {
+                struct {
+                  libkn_KType* (*_type)(void);
+                  libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem_$serializer (*_instance)();
+                  libkn_kref_kotlinx_serialization_descriptors_SerialDescriptor (*get_descriptor)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem_$serializer thiz);
+                  libkn_kref_kotlin_Array (*childSerializers)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem_$serializer thiz);
+                  libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem (*deserialize)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem_$serializer thiz, libkn_kref_kotlinx_serialization_encoding_Decoder decoder);
+                  void (*serialize)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem_$serializer thiz, libkn_kref_kotlinx_serialization_encoding_Encoder encoder, libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem value);
+                } $serializer;
+                struct {
+                  libkn_KType* (*_type)(void);
+                  libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem_Companion (*_instance)();
+                  libkn_kref_kotlinx_serialization_KSerializer (*serializer)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem_Companion thiz);
+                } Companion;
                 libkn_KType* (*_type)(void);
                 libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem (*MonthlyReportItem)(const char* permalink, const char* publishDate, libkn_kref_kotlin_collections_List tags, const char* title);
                 const char* (*get_displayYMD)(libkn_kref_com_jiang_nowinkotlin_data_MonthlyReportItem thiz);
@@ -663,10 +712,75 @@ typedef struct {
                 libkn_KInt (*hashCode)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
                 const char* (*toString)(libkn_kref_com_jiang_nowinkotlin_data_Episode thiz);
               } Episode;
+              struct {
+                struct {
+                  libkn_KType* (*_type)(void);
+                  libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel_$serializer (*_instance)();
+                  libkn_kref_kotlinx_serialization_descriptors_SerialDescriptor (*get_descriptor)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel_$serializer thiz);
+                  libkn_kref_kotlin_Array (*childSerializers)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel_$serializer thiz);
+                  libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel (*deserialize)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel_$serializer thiz, libkn_kref_kotlinx_serialization_encoding_Decoder decoder);
+                  void (*serialize)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel_$serializer thiz, libkn_kref_kotlinx_serialization_encoding_Encoder encoder, libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel value);
+                } $serializer;
+                struct {
+                  libkn_KType* (*_type)(void);
+                  libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel_Companion (*_instance)();
+                  libkn_kref_kotlinx_serialization_KSerializer (*serializer)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel_Companion thiz);
+                } Companion;
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel (*EpisodeModel)(const char* title, const char* pubDate, const char* author, const char* thumbnail, const char* description, libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel audioResource);
+                libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel (*get_audioResource)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel thiz);
+                const char* (*get_author)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel thiz);
+                const char* (*get_description)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel thiz);
+                const char* (*get_pubDate)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel thiz);
+                const char* (*get_thumbnail)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel thiz);
+                const char* (*get_title)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel thiz);
+                const char* (*component1)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel thiz);
+                const char* (*component2)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel thiz);
+                const char* (*component3)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel thiz);
+                const char* (*component4)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel thiz);
+                const char* (*component5)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel thiz);
+                libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel (*component6)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel thiz);
+                libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel (*copy)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel thiz, const char* title, const char* pubDate, const char* author, const char* thumbnail, const char* description, libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel audioResource);
+                libkn_KBoolean (*equals)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel thiz, libkn_kref_kotlin_Any other);
+                libkn_KInt (*hashCode)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel thiz);
+                const char* (*toString)(libkn_kref_com_jiang_nowinkotlin_data_EpisodeModel thiz);
+              } EpisodeModel;
+              struct {
+                struct {
+                  libkn_KType* (*_type)(void);
+                  libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel_$serializer (*_instance)();
+                  libkn_kref_kotlinx_serialization_descriptors_SerialDescriptor (*get_descriptor)(libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel_$serializer thiz);
+                  libkn_kref_kotlin_Array (*childSerializers)(libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel_$serializer thiz);
+                  libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel (*deserialize)(libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel_$serializer thiz, libkn_kref_kotlinx_serialization_encoding_Decoder decoder);
+                  void (*serialize)(libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel_$serializer thiz, libkn_kref_kotlinx_serialization_encoding_Encoder encoder, libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel value);
+                } $serializer;
+                struct {
+                  libkn_KType* (*_type)(void);
+                  libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel_Companion (*_instance)();
+                  libkn_kref_kotlinx_serialization_KSerializer (*serializer)(libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel_Companion thiz);
+                } Companion;
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel (*AudioResourceModel)(const char* link, const char* type, libkn_KInt duration);
+                libkn_KInt (*get_duration)(libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel thiz);
+                const char* (*get_link)(libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel thiz);
+                const char* (*get_type)(libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel thiz);
+                const char* (*component1)(libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel thiz);
+                const char* (*component2)(libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel thiz);
+                libkn_KInt (*component3)(libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel thiz);
+                libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel (*copy)(libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel thiz, const char* link, const char* type, libkn_KInt duration);
+                libkn_KBoolean (*equals)(libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel thiz, libkn_kref_kotlin_Any other);
+                libkn_KInt (*hashCode)(libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel thiz);
+                const char* (*toString)(libkn_kref_com_jiang_nowinkotlin_data_AudioResourceModel thiz);
+              } AudioResourceModel;
+              libkn_KInt (*com_jiang_nowinkotlin_data_AudioResourceModel$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_data_AudioResourceModel_$serializer$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_data_DisplayItem$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_data_DisplaySection$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_data_Episode$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_data_EpisodeModel$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_data_EpisodeModel_$serializer$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_data_MonthlyReportItem$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_data_MonthlyReportItem_$serializer$stableprop_getter)();
             } data;
             struct {
               libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_FastForward)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);

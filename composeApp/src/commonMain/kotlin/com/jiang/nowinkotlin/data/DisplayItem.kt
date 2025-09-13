@@ -19,6 +19,7 @@ package com.jiang.nowinkotlin.data
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
+import kotlinx.serialization.Serializable
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 
@@ -35,6 +36,7 @@ internal data class DisplayItem(
     val content: @Composable () -> Unit
 )
 
+@Serializable
 data class MonthlyReportItem(
     val permalink: String,
     val publishDate: String,
@@ -117,3 +119,20 @@ data class Episode(
                 .split("其他收视/听平台")[0].trim()
         }
 }
+
+@Serializable
+data class EpisodeModel(
+    val title: String,
+    val pubDate: String,
+    val author: String,
+    val thumbnail: String,
+    val description: String,
+    val audioResource: AudioResourceModel
+)
+
+@Serializable
+data class AudioResourceModel(
+    val link: String,
+    val type: String,
+    val duration: Int
+)

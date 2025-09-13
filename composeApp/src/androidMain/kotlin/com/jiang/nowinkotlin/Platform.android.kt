@@ -19,8 +19,6 @@ package com.jiang.nowinkotlin
 
 import android.os.Build
 import androidx.compose.ui.platform.LocalContext
-import com.jiang.nowinkotlin.data.Episode
-import com.jiang.nowinkotlin.data.MonthlyReportItem
 import nowinkotlin.composeapp.generated.resources.Res
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 
@@ -29,9 +27,6 @@ internal class AndroidPlatform : Platform {
 }
 
 internal actual fun getPlatform(): Platform = AndroidPlatform()
-internal actual fun parseMonthReport(json: String): List<MonthlyReportItem> {
-    return DeserializationAndroidData.parseMonthReport(json)
-}
 
 @OptIn(ExperimentalResourceApi::class)
 internal actual suspend fun readJson(path: String): String {
@@ -42,10 +37,6 @@ internal actual suspend fun readJson(path: String): String {
         e.printStackTrace()
         "{}"
     }
-}
-
-internal actual fun parseKotlinEpisodeList(json: String): List<Episode> {
-    return DeserializationAndroidData.parseKotlinStoveList(json)
 }
 
 actual typealias PlatformContext = android.content.Context

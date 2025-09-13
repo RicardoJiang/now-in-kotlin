@@ -18,8 +18,6 @@
 package com.jiang.nowinkotlin
 
 import androidx.compose.runtime.staticCompositionLocalOf
-import com.jiang.nowinkotlin.data.MonthlyReportItem
-import com.jiang.nowinkotlin.data.Episode
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.addressOf
 import kotlinx.cinterop.toKString
@@ -38,10 +36,6 @@ internal class OHOSPlatform : Platform {
 
 internal actual fun getPlatform(): Platform = OHOSPlatform()
 
-internal actual fun parseMonthReport(json: String): List<MonthlyReportItem> {
-    return DeserializationOhosData.parseMonthReport(json)
-}
-
 @OptIn(ExperimentalResourceApi::class, ExperimentalForeignApi::class)
 internal actual suspend fun readJson(path: String): String {
     return try {
@@ -58,10 +52,6 @@ internal actual suspend fun readJson(path: String): String {
         e.printStackTrace()
         "{}"
     }
-}
-
-internal actual fun parseKotlinEpisodeList(json: String): List<Episode> {
-    return DeserializationOhosData.parseKotlinStoveList(json)
 }
 
 actual abstract class PlatformContext private constructor() {

@@ -28,10 +28,6 @@ internal interface Platform {
 
 internal expect fun getPlatform(): Platform
 
-internal expect fun parseMonthReport(json: String): List<MonthlyReportItem>
-
-internal expect fun parseKotlinEpisodeList(json: String): List<Episode>
-
 internal expect suspend fun readJson(path: String): String
 
 expect val LocalPlatformContext: ProvidableCompositionLocal<PlatformContext>

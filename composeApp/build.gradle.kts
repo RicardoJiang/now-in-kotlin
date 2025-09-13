@@ -25,6 +25,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.cocoapods)
+    alias(libs.plugins.kotlin.serialization)
     id("com.tencent.kuiklybase.knoi.plugin")
 }
 
@@ -95,7 +96,6 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
-            implementation(libs.kotlinx.serialization.json)
             implementation(libs.androidx.media3.common)
             implementation(libs.androidx.media3.session)
             implementation(libs.androidx.media3.exoplayer)
@@ -111,10 +111,10 @@ kotlin {
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.atomicFu)
             implementation(libs.network)
+            implementation(libs.kotlinx.serialization.json)
         }
 
         iosMain.dependencies {
-            implementation(libs.kotlinx.serialization.json)
         }
 
         val ohosArm64Main by getting {

@@ -18,8 +18,6 @@
 package com.jiang.nowinkotlin
 
 import androidx.compose.runtime.staticCompositionLocalOf
-import com.jiang.nowinkotlin.data.MonthlyReportItem
-import com.jiang.nowinkotlin.data.Episode
 import nowinkotlin.composeapp.generated.resources.Res
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import platform.UIKit.UIDevice
@@ -31,10 +29,6 @@ internal class IOSPlatform : Platform {
 
 internal actual fun getPlatform(): Platform = IOSPlatform()
 
-internal actual fun parseMonthReport(json: String): List<MonthlyReportItem> {
-    return DeserializationiOSData.parseMonthReport(json)
-}
-
 @OptIn(ExperimentalResourceApi::class)
 internal actual suspend fun readJson(path: String): String {
     return try {
@@ -44,10 +38,6 @@ internal actual suspend fun readJson(path: String): String {
         e.printStackTrace()
         "{}"
     }
-}
-
-internal actual fun parseKotlinEpisodeList(json: String): List<Episode> {
-   return DeserializationiOSData.parseKotlinStoveList(json)
 }
 
 actual abstract class PlatformContext private constructor() {
