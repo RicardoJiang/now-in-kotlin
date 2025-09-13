@@ -69,9 +69,15 @@ class IosPlayerStateManager(coroutineScope: CoroutineScope) {
         musicCompleteTimeObserverManager.cleanup()
     }
 
+    private var isSeeking = false
     fun setPosition(positionMs: Long) {
         val time = CMTimeMake(value = positionMs, timescale = 1000)
-        player.seekToTime(time)
+        isSeeking = true
+        player.seekToTime(time){
+            if (it) {
+                isSeeking = false
+            }
+        }
     }
 
     fun setSpeed(speed: Float) {
@@ -79,7 +85,11 @@ class IosPlayerStateManager(coroutineScope: CoroutineScope) {
     }
 
     fun setupPlaybackTimeObserver(onTimeUpdated: () -> Unit) {
-        playbackTimeObserverManager.setup(onTimeUpdated)
+        playbackTimeObserverManager.setup {
+            if (!isSeeking) {
+                onTimeUpdated()
+            }
+        }
     }
 
     fun setupMusicCompleteTimeObserver(onMusicCompleted: () -> Unit) {
@@ -97,5 +107,6 @@ class IosPlayerStateManager(coroutineScope: CoroutineScope) {
     fun cleanup() {
 //        musicCompleteTimeObserverManager.cleanup()
         musicStatusObserverManager.cleanup()
+        isSeeking = false
     }
 }
