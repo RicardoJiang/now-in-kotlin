@@ -1,4 +1,4 @@
-package com.jiang.nowinkotlin.mainpage
+package com.jiang.nowinkotlin.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

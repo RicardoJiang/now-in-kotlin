@@ -4,9 +4,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import com.jiang.nowinkotlin.audio.KmpAudioPlayer
-import com.jiang.nowinkotlin.mainpage.AudioPlayerScreen
-import com.jiang.nowinkotlin.mainpage.MainScreen
-import com.jiang.nowinkotlin.mainpage.SimpleWebViewScreen
+import com.jiang.nowinkotlin.screen.AudioPlayerScreen
+import com.jiang.nowinkotlin.screen.MainScreen
+import com.jiang.nowinkotlin.screen.SimpleWebViewScreen
 import com.jiang.nowinkotlin.navigation.LocalNavigator
 import com.jiang.nowinkotlin.navigation.Screen
 

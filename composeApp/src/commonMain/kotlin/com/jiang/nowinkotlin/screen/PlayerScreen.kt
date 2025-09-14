@@ -1,4 +1,4 @@
-package com.jiang.nowinkotlin.mainpage
+package com.jiang.nowinkotlin.screen
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode

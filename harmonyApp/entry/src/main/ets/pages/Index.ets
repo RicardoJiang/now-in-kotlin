@@ -17,7 +17,6 @@
 
 import { Compose } from 'compose';
 import { MainArkUIViewController } from 'libentry.so';
-import { ProviderFeature } from '../controller/ProviderManager';
 import { OhosAVPlayerImpl } from '../knoi/OhosAVPlayerImpl';
 import { registerComposeInteropBuilders } from './ComposeSample';
 import { WindowHelper } from './WindowHelper';

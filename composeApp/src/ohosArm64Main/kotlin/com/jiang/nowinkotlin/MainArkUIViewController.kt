@@ -18,9 +18,7 @@
 package com.jiang.nowinkotlin
 
 import androidx.compose.ui.window.ComposeArkUIViewController
-import com.jiang.nowinkotlin.NativeResourceManager
-import com.jiang.nowinkotlin.mainpage.MainPage
-import com.jiang.nowinkotlin.nativeResourceManager
+import com.jiang.nowinkotlin.screen.MainPage
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.coroutines.initMainHandler
 import platform.ohos.napi_env

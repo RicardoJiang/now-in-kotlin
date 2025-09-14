@@ -22,7 +22,7 @@ package com.jiang.nowinkotlin
 import androidx.compose.ui.uikit.OnFocusBehavior
 import androidx.compose.ui.uikit.RenderBackend
 import androidx.compose.ui.window.ComposeUIViewController
-import com.jiang.nowinkotlin.mainpage.MainPage
+import com.jiang.nowinkotlin.screen.MainPage
 import kotlin.experimental.ExperimentalObjCName
 
 @OptIn(ExperimentalObjCName::class)

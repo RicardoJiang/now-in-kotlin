@@ -1,4 +1,4 @@
-package com.jiang.nowinkotlin.mainpage
+package com.jiang.nowinkotlin.screen
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box

@@ -15,29 +15,9 @@
  * limitations under the License.
  */
 
-import { Compose } from 'compose';
-import { MainArkUIViewController } from 'libentry.so';
 import { registerComposeInteropBuilder } from 'compose/src/main/ets/compose/ArkUIView';
-import {
-  buttonBuilder,
-  textBuilder,
-  labelBuilder,
-  textInputBuilder,
-  buttonWrapContentBuilder,
-  layerBuilder,
-  verticalListBuilder,
-  horizontalListBuilder,
-  harmonyWebViewBuilder,
-} from './ComposeInterops';
+import { harmonyWebViewBuilder, } from './ComposeInterops';
 
 export function registerComposeInteropBuilders() {
-  registerComposeInteropBuilder('button', buttonBuilder)
-  registerComposeInteropBuilder('label', labelBuilder)
-  registerComposeInteropBuilder('buttonWrapContent', buttonWrapContentBuilder)
-  registerComposeInteropBuilder('textInput', textInputBuilder)
-  registerComposeInteropBuilder('layer', layerBuilder)
-  registerComposeInteropBuilder('text', textBuilder)
-  registerComposeInteropBuilder('verticalList', verticalListBuilder)
-  registerComposeInteropBuilder('horizontalList', horizontalListBuilder)
   registerComposeInteropBuilder('harmonyWebView', harmonyWebViewBuilder)
 }
