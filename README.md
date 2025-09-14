@@ -1,6 +1,5 @@
 # Now in Kotlin
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS%20%7C%20HarmonyOS-brightgreen.svg)](https://kotlinlang.org/docs/multiplatform.html)
 
 `Now in Kotlin` 是一个基于 ovCompose 技术构建的跨平台项目。本项目旨在帮助开发者了解 Kotlin 最新技术动态，同时演示如何利用 ovCompose 在 Android、iOS 和 鸿蒙三个平台上实现代码共享与高效开发。
