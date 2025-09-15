@@ -191,6 +191,9 @@ fun OhosWebView(
 ### iOS 平台
 由于未申请 iOS 开发者证书，只能下载源码编译安装到模拟器或者自己手机
 
+### 鸿蒙平台
+鸿蒙平台提审中，如需体验也可先下载源码编译安装
+
 ## 项目地址
 [https://github.com/RicardoJiang/now-in-kotlin](https://github.com/RicardoJiang/now-in-kotlin)
 
