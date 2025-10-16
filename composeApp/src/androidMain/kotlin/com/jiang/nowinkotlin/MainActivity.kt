@@ -27,9 +27,12 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import com.jiang.nowinkotlin.screen.MainPage
+import com.jiang.nowinkotlin.video.setActivity
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        NowInKotlinContextProvider.initContext(this)
+        setActivity(this)
         enableEdgeToEdge(
             statusBarStyle = SystemBarStyle.dark(0xFF0B1220.toInt()),
             navigationBarStyle = SystemBarStyle.dark(0xFF0B1220.toInt()),

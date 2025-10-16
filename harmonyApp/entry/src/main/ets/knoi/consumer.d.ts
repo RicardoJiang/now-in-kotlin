@@ -7,6 +7,12 @@ export interface OhosServices {
 
 }
 
+export interface SetScreenOrientation {
+
+  setOrientation(isLandscape: boolean): void;
+
+}
+
 export interface OhosAVPlayer {
 
   play(): void;
@@ -23,3 +29,22 @@ export interface OhosAVPlayer {
 
 }
 
+
+export interface OhosVideoAVPlayer {
+
+  isPlaying(): boolean;
+
+  isBuffering(): boolean;
+
+  currentTime(): number;
+
+  duration(): number;
+
+  pause(): void;
+
+  play(): void;
+
+  seekTo(position: number): void;
+
+  release(): void;
+}

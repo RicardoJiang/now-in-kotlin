@@ -26,6 +26,8 @@ import GlobalContext from '../controller/GlobalContextUtils';
 import Constants from '../controller/Constants';
 import { WindowHelper } from '../pages/WindowHelper';
 import { ProviderFeature } from '../controller/ProviderManager';
+import { SetScreenOrientationImpl } from '../knoi/SetScreenOrientationImpl';
+import { OhosVideoAVPlayerImpl } from '../knoi/OhosVideoAVPlayerImpl';
 
 const DOMAIN = 0x0000;
 
@@ -39,6 +41,8 @@ export default class EntryAbility extends UIAbility {
     initResourceManager(this.context.resourceManager)
     registerServiceProvider("OhosServices", false, OhosServicesImpl)
     registerServiceProvider("OhosAVPlayer", true, OhosAVPlayerImpl)
+    registerServiceProvider("SetScreenOrientation", true, SetScreenOrientationImpl)
+    registerServiceProvider("OhosVideoAVPlayer", true, OhosVideoAVPlayerImpl)
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
   }
 

@@ -68,6 +68,12 @@ typedef struct {
 } libkn_kref_com_jiang_nowinkotlin_OhosServices;
 typedef struct {
   libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayer;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_SetScreenOrientation;
+typedef struct {
+  libkn_KNativePtr pinned;
 } libkn_kref_androidx_compose_runtime_ProvidableCompositionLocal;
 typedef struct {
   libkn_KNativePtr pinned;
@@ -75,6 +81,12 @@ typedef struct {
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_kotlin_collections_Map;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_SetScreenOrientationProxy;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayerProxy;
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_com_jiang_nowinkotlin_audio_OhosAVPlayer;
@@ -215,6 +227,30 @@ typedef struct {
 } libkn_kref_androidx_compose_material_Typography;
 typedef struct {
   libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_video_ScreenOrientation;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_video_Video;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_video_ScreenOrientation_PORTRAIT;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_video_ScreenOrientation_LANDSCAPE;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_video_ScreenOrientation_UNSPECIFIED;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_video_VideoPlayerController;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_androidx_compose_runtime_State;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_video_OHOSVideoPlayerController;
+typedef struct {
+  libkn_KNativePtr pinned;
 } libkn_kref_com_jiang_nowinkotlin_viewmodel_LifecycleAware;
 typedef struct {
   libkn_KNativePtr pinned;
@@ -352,6 +388,23 @@ typedef struct {
               libkn_kref_com_jiang_nowinkotlin_OhosServicesProxy (*OhosServicesProxy)();
               libkn_kref_kotlin_collections_Map (*parseJson)(libkn_kref_com_jiang_nowinkotlin_OhosServicesProxy thiz, const char* json);
             } OhosServicesProxy;
+            struct {
+              libkn_KType* (*_type)(void);
+              libkn_kref_com_jiang_nowinkotlin_SetScreenOrientationProxy (*SetScreenOrientationProxy)();
+              void (*setOrientation)(libkn_kref_com_jiang_nowinkotlin_SetScreenOrientationProxy thiz, libkn_KBoolean isLandscape);
+            } SetScreenOrientationProxy;
+            struct {
+              libkn_KType* (*_type)(void);
+              libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayerProxy (*OhosVideoAVPlayerProxy)();
+              libkn_KLong (*currentTime)(libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayerProxy thiz);
+              libkn_KLong (*duration)(libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayerProxy thiz);
+              libkn_KBoolean (*isBuffering)(libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayerProxy thiz);
+              libkn_KBoolean (*isPlaying)(libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayerProxy thiz);
+              void (*pause)(libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayerProxy thiz);
+              void (*play)(libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayerProxy thiz);
+              void (*release)(libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayerProxy thiz);
+              void (*seekTo)(libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayerProxy thiz, libkn_KLong position);
+            } OhosVideoAVPlayerProxy;
             struct {
               struct {
                 libkn_KType* (*_type)(void);
@@ -851,6 +904,84 @@ typedef struct {
             struct {
               struct {
                 libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_video_Video (*Video)(libkn_KInt id, const char* title, const char* url);
+                libkn_KInt (*get_id)(libkn_kref_com_jiang_nowinkotlin_video_Video thiz);
+                const char* (*get_title)(libkn_kref_com_jiang_nowinkotlin_video_Video thiz);
+                const char* (*get_url)(libkn_kref_com_jiang_nowinkotlin_video_Video thiz);
+                libkn_KInt (*component1)(libkn_kref_com_jiang_nowinkotlin_video_Video thiz);
+                const char* (*component2)(libkn_kref_com_jiang_nowinkotlin_video_Video thiz);
+                const char* (*component3)(libkn_kref_com_jiang_nowinkotlin_video_Video thiz);
+                libkn_kref_com_jiang_nowinkotlin_video_Video (*copy)(libkn_kref_com_jiang_nowinkotlin_video_Video thiz, libkn_KInt id, const char* title, const char* url);
+                libkn_KBoolean (*equals)(libkn_kref_com_jiang_nowinkotlin_video_Video thiz, libkn_kref_kotlin_Any other);
+                libkn_KInt (*hashCode)(libkn_kref_com_jiang_nowinkotlin_video_Video thiz);
+                const char* (*toString)(libkn_kref_com_jiang_nowinkotlin_video_Video thiz);
+              } Video;
+              struct {
+                struct {
+                  libkn_kref_com_jiang_nowinkotlin_video_ScreenOrientation (*get)(); /* enum entry for PORTRAIT. */
+                } PORTRAIT;
+                struct {
+                  libkn_kref_com_jiang_nowinkotlin_video_ScreenOrientation (*get)(); /* enum entry for LANDSCAPE. */
+                } LANDSCAPE;
+                struct {
+                  libkn_kref_com_jiang_nowinkotlin_video_ScreenOrientation (*get)(); /* enum entry for UNSPECIFIED. */
+                } UNSPECIFIED;
+                libkn_KType* (*_type)(void);
+              } ScreenOrientation;
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_androidx_compose_runtime_State (*get_currentPosition)(libkn_kref_com_jiang_nowinkotlin_video_VideoPlayerController thiz);
+                libkn_kref_androidx_compose_runtime_State (*get_duration)(libkn_kref_com_jiang_nowinkotlin_video_VideoPlayerController thiz);
+                libkn_kref_androidx_compose_runtime_State (*get_isBuffering)(libkn_kref_com_jiang_nowinkotlin_video_VideoPlayerController thiz);
+                libkn_kref_androidx_compose_runtime_State (*get_isPlaying)(libkn_kref_com_jiang_nowinkotlin_video_VideoPlayerController thiz);
+                libkn_kref_androidx_compose_runtime_State (*get_progress)(libkn_kref_com_jiang_nowinkotlin_video_VideoPlayerController thiz);
+                void (*playPause)(libkn_kref_com_jiang_nowinkotlin_video_VideoPlayerController thiz);
+                void (*release)(libkn_kref_com_jiang_nowinkotlin_video_VideoPlayerController thiz);
+                void (*seekTo)(libkn_kref_com_jiang_nowinkotlin_video_VideoPlayerController thiz, libkn_KLong position);
+                void (*seekToProgress)(libkn_kref_com_jiang_nowinkotlin_video_VideoPlayerController thiz, libkn_KFloat progress);
+              } VideoPlayerController;
+              struct {
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_video_OHOSVideoPlayerController (*OHOSVideoPlayerController)(const char* videoUrl, libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayer player);
+                libkn_kref_androidx_compose_runtime_State (*get_currentPosition)(libkn_kref_com_jiang_nowinkotlin_video_OHOSVideoPlayerController thiz);
+                libkn_kref_androidx_compose_runtime_State (*get_duration)(libkn_kref_com_jiang_nowinkotlin_video_OHOSVideoPlayerController thiz);
+                libkn_kref_androidx_compose_runtime_State (*get_isBuffering)(libkn_kref_com_jiang_nowinkotlin_video_OHOSVideoPlayerController thiz);
+                libkn_kref_androidx_compose_runtime_State (*get_isPlaying)(libkn_kref_com_jiang_nowinkotlin_video_OHOSVideoPlayerController thiz);
+                libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayer (*get_player)(libkn_kref_com_jiang_nowinkotlin_video_OHOSVideoPlayerController thiz);
+                libkn_kref_androidx_compose_runtime_State (*get_progress)(libkn_kref_com_jiang_nowinkotlin_video_OHOSVideoPlayerController thiz);
+                const char* (*get_videoUrl)(libkn_kref_com_jiang_nowinkotlin_video_OHOSVideoPlayerController thiz);
+                void (*playPause)(libkn_kref_com_jiang_nowinkotlin_video_OHOSVideoPlayerController thiz);
+                void (*release)(libkn_kref_com_jiang_nowinkotlin_video_OHOSVideoPlayerController thiz);
+                void (*seekTo)(libkn_kref_com_jiang_nowinkotlin_video_OHOSVideoPlayerController thiz, libkn_KLong position);
+                void (*seekToProgress)(libkn_kref_com_jiang_nowinkotlin_video_OHOSVideoPlayerController thiz, libkn_KFloat progress);
+                void (*updateProgress)(libkn_kref_com_jiang_nowinkotlin_video_OHOSVideoPlayerController thiz);
+              } OHOSVideoPlayerController;
+              libkn_KInt (*com_jiang_nowinkotlin_video_OHOSVideoPlayerController$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_Video$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_VideoPlayerScreen$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_OHOSVideoPlayerController$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_Video$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_VideoPlayerScreen$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_OHOSVideoPlayerController$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_Video$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_VideoPlayerScreen$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_OHOSVideoPlayerController$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_Video$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_VideoPlayerScreen$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_OHOSVideoPlayerController$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_Video$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_VideoPlayerScreen$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_OHOSVideoPlayerController$stableprop_getter_____)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_Video$stableprop_getter_____)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_VideoPlayerScreen$stableprop_getter_____)();
+              void (*setScreenOrientation)(libkn_kref_com_jiang_nowinkotlin_video_ScreenOrientation orientation);
+              libkn_KInt (*com_jiang_nowinkotlin_video_OHOSVideoPlayerController$stableprop_getter______)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_Video$stableprop_getter______)();
+              libkn_KInt (*com_jiang_nowinkotlin_video_VideoPlayerScreen$stableprop_getter______)();
+            } video;
+            struct {
+              struct {
+                libkn_KType* (*_type)(void);
                 void (*onCreate)(libkn_kref_com_jiang_nowinkotlin_viewmodel_LifecycleAware thiz);
                 void (*onDestroy)(libkn_kref_com_jiang_nowinkotlin_viewmodel_LifecycleAware thiz);
               } LifecycleAware;
@@ -907,6 +1038,21 @@ typedef struct {
               libkn_kref_kotlin_collections_Map (*parseJson)(libkn_kref_com_jiang_nowinkotlin_OhosServices thiz, const char* json);
             } OhosServices;
             struct {
+              libkn_KType* (*_type)(void);
+              void (*setOrientation)(libkn_kref_com_jiang_nowinkotlin_SetScreenOrientation thiz, libkn_KBoolean isLandscape);
+            } SetScreenOrientation;
+            struct {
+              libkn_KType* (*_type)(void);
+              libkn_KLong (*currentTime)(libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayer thiz);
+              libkn_KLong (*duration)(libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayer thiz);
+              libkn_KBoolean (*isBuffering)(libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayer thiz);
+              libkn_KBoolean (*isPlaying)(libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayer thiz);
+              void (*pause)(libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayer thiz);
+              void (*play)(libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayer thiz);
+              void (*release)(libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayer thiz);
+              void (*seekTo)(libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayer thiz, libkn_KLong position);
+            } OhosVideoAVPlayer;
+            struct {
               struct {
                 libkn_KType* (*_type)(void);
                 libkn_kref_com_jiang_nowinkotlin_PlatformContext_Companion (*_instance)();
@@ -917,57 +1063,83 @@ typedef struct {
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosVideoAVPlayerProxy$stableprop_getter)();
             libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter)();
+            libkn_KInt (*com_jiang_nowinkotlin_SetScreenOrientationProxy$stableprop_getter)();
             libkn_kref_com_jiang_nowinkotlin_OhosServices (*getOhosServicesApi)();
+            libkn_kref_com_jiang_nowinkotlin_OhosVideoAVPlayer (*getOhosVideoAVPlayerApi)();
+            libkn_kref_com_jiang_nowinkotlin_SetScreenOrientation (*getSetScreenOrientationApi)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter_)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter_)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter_)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosVideoAVPlayerProxy$stableprop_getter_)();
             libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter_)();
+            libkn_KInt (*com_jiang_nowinkotlin_SetScreenOrientationProxy$stableprop_getter_)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter__)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter__)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter__)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosVideoAVPlayerProxy$stableprop_getter__)();
             libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter__)();
+            libkn_KInt (*com_jiang_nowinkotlin_SetScreenOrientationProxy$stableprop_getter__)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter___)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter___)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter___)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosVideoAVPlayerProxy$stableprop_getter___)();
             libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter___)();
+            libkn_KInt (*com_jiang_nowinkotlin_SetScreenOrientationProxy$stableprop_getter___)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter____)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter____)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter____)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosVideoAVPlayerProxy$stableprop_getter____)();
             libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter____)();
+            libkn_KInt (*com_jiang_nowinkotlin_SetScreenOrientationProxy$stableprop_getter____)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter_____)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter_____)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter_____)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosVideoAVPlayerProxy$stableprop_getter_____)();
             libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter_____)();
+            libkn_KInt (*com_jiang_nowinkotlin_SetScreenOrientationProxy$stableprop_getter_____)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter______)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter______)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter______)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosVideoAVPlayerProxy$stableprop_getter______)();
             libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter______)();
+            libkn_KInt (*com_jiang_nowinkotlin_SetScreenOrientationProxy$stableprop_getter______)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter_______)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter_______)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter_______)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosVideoAVPlayerProxy$stableprop_getter_______)();
             libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter_______)();
+            libkn_KInt (*com_jiang_nowinkotlin_SetScreenOrientationProxy$stableprop_getter_______)();
             void* (*get_nativeResourceManager)();
             void (*set_nativeResourceManager)(void* set);
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter________)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter________)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosVideoAVPlayerProxy$stableprop_getter________)();
             libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter________)();
+            libkn_KInt (*com_jiang_nowinkotlin_SetScreenOrientationProxy$stableprop_getter________)();
             void* (*MainArkUIViewController_)(void* env);
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter_________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter_________)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter_________)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosVideoAVPlayerProxy$stableprop_getter_________)();
             libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter_________)();
+            libkn_KInt (*com_jiang_nowinkotlin_SetScreenOrientationProxy$stableprop_getter_________)();
             void (*initResourceManager)(void* resourceManager);
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter__________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter__________)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter__________)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosVideoAVPlayerProxy$stableprop_getter__________)();
             libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter__________)();
+            libkn_KInt (*com_jiang_nowinkotlin_SetScreenOrientationProxy$stableprop_getter__________)();
             libkn_kref_androidx_compose_runtime_ProvidableCompositionLocal (*get_LocalPlatformContext)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter___________)();
             libkn_KInt (*com_jiang_nowinkotlin_OHOSPlatform$stableprop_getter___________)();
             libkn_KInt (*com_jiang_nowinkotlin_OhosServicesProxy$stableprop_getter___________)();
+            libkn_KInt (*com_jiang_nowinkotlin_OhosVideoAVPlayerProxy$stableprop_getter___________)();
             libkn_KInt (*com_jiang_nowinkotlin_PlatformContext$stableprop_getter___________)();
+            libkn_KInt (*com_jiang_nowinkotlin_SetScreenOrientationProxy$stableprop_getter___________)();
           } nowinkotlin;
         } jiang;
         struct {
@@ -977,6 +1149,8 @@ typedef struct {
                 struct {
                   void (*registerOhosAVPlayerProxy)();
                   void (*registerOhosServicesProxy)();
+                  void (*registerOhosVideoAVPlayerProxy)();
+                  void (*registerSetScreenOrientationProxy)();
                   void (*registerMediaCommandHandlerProvider)();
                   void (*registerOhosStateListenerProvider)();
                 } composeApp;

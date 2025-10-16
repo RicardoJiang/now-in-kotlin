@@ -9,6 +9,8 @@ import com.jiang.nowinkotlin.screen.MainScreen
 import com.jiang.nowinkotlin.screen.SimpleWebViewScreen
 import com.jiang.nowinkotlin.navigation.LocalNavigator
 import com.jiang.nowinkotlin.navigation.Screen
+import com.jiang.nowinkotlin.video.Video
+import com.jiang.nowinkotlin.video.VideoPlayerScreen
 
 /**
  * 主屏幕的 Screen 对象实现。
@@ -31,6 +33,18 @@ object AppMainScreen : Screen {
                     AudioPlayerScreen(
                         episodes = episodes,
                         initialIndex = index
+                    )
+                )
+            },
+            onPlayClick = { episodes, index ->
+                val videoIndex = (episodes.size - index)
+                navigator?.push(
+                    VideoPlayerScreen(
+                        Video(
+                            index,
+                            episodes[index].title,
+                            "https://nowinkotlin.top/ep$videoIndex.mp4"
+                        )
                     )
                 )
             },

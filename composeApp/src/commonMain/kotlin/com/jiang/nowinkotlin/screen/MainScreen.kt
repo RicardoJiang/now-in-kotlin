@@ -21,6 +21,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun MainScreen(
     onEpisodeClick: (List<Episode>, Int) -> Unit,
+    onPlayClick: (List<Episode>, Int) -> Unit,
     onMonthlyReportClick: (MonthlyReportItem) -> Unit
 ) {
     val pages = listOf("home", "monthly")
@@ -37,7 +38,7 @@ fun MainScreen(
                 when (pages[pageIndex]) {
                     "home" -> HomeScreen(
                         onEpisodeClick = onEpisodeClick,
-                        onPlayClick = onEpisodeClick,
+                        onPlayClick = onPlayClick,
                         // onNavigateToTab is removed
                     )
 

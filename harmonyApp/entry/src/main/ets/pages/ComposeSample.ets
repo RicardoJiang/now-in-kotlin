@@ -16,8 +16,10 @@
  */
 
 import { registerComposeInteropBuilder } from 'compose/src/main/ets/compose/ArkUIView';
+import { harmonyVideoBuilder } from '../video/ComposeVideoInterops';
 import { harmonyWebViewBuilder, } from './ComposeInterops';
 
 export function registerComposeInteropBuilders() {
   registerComposeInteropBuilder('harmonyWebView', harmonyWebViewBuilder)
+  registerComposeInteropBuilder('harmonyVideo', harmonyVideoBuilder)
 }
