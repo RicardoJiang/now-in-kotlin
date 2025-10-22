@@ -49,11 +49,13 @@ data class VideoPlayerScreen(
 @Composable
 fun VideoPlayerScreen(video: Video, onBack: () -> Unit) {
 
-    // 创建视频播放器控制器
+    // 创建视频播放器控制器 - 使用 video.url 作为 key 确保只在 URL 改变时重新创建
     val controller = rememberVideoPlayerController(videoUrl = video.url)
     val isBuffering by controller.isBuffering
 
+    // 延迟设置屏幕方向，让视频播放器先初始化
     LaunchedEffect(Unit) {
+        kotlinx.coroutines.delay(100) // 延迟 100ms
         setScreenOrientation(ScreenOrientation.LANDSCAPE)
     }
 
