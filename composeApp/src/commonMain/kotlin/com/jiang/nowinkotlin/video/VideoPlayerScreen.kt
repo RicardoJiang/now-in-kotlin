@@ -24,6 +24,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.jiang.nowinkotlin.audio.KmpAudioPlayer
 import com.jiang.nowinkotlin.components.SmallIconButton
 import com.jiang.nowinkotlin.navigation.LocalNavigator
 import com.jiang.nowinkotlin.navigation.Screen
@@ -55,6 +56,9 @@ fun VideoPlayerScreen(video: Video, onBack: () -> Unit) {
 
     // 延迟设置屏幕方向，让视频播放器先初始化
     LaunchedEffect(Unit) {
+        if (KmpAudioPlayer.playbackState.value.isPlaying) {
+            KmpAudioPlayer.playbackController.pause()
+        }
         kotlinx.coroutines.delay(100) // 延迟 100ms
         setScreenOrientation(ScreenOrientation.LANDSCAPE)
         setSystemBarsVisibility(false) // 隐藏系统栏实现全屏
