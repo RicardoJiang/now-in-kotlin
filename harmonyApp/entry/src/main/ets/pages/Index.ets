@@ -29,7 +29,7 @@ struct Index {
   private controller = MainArkUIViewController()
 
   async aboutToAppear() {
-
+    WindowHelper.enterFullScreen()
   }
 
   aboutToDisappear(): void {
@@ -64,6 +64,5 @@ struct Index {
       ).width('100%').height('100%')
     }.width('100%').height('100%')
     .backgroundColor('#FF0B1220')
-    .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])
   }
 }

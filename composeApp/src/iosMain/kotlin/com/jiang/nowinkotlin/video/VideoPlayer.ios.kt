@@ -91,6 +91,11 @@ fun getPreferredOrientationMask(): ULong {
     }
 }
 
+actual fun setSystemBarsVisibility(visible: Boolean) {
+    // iOS handles system bars visibility automatically
+    // Could use UIViewController.prefersStatusBarHidden if needed
+}
+
 /**
  * iOS 平台的视频播放视图（不带控制器）
  */

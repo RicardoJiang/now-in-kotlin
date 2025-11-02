@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -34,6 +35,7 @@ fun SimpleWebViewScreen(
     Box(
         modifier = modifier
             .fillMaxSize()
+            .statusBarsPadding()
             .background(KotlinDark)
     ) {
         // 主内容区域

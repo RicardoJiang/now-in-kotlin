@@ -13,6 +13,14 @@ export class WindowHelper {
     });
   }
 
+  static enterFullScreen() {
+    WindowHelper.windowClass?.setWindowLayoutFullScreen(true).then(() => {
+      console.info('Succeeded in setting the window layout to full-screen mode.');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to set the window layout to full-screen mode. Code is ${err.code}, message is ${err.message}`);
+    });
+  }
+
   static updateWindowOrientation(isLandscape: boolean) {
     const orientation = isLandscape ? window.Orientation.LANDSCAPE : window.Orientation.PORTRAIT
     WindowHelper.windowClass?.setPreferredOrientation(orientation, (err: BusinessError) => {

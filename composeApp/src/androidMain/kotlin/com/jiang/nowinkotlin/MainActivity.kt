@@ -39,9 +39,7 @@ class MainActivity : ComponentActivity() {
         )
         super.onCreate(savedInstanceState)
         setContent {
-            Surface(modifier = Modifier
-                .statusBarsPadding()
-                .navigationBarsPadding()) {
+            Surface(modifier = Modifier) {
                 MainPage()
             }
         }

@@ -12,6 +12,8 @@ expect fun VideoPlayerView(
 
 expect fun setScreenOrientation(orientation: ScreenOrientation)
 
+expect fun setSystemBarsVisibility(visible: Boolean)
+
 enum class ScreenOrientation {
     PORTRAIT,
     LANDSCAPE,

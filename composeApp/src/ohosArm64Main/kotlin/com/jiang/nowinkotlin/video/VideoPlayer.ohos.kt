@@ -12,6 +12,11 @@ actual fun setScreenOrientation(orientation: ScreenOrientation) {
     getService<SetScreenOrientation>("SetScreenOrientation").setOrientation(orientation == ScreenOrientation.LANDSCAPE)
 }
 
+actual fun setSystemBarsVisibility(visible: Boolean) {
+    // OHOS handles system bars visibility automatically
+    // Could implement native API if needed
+}
+
 /**
  * iOS 平台的视频播放视图（不带控制器）
  */

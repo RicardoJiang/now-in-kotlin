@@ -975,6 +975,7 @@ typedef struct {
               libkn_KInt (*com_jiang_nowinkotlin_video_Video$stableprop_getter_____)();
               libkn_KInt (*com_jiang_nowinkotlin_video_VideoPlayerScreen$stableprop_getter_____)();
               void (*setScreenOrientation)(libkn_kref_com_jiang_nowinkotlin_video_ScreenOrientation orientation);
+              void (*setSystemBarsVisibility)(libkn_KBoolean visible);
               libkn_KInt (*com_jiang_nowinkotlin_video_OHOSVideoPlayerController$stableprop_getter______)();
               libkn_KInt (*com_jiang_nowinkotlin_video_Video$stableprop_getter______)();
               libkn_KInt (*com_jiang_nowinkotlin_video_VideoPlayerScreen$stableprop_getter______)();

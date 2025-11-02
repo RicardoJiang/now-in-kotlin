@@ -27,6 +27,22 @@ actual fun setScreenOrientation(orientation: ScreenOrientation) {
     }
 }
 
+actual fun setSystemBarsVisibility(visible: Boolean) {
+    currentActivity?.window?.let { window ->
+        if (visible) {
+            androidx.core.view.WindowCompat.getInsetsController(window, window.decorView).apply {
+                show(androidx.core.view.WindowInsetsCompat.Type.systemBars())
+                systemBarsBehavior = androidx.core.view.WindowInsetsControllerCompat.BEHAVIOR_DEFAULT
+            }
+        } else {
+            androidx.core.view.WindowCompat.getInsetsController(window, window.decorView).apply {
+                hide(androidx.core.view.WindowInsetsCompat.Type.systemBars())
+                systemBarsBehavior = androidx.core.view.WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            }
+        }
+    }
+}
+
 /**
  * Android 平台的视频播放视图（不带控制器）
  */

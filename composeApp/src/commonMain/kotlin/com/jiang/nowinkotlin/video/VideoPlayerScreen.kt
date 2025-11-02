@@ -57,11 +57,13 @@ fun VideoPlayerScreen(video: Video, onBack: () -> Unit) {
     LaunchedEffect(Unit) {
         kotlinx.coroutines.delay(100) // 延迟 100ms
         setScreenOrientation(ScreenOrientation.LANDSCAPE)
+        setSystemBarsVisibility(false) // 隐藏系统栏实现全屏
     }
 
     DisposableEffect(Unit) {
         onDispose {
             setScreenOrientation(ScreenOrientation.UNSPECIFIED)
+            setSystemBarsVisibility(true) // 恢复系统栏显示
         }
     }
 
