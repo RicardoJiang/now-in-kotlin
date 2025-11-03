@@ -1,5 +1,6 @@
 package com.jiang.nowinkotlin.webview
 
+import android.graphics.Bitmap
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
@@ -23,7 +24,19 @@ fun AccompanistWebView(
                         ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT
                     )
-                    webViewClient = WebViewClient()
+                    webViewClient = object : WebViewClient() {
+                        override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+                            super.onPageStarted(view, url, favicon)
+                            // 页面开始加载时，设置加载状态为 Loading
+                            state.loadingState = LoadingState.Loading
+                        }
+
+                        override fun onPageFinished(view: WebView?, url: String?) {
+                            super.onPageFinished(view, url)
+                            // 页面加载完成时，设置加载状态为 Finished
+                            state.loadingState = LoadingState.Finished
+                        }
+                    }
                     this.setLayerType(View.LAYER_TYPE_HARDWARE, null)
 
                     settings.apply {

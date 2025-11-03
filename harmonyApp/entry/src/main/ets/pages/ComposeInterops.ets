@@ -19,6 +19,7 @@ import { webview } from '@kit.ArkWeb';
 
 interface WebViewArgs {
   url: string
+  isPageFinished: boolean
 }
 
 @Builder
@@ -34,6 +35,26 @@ export struct HarmonyWebView {
   build() {
     Column() {
       Web({ src: this.compose_args.url, controller: this.controller })
+        .onPageBegin((event) => {
+          // 页面开始加载
+          console.info('WebView onPageBegin: ' + event?.url)
+          // 更新 isPageFinished 状态为 false
+          this.compose_args.isPageFinished = false
+        })
+        .onPageEnd((event) => {
+          // 页面加载完成
+          console.info('WebView onPageEnd: ' + event?.url)
+          // 更新 isPageFinished 状态为 true
+          this.compose_args.isPageFinished = true
+        })
+        .onProgressChange((event) => {
+          // 页面加载进度变化
+          console.info('WebView onProgressChange: ' + event?.newProgress)
+        })
+        .onErrorReceive((event) => {
+          // 页面加载错误
+          console.error('WebView onErrorReceive: ' + event?.error?.getErrorInfo())
+        })
     }
   }
 }

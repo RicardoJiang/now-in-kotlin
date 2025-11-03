@@ -6,6 +6,26 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 
+/**
+ * Sealed class for constraining possible loading states.
+ */
+sealed class LoadingState {
+    /**
+     * Describes a WebView that has not yet loaded for the first time.
+     */
+    data object Initializing : LoadingState()
+
+    /**
+     * Describes a webview between onPageStarted and onPageFinished events.
+     */
+    data object Loading : LoadingState()
+
+    /**
+     * Describes a webview that has finished loading content.
+     */
+    data object Finished : LoadingState()
+}
+
 class WebViewState(
     url: String
 ) {
@@ -14,6 +34,18 @@ class WebViewState(
      */
     var webUrl: String by mutableStateOf(url)
 
+    /**
+     * The loading state of the WebView.
+     */
+    var loadingState: LoadingState by mutableStateOf(LoadingState.Initializing)
+        internal set
+
+    /**
+     * Whether the page has finished loading.
+     * Returns true only when loadingState is Finished.
+     */
+    val isPageFinished: Boolean
+        get() = loadingState is LoadingState.Finished
 
     /**
      * Whether the WebView should capture back presses and navigate back.

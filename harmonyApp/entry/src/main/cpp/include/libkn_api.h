@@ -257,6 +257,18 @@ typedef struct {
 } libkn_kref_com_jiang_nowinkotlin_webview_IWebView;
 typedef struct {
   libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_webview_LoadingState;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_webview_LoadingState_Initializing;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_webview_LoadingState_Loading;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_webview_LoadingState_Finished;
+typedef struct {
+  libkn_KNativePtr pinned;
 } libkn_kref_com_jiang_nowinkotlin_webview_WebViewState;
 typedef struct {
   libkn_KNativePtr pinned;
@@ -1006,8 +1018,35 @@ typedef struct {
                 void (*loadUrl)(libkn_kref_com_jiang_nowinkotlin_webview_IWebView thiz, const char* url);
               } IWebView;
               struct {
+                struct {
+                  libkn_KType* (*_type)(void);
+                  libkn_kref_com_jiang_nowinkotlin_webview_LoadingState_Initializing (*_instance)();
+                  libkn_KBoolean (*equals)(libkn_kref_com_jiang_nowinkotlin_webview_LoadingState_Initializing thiz, libkn_kref_kotlin_Any other);
+                  libkn_KInt (*hashCode)(libkn_kref_com_jiang_nowinkotlin_webview_LoadingState_Initializing thiz);
+                  const char* (*toString)(libkn_kref_com_jiang_nowinkotlin_webview_LoadingState_Initializing thiz);
+                } Initializing;
+                struct {
+                  libkn_KType* (*_type)(void);
+                  libkn_kref_com_jiang_nowinkotlin_webview_LoadingState_Loading (*_instance)();
+                  libkn_KBoolean (*equals)(libkn_kref_com_jiang_nowinkotlin_webview_LoadingState_Loading thiz, libkn_kref_kotlin_Any other);
+                  libkn_KInt (*hashCode)(libkn_kref_com_jiang_nowinkotlin_webview_LoadingState_Loading thiz);
+                  const char* (*toString)(libkn_kref_com_jiang_nowinkotlin_webview_LoadingState_Loading thiz);
+                } Loading;
+                struct {
+                  libkn_KType* (*_type)(void);
+                  libkn_kref_com_jiang_nowinkotlin_webview_LoadingState_Finished (*_instance)();
+                  libkn_KBoolean (*equals)(libkn_kref_com_jiang_nowinkotlin_webview_LoadingState_Finished thiz, libkn_kref_kotlin_Any other);
+                  libkn_KInt (*hashCode)(libkn_kref_com_jiang_nowinkotlin_webview_LoadingState_Finished thiz);
+                  const char* (*toString)(libkn_kref_com_jiang_nowinkotlin_webview_LoadingState_Finished thiz);
+                } Finished;
+                libkn_KType* (*_type)(void);
+                libkn_kref_com_jiang_nowinkotlin_webview_LoadingState (*LoadingState)();
+              } LoadingState;
+              struct {
                 libkn_KType* (*_type)(void);
                 libkn_kref_com_jiang_nowinkotlin_webview_WebViewState (*WebViewState)(const char* url);
+                libkn_KBoolean (*get_isPageFinished)(libkn_kref_com_jiang_nowinkotlin_webview_WebViewState thiz);
+                libkn_kref_com_jiang_nowinkotlin_webview_LoadingState (*get_loadingState)(libkn_kref_com_jiang_nowinkotlin_webview_WebViewState thiz);
                 void (*get_nativeWebView)(libkn_kref_com_jiang_nowinkotlin_webview_WebViewState thiz);
                 const char* (*get_webUrl)(libkn_kref_com_jiang_nowinkotlin_webview_WebViewState thiz);
                 void (*set_webUrl)(libkn_kref_com_jiang_nowinkotlin_webview_WebViewState thiz, const char* set);
@@ -1019,14 +1058,34 @@ typedef struct {
                 void (*loadUrl)(libkn_kref_com_jiang_nowinkotlin_webview_IOSWebView thiz, const char* url);
               } IOSWebView;
               libkn_KInt (*com_jiang_nowinkotlin_webview_IOSWebView$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState_Finished$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState_Initializing$stableprop_getter)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState_Loading$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_webview_WebViewState$stableprop_getter)();
               libkn_KInt (*com_jiang_nowinkotlin_webview_IOSWebView$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState_Finished$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState_Initializing$stableprop_getter_)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState_Loading$stableprop_getter_)();
               libkn_KInt (*com_jiang_nowinkotlin_webview_WebViewState$stableprop_getter_)();
               libkn_KInt (*com_jiang_nowinkotlin_webview_IOSWebView$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState_Finished$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState_Initializing$stableprop_getter__)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState_Loading$stableprop_getter__)();
               libkn_KInt (*com_jiang_nowinkotlin_webview_WebViewState$stableprop_getter__)();
               libkn_KInt (*com_jiang_nowinkotlin_webview_IOSWebView$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState_Finished$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState_Initializing$stableprop_getter___)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState_Loading$stableprop_getter___)();
               libkn_KInt (*com_jiang_nowinkotlin_webview_WebViewState$stableprop_getter___)();
               libkn_KInt (*com_jiang_nowinkotlin_webview_IOSWebView$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState_Finished$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState_Initializing$stableprop_getter____)();
+              libkn_KInt (*com_jiang_nowinkotlin_webview_LoadingState_Loading$stableprop_getter____)();
               libkn_KInt (*com_jiang_nowinkotlin_webview_WebViewState$stableprop_getter____)();
             } webview;
             struct {

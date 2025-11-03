@@ -3,6 +3,7 @@ package com.jiang.nowinkotlin.webview
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.napi.asBoolean
 import androidx.compose.ui.napi.js
 import com.jiang.nowinkotlin.ArkUIView
 import kotlinx.cinterop.ExperimentalForeignApi
@@ -35,8 +36,15 @@ fun OhosWebView(
         modifier = modifier,
         parameter = js {
             "url"(state.webUrl)
+            "isPageFinished"(state.isPageFinished)
             "backgroundColor"("#FF0000FF")
         },
+        update = {
+            val isPageFinished = it.get("isPageFinished").asBoolean()
+            if (isPageFinished == true) {
+                state.loadingState = LoadingState.Finished
+            }
+        }
     )
 }
 

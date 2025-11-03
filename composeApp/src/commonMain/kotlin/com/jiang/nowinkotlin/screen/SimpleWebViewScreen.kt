@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -47,6 +48,13 @@ fun SimpleWebViewScreen(
             WebView(
                 state = state,
                 modifier = Modifier.fillMaxSize()
+            )
+        }
+
+        // 加载指示器 - 当页面未完成加载时显示
+        if (!state.isPageFinished) {
+            CircularProgressIndicator(
+                modifier = Modifier.align(Alignment.Center)
             )
         }
     }
