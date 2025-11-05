@@ -22,10 +22,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.navigationBarsPadding
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import com.jiang.nowinkotlin.screen.MainPage
 import com.jiang.nowinkotlin.video.setActivity
 
@@ -39,7 +38,7 @@ class MainActivity : ComponentActivity() {
         )
         super.onCreate(savedInstanceState)
         setContent {
-            Surface(modifier = Modifier) {
+            Surface(modifier = Modifier, color = Color(0xFF0B1220)) {
                 MainPage()
             }
         }
