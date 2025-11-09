@@ -1,5 +1,6 @@
-import { ProviderFeature } from "../controller/ProviderManager";
-import { OhosAVPlayer } from "./consumer";
+import { ProviderFeature } from '../controller/ProviderManager';
+import { OhosAVPlayer, OhosVideoAVPlayerFactory } from './consumer';
+import { OhosVideoAVPlayerImpl } from './OhosVideoAVPlayerImpl';
 
 export class OhosAVPlayerImpl implements OhosAVPlayer {
   public static provider?: ProviderFeature = undefined
@@ -31,5 +32,11 @@ export class OhosAVPlayerImpl implements OhosAVPlayer {
 
   duration(): number {
     return (OhosAVPlayerImpl.provider?.duration ?? 0)
+  }
+}
+
+export class OhosVideoAVPlayerFactoryImpl implements OhosVideoAVPlayerFactory {
+  createOhosVideoAVPlayer(): object {
+    return new OhosVideoAVPlayerImpl()
   }
 }

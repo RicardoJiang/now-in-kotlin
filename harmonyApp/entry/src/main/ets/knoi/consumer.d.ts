@@ -29,8 +29,9 @@ export interface OhosAVPlayer {
 
 }
 
-
 export interface OhosVideoAVPlayer {
+
+  setUpVideo(surfaceId: string, url: string): void;
 
   isPlaying(): boolean;
 
@@ -47,4 +48,11 @@ export interface OhosVideoAVPlayer {
   seekTo(position: number): void;
 
   release(): void;
+
+}
+
+export interface OhosVideoAVPlayerFactory {
+
+  createOhosVideoAVPlayer(): object;
+
 }

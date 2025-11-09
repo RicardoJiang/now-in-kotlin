@@ -1,11 +1,15 @@
-import { OhosVideoAVPlayer } from "./consumer";
-import { AVPlayerManager } from "../video/AVPlayerManager";
+import { OhosVideoAVPlayer } from './consumer';
+import { AVPlayerManager } from '../video/AVPlayerManager';
 
 export class OhosVideoAVPlayerImpl implements OhosVideoAVPlayer {
   private avPlayerManager: AVPlayerManager;
 
   constructor() {
-    this.avPlayerManager = AVPlayerManager.getInstance();
+    this.avPlayerManager = new AVPlayerManager();
+  }
+
+  setUpVideo(surfaceId: string, url: string): void {
+    this.avPlayerManager.setupVideo(surfaceId, url);
   }
 
   isPlaying(): boolean {

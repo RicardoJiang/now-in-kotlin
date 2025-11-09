@@ -1,8 +1,14 @@
 package com.jiang.nowinkotlin.video
 
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import com.jiang.nowinkotlin.OhosVideoAVPlayer
-import com.tencent.tmm.knoi.definder.getService
+import com.jiang.nowinkotlin.asOhosVideoAVPlayer
+import com.jiang.nowinkotlin.getOhosVideoAVPlayerFactoryApi
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
@@ -13,9 +19,12 @@ import kotlinx.coroutines.isActive
  */
 @OptIn(ExperimentalForeignApi::class)
 class OHOSVideoPlayerController(
-    val videoUrl: String,
-    val player: OhosVideoAVPlayer
+    val videoUrl: String
 ) : VideoPlayerController {
+
+    val player: OhosVideoAVPlayer by lazy {
+        getOhosVideoAVPlayerFactoryApi().createOhosVideoAVPlayer().asOhosVideoAVPlayer()
+    }
 
     private val _isPlaying = mutableStateOf(false)
     override val isPlaying: State<Boolean> = _isPlaying
@@ -80,11 +89,7 @@ class OHOSVideoPlayerController(
 @Composable
 actual fun rememberVideoPlayerController(videoUrl: String): VideoPlayerController {
 
-    val player: OhosVideoAVPlayer = remember {
-        getService("OhosVideoAVPlayer")
-    }
-
-    val controller = remember { OHOSVideoPlayerController(videoUrl, player) }
+    val controller = remember { OHOSVideoPlayerController(videoUrl) }
 
     // 定期更新进度
     LaunchedEffect(Unit) {

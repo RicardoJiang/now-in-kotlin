@@ -1,7 +1,13 @@
 package com.jiang.nowinkotlin.video
 
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.napi.asString
 import androidx.compose.ui.napi.js
 import com.jiang.nowinkotlin.ArkUIView
 import com.jiang.nowinkotlin.SetScreenOrientation
@@ -27,13 +33,22 @@ actual fun PlatformVideoPlayerView(
     modifier: Modifier
 ) {
     val ohosController = controller as OHOSVideoPlayerController
+    var surfaceId: String by remember { mutableStateOf("") }
 
     ArkUIView(
         name = "harmonyVideo",
         modifier = modifier,
         parameter = js {
             "url"(ohosController.videoUrl)
+            "surfaceId"(surfaceId)
         },
+        update = {
+            val newSurfaceId = it.get("surfaceId").asString()
+            if (newSurfaceId.isNullOrEmpty().not() && newSurfaceId != surfaceId) {
+                surfaceId = newSurfaceId
+                controller.player.setUpVideo(newSurfaceId, ohosController.videoUrl)
+            }
+        }
     )
 }
 

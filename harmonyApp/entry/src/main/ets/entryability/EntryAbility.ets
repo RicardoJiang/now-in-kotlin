@@ -21,7 +21,7 @@ import { window } from '@kit.ArkUI';
 import { initResourceManager } from 'libentry.so';
 import { registerServiceProvider, setup } from '@kuiklybase/knoi';
 import { OhosServicesImpl } from '../knoi/OhosServicesImpl';
-import { OhosAVPlayerImpl } from '../knoi/OhosAVPlayerImpl';
+import { OhosAVPlayerImpl, OhosVideoAVPlayerFactoryImpl } from '../knoi/OhosAVPlayerImpl';
 import GlobalContext from '../controller/GlobalContextUtils';
 import Constants from '../controller/Constants';
 import { WindowHelper } from '../pages/WindowHelper';
@@ -42,7 +42,8 @@ export default class EntryAbility extends UIAbility {
     registerServiceProvider("OhosServices", false, OhosServicesImpl)
     registerServiceProvider("OhosAVPlayer", true, OhosAVPlayerImpl)
     registerServiceProvider("SetScreenOrientation", true, SetScreenOrientationImpl)
-    registerServiceProvider("OhosVideoAVPlayer", true, OhosVideoAVPlayerImpl)
+    registerServiceProvider("OhosVideoAVPlayer", false, OhosVideoAVPlayerImpl)
+    registerServiceProvider("OhosVideoAVPlayerFactory", false, OhosVideoAVPlayerFactoryImpl)
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
   }
 

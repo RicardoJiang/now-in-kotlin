@@ -2,18 +2,28 @@ import { media } from "@kit.MediaKit";
 import { common } from "@kit.AbilityKit";
 
 export class AVPlayerManager {
-  private static instance: AVPlayerManager | null = null;
   private avPlayer: media.AVPlayer | null = null;
   private tag: string = 'AVPlayerManager';
   private isBufferingState: boolean = true;
 
-  private constructor() {}
+  constructor() {
+  }
 
-  public static getInstance(): AVPlayerManager {
-    if (AVPlayerManager.instance == null) {
-      AVPlayerManager.instance = new AVPlayerManager();
-    }
-    return AVPlayerManager.instance;
+  public setupVideo(surfaceId: string, url: string): void {
+    this.initializePlayer(surfaceId, url);
+  }
+
+  private async initializePlayer(surfaceId: string, url: string): Promise<void> {
+    // 创建avPlayer实例对象
+    await this.createAVPlayer();
+
+    // 创建状态机变化回调函数
+    await this.setAVPlayerCallback((avPlayer) => {
+      // 回调函数，可以在这里处理播放器状态变化
+    }, surfaceId);
+
+    // 为url赋值触发initialized状态机上报
+    this.setUrl(url);
   }
 
   public async createAVPlayer(): Promise<void> {
