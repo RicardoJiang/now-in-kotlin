@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.jiang.nowinkotlin.app
+package com.jiang.nowinkotlin
 
 import androidx.compose.ui.window.ComposeArkUIViewController
 import com.jiang.nowinkotlin.app.MainPage

@@ -410,10 +410,6 @@ typedef struct {
               const char* (*greet)(libkn_kref_com_jiang_nowinkotlin_Greeting thiz);
             } Greeting;
             struct {
-              void* (*MainArkUIViewController_)(void* env);
-              void (*initResourceManager)(void* resourceManager);
-            } app;
-            struct {
               struct {
                 struct {
                   libkn_KType* (*_type)(void);
@@ -1163,6 +1159,9 @@ typedef struct {
             } shared;
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter)();
             libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter_)();
+            void* (*MainArkUIViewController_)(void* env);
+            libkn_KInt (*com_jiang_nowinkotlin_Greeting$stableprop_getter__)();
+            void (*initResourceManager)(void* resourceManager);
           } nowinkotlin;
         } jiang;
         struct {
