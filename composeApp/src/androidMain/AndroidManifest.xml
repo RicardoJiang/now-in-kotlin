@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.jiang.nowinkotlin.audio.PlaybackService"
+        <service android:name="com.jiang.nowinkotlin.features.audio.platform.PlaybackService"
             android:exported="false"
             android:foregroundServiceType="mediaPlayback">
             <intent-filter>

@@ -25,8 +25,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.jiang.nowinkotlin.screen.MainPage
-import com.jiang.nowinkotlin.video.setActivity
+import com.jiang.nowinkotlin.app.MainPage
+import com.jiang.nowinkotlin.features.video.player.setActivity
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

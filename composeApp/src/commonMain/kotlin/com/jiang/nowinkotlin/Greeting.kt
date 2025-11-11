@@ -17,6 +17,8 @@
 
 package com.jiang.nowinkotlin
 
+import com.jiang.nowinkotlin.core.platform.getPlatform
+
 class Greeting {
     private val platform = getPlatform()
 

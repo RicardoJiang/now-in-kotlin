@@ -1,0 +1,50 @@
+package com.jiang.nowinkotlin.features.webview.component
+
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.ExperimentalComposeUiApi
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.napi.asBoolean
+import androidx.compose.ui.napi.js
+import com.jiang.nowinkotlin.app.ArkUIView
+import kotlinx.cinterop.ExperimentalForeignApi
+
+/**
+ * iOS WebView implementation.
+ */
+@Composable
+actual fun ActualWebView(
+    state: WebViewState,
+    modifier: Modifier
+) {
+    OhosWebView(
+        state,
+        modifier
+    )
+}
+
+/**
+ * iOS WebView implementation.
+ */
+@OptIn(ExperimentalForeignApi::class, ExperimentalComposeUiApi::class)
+@Composable
+fun OhosWebView(
+    state: WebViewState,
+    modifier: Modifier
+) {
+    ArkUIView(
+        name = "harmonyWebView",
+        modifier = modifier,
+        parameter = js {
+            "url"(state.webUrl)
+            "isPageFinished"(state.isPageFinished)
+            "backgroundColor"("#FF0000FF")
+        },
+        update = {
+            val isPageFinished = it.get("isPageFinished").asBoolean()
+            if (isPageFinished == true) {
+                state.loadingState = LoadingState.Finished
+            }
+        }
+    )
+}
+
