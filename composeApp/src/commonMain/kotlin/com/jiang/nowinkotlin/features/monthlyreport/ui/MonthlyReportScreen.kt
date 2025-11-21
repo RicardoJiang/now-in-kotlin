@@ -43,6 +43,7 @@ import com.jiang.nowinkotlin.core.ui.theme.KotlinPrimary
 import com.jiang.nowinkotlin.core.ui.theme.KotlinSecondary
 import com.jiang.nowinkotlin.core.ui.theme.TextPrimary
 import com.jiang.nowinkotlin.core.ui.theme.TextTertiary
+import com.jiang.nowinkotlin.features.monthlyreport.data.MonthlyReportRepositoryImpl
 import com.jiang.nowinkotlin.features.monthlyreport.viewmodel.MonthlyReportViewModel
 import com.jiang.nowinkotlin.shared.viewmodel.rememberLifecycleAware
 import nowinkotlin.composeapp.generated.resources.Res
@@ -56,7 +57,7 @@ fun MonthlyReportScreen(
     onMonthlyReportClick: (MonthlyReportItem) -> Unit
 ) {
     val monthlyReportViewModel = rememberLifecycleAware { scope ->
-        MonthlyReportViewModel(scope)
+        MonthlyReportViewModel(scope, MonthlyReportRepositoryImpl())
     }
     val uiState = monthlyReportViewModel.uiState
 

@@ -20,6 +20,7 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
     repositories {
+        mavenLocal()
         maven("https://mirrors.tencent.com/nexus/repository/maven-tencent")
         maven("https://mirrors.tencent.com/nexus/repository/maven-public")
         google {
@@ -36,6 +37,7 @@ pluginManagement {
 
 dependencyResolutionManagement {
     repositories {
+        mavenLocal()
         maven("https://mirrors.tencent.com/nexus/repository/maven-tencent")
         maven("https://mirrors.tencent.com/nexus/repository/maven-public")
         google {
