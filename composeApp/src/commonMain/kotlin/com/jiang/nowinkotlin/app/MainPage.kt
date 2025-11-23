@@ -3,6 +3,8 @@ package com.jiang.nowinkotlin.app
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import coil3.compose.setSingletonImageLoaderFactory
+import com.jiang.nowinkotlin.core.image.createImageLoader
 import com.jiang.nowinkotlin.core.navigation.NavigatorHost
 import com.jiang.nowinkotlin.core.navigation.AppMainScreen
 import com.tencent.kmm.network.service.VBTransportServiceTest
@@ -13,6 +15,13 @@ import com.tencent.kmm.network.service.VBTransportServiceTest
  */
 @Composable
 internal fun MainPage(skiaRender: Boolean = true) {
+    // 配置 Coil ImageLoader，使用自定义的 KmpNetworkHelper
+    // setSingletonImageLoaderFactory 被标记为 @ReadOnlyComposable，可以安全地多次调用
+    // 内部通过 SingletonImageLoader.setSafe 保证只有第一次设置会生效
+    setSingletonImageLoaderFactory { context ->
+        createImageLoader(context)
+    }
+
     // LaunchedEffect 仍然可以用来执行只需要在组件首次进入组合时运行一次的逻辑，
     // 比如初始化网络服务。
     LaunchedEffect(Unit) {

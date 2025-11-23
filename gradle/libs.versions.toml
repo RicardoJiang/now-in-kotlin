@@ -23,7 +23,7 @@ kotlin-stdlib-platform-ext = "0.1.0"
 media3 = "1.7.1"
 kotlinxDatetime = "0.7.1-0.6.x-compat"
 kermit = "2.0.6"
-coil = "3.0.4-KBA"
+coil = "3.0.4-KBA-001"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -61,8 +61,8 @@ compose-material = { module = "androidx.compose.material:material", version.ref 
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 network = { module = "com.tencent.kuiklybase:network", version.ref = "network" }
 kotlin-stdlib-platform-ext = { module = "com.tencent.tmm:kotlin-stdlib-platform-ext", version.ref = "kotlin-stdlib-platform-ext" }
-coil = { module = "io.coil-kt.coil3:coil", version.ref = "coil" }
-coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+coil = { module = "io.github.ricardojiang:coil", version.ref = "coil" }
+coil-compose = { module = "io.github.ricardojiang:coil-compose", version.ref = "coil" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

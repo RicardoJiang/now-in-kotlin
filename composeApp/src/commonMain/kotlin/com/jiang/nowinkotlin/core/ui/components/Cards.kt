@@ -31,7 +31,6 @@ import nowinkotlin.composeapp.generated.resources.Res
 import nowinkotlin.composeapp.generated.resources.episode_cover
 import nowinkotlin.composeapp.generated.resources.kotlin_stove
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import com.jiang.nowinkotlin.core.util.rememberLocalImage
 
 /**
  * 播客卡片组件
@@ -63,23 +62,16 @@ fun EpisodeCard(
             verticalAlignment = Alignment.CenterVertically
         ) {
             // 播客封面
-            AsyncImage(
+            NetworkImage(
                 url = imageUrl,
-                placeHodler = Res.drawable.episode_cover,
                 contentDescription = "Episode cover",
+                placeholder = Res.drawable.episode_cover,
+                placeholderColor = SurfaceOverlay15,
                 modifier = Modifier
                     .size(64.dp)
                     .clip(RoundedCornerShape(12.dp)),
                 contentScale = ContentScale.Crop
             )
-//            Image(
-//                bitmap = rememberLocalImage(Res.drawable.episode_cover),
-//                contentDescription = "Episode cover",
-//                modifier = Modifier
-//                    .size(64.dp)
-//                    .clip(RoundedCornerShape(12.dp)),
-//                contentScale = ContentScale.Crop
-//            )
 
             // 内容区域
             Column(

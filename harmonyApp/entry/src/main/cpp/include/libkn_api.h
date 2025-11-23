@@ -68,6 +68,27 @@ typedef struct {
 } libkn_kref_com_jiang_nowinkotlin_Greeting;
 typedef struct {
   libkn_KNativePtr pinned;
+} libkn_kref_coil3_PlatformContext;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_coil3_ImageLoader;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_core_image_KmpNetworkFetcher;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_coil3_request_Options;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_core_image_KmpNetworkFetcher_Factory;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_coil3_Uri;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_coil3_fetch_Fetcher;
+typedef struct {
+  libkn_KNativePtr pinned;
 } libkn_kref_androidx_compose_runtime_ProvidableCompositionLocal;
 typedef struct {
   libkn_KNativePtr pinned;
@@ -198,6 +219,9 @@ typedef struct {
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_com_jiang_nowinkotlin_features_audio_player_PlatformMediaPlaybackController;
+typedef struct {
+  libkn_KNativePtr pinned;
+} libkn_kref_com_jiang_nowinkotlin_features_monthlyreport_data_MonthlyReportRepository;
 typedef struct {
   libkn_KNativePtr pinned;
 } libkn_kref_androidx_compose_material_icons_Icons_Filled;
@@ -412,6 +436,22 @@ typedef struct {
             struct {
               struct {
                 struct {
+                  struct {
+                    libkn_KType* (*_type)(void);
+                    libkn_kref_com_jiang_nowinkotlin_core_image_KmpNetworkFetcher_Factory (*Factory)();
+                    libkn_kref_coil3_fetch_Fetcher (*create)(libkn_kref_com_jiang_nowinkotlin_core_image_KmpNetworkFetcher_Factory thiz, libkn_kref_coil3_Uri data, libkn_kref_coil3_request_Options options, libkn_kref_coil3_ImageLoader imageLoader);
+                  } Factory;
+                  libkn_KType* (*_type)(void);
+                  libkn_kref_com_jiang_nowinkotlin_core_image_KmpNetworkFetcher (*KmpNetworkFetcher)(const char* url, libkn_kref_coil3_request_Options options);
+                } KmpNetworkFetcher;
+                libkn_KInt (*com_jiang_nowinkotlin_core_image_KmpNetworkFetcher$stableprop_getter)();
+                libkn_KInt (*com_jiang_nowinkotlin_core_image_KmpNetworkFetcher_Factory$stableprop_getter)();
+                libkn_kref_coil3_ImageLoader (*createImageLoader)(libkn_kref_coil3_PlatformContext context);
+                libkn_KInt (*com_jiang_nowinkotlin_core_image_KmpNetworkFetcher$stableprop_getter_)();
+                libkn_KInt (*com_jiang_nowinkotlin_core_image_KmpNetworkFetcher_Factory$stableprop_getter_)();
+              } image;
+              struct {
+                struct {
                   libkn_KType* (*_type)(void);
                   libkn_kref_com_jiang_nowinkotlin_core_navigation_AppMainScreen (*_instance)();
                 } AppMainScreen;
@@ -578,22 +618,10 @@ typedef struct {
                     libkn_KInt (*hashCode)(libkn_kref_com_jiang_nowinkotlin_core_ui_components_BottomNavItem thiz);
                     const char* (*toString)(libkn_kref_com_jiang_nowinkotlin_core_ui_components_BottomNavItem thiz);
                   } BottomNavItem;
-                  libkn_KInt (*com_jiang_nowinkotlin_core_ui_components_AsyncImageState_Error$stableprop_getter)();
-                  libkn_KInt (*com_jiang_nowinkotlin_core_ui_components_AsyncImageState_Loading$stableprop_getter)();
-                  libkn_KInt (*com_jiang_nowinkotlin_core_ui_components_AsyncImageState_Success$stableprop_getter)();
-                  libkn_KInt (*com_jiang_nowinkotlin_core_ui_components_BottomNavItem$stableprop_getter)();
                   libkn_kref_kotlin_collections_List (*get_bottomNavItems)();
-                  libkn_KInt (*com_jiang_nowinkotlin_core_ui_components_AsyncImageState_Error$stableprop_getter_)();
-                  libkn_KInt (*com_jiang_nowinkotlin_core_ui_components_AsyncImageState_Loading$stableprop_getter_)();
-                  libkn_KInt (*com_jiang_nowinkotlin_core_ui_components_AsyncImageState_Success$stableprop_getter_)();
+                  libkn_KInt (*com_jiang_nowinkotlin_core_ui_components_BottomNavItem$stableprop_getter)();
                   libkn_KInt (*com_jiang_nowinkotlin_core_ui_components_BottomNavItem$stableprop_getter_)();
-                  libkn_KInt (*com_jiang_nowinkotlin_core_ui_components_AsyncImageState_Error$stableprop_getter__)();
-                  libkn_KInt (*com_jiang_nowinkotlin_core_ui_components_AsyncImageState_Loading$stableprop_getter__)();
-                  libkn_KInt (*com_jiang_nowinkotlin_core_ui_components_AsyncImageState_Success$stableprop_getter__)();
                   libkn_KInt (*com_jiang_nowinkotlin_core_ui_components_BottomNavItem$stableprop_getter__)();
-                  libkn_KInt (*com_jiang_nowinkotlin_core_ui_components_AsyncImageState_Error$stableprop_getter___)();
-                  libkn_KInt (*com_jiang_nowinkotlin_core_ui_components_AsyncImageState_Loading$stableprop_getter___)();
-                  libkn_KInt (*com_jiang_nowinkotlin_core_ui_components_AsyncImageState_Success$stableprop_getter___)();
                   libkn_KInt (*com_jiang_nowinkotlin_core_ui_components_BottomNavItem$stableprop_getter___)();
                 } components;
                 struct {
@@ -842,6 +870,13 @@ typedef struct {
                 } viewmodel;
               } home;
               struct {
+                struct {
+                  struct {
+                    libkn_KType* (*_type)(void);
+                  } MonthlyReportRepository;
+                  libkn_KInt (*com_jiang_nowinkotlin_features_monthlyreport_data_MonthlyReportRepositoryImpl$stableprop_getter)();
+                  libkn_KInt (*com_jiang_nowinkotlin_features_monthlyreport_data_MonthlyReportRepositoryImpl$stableprop_getter_)();
+                } data;
                 struct {
                   libkn_kref_androidx_compose_ui_graphics_vector_ImageVector (*get_ChevronRight)(libkn_kref_androidx_compose_material_icons_Icons_Filled thiz);
                 } ui;

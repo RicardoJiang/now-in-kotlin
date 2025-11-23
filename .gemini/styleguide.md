@@ -3,7 +3,8 @@
 ## 基本规范
 
 ### 语言要求
-- 使用中文进行 code review 和代码总结
+- 使用中文进行 Summary of Changes
+- 使用中文进行 code review
 - 代码注释使用中文，清晰说明意图
 
 ### 项目架构
