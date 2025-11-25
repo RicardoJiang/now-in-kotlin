@@ -59,7 +59,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jiang.nowinkotlin.features.audio.player.KmpAudioPlayer
-import com.jiang.nowinkotlin.core.ui.components.AsyncImage
+import com.jiang.nowinkotlin.core.ui.components.NetworkImage
 import com.jiang.nowinkotlin.core.ui.components.SmallIconButton
 import com.jiang.nowinkotlin.core.ui.components.TagChip
 import com.jiang.nowinkotlin.shared.data.Episode
@@ -255,23 +255,16 @@ private fun AlbumCoverWithVisualizer(
         contentAlignment = Alignment.BottomEnd
     ) {
         // 封面图片
-        AsyncImage(
+        NetworkImage(
             url = imageUrl,
-            placeHodler = Res.drawable.episode_cover,
             contentDescription = "Album cover",
+            placeholder = Res.drawable.episode_cover,
+            placeholderColor = SurfaceOverlay15,
             modifier = Modifier
                 .size(288.dp)
                 .clip(RoundedCornerShape(24.dp)),
             contentScale = ContentScale.Crop
         )
-//        Image(
-//            bitmap = rememberLocalImage(Res.drawable.episode_cover),
-//            contentDescription = "Album cover",
-//            modifier = Modifier
-//                .size(288.dp)
-//                .clip(RoundedCornerShape(24.dp)),
-//            contentScale = ContentScale.Crop
-//        )
 
         // 渐变遮罩
         Box(

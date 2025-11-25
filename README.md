@@ -107,6 +107,10 @@ fun AsyncImage(
 }
 ```
 
+或者也可以直接使用我适配的 Coil 库：[https://github.com/RicardoJiang/coil](https://github.com/RicardoJiang/coil)
+
+支持Android、iOS、鸿蒙三个平台，使用鸿蒙 OH_ImageSourceNative 原生 API 解码，支持PNG、JPEG、WebP等图片格式
+
 ### ViewModel 简单支持
 ViewModel 目前也没有支持，因此也需要自己做一个简单实现。如下所示，通过`rememberLifecycleAware`即可创建一个与 Compose 组件生命周期一致的 ViewModel。
 

@@ -19,6 +19,7 @@
 
 package com.jiang.nowinkotlin.core.util
 
+import androidx.collection.LruCache
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -48,23 +49,49 @@ var nativeResourceManager: NativeResourceManager = null
 
 private val emptyImageBitmap: ImageBitmap by lazy { ImageBitmap(1, 1) }
 
+// 图片缓存，避免重复加载同一资源
+private val imageCache = LruCache<String, ImageBitmap>(20)
+
+/**
+ * 异步加载本地资源图片，带缓存机制
+ * 首次访问返回空图片，异步加载完成后更新
+ * 后续访问直接从缓存返回，无需重新加载
+ */
 @Composable
 internal actual fun rememberLocalImage(id: DrawableResource): ImageBitmap {
-    var imageBitmap: ImageBitmap by remember { mutableStateOf(emptyImageBitmap) }
-    LaunchedEffect(Unit) {
-        withContext(Dispatchers.IO) {
-            val rawFile = OH_ResourceManager_OpenRawFile(nativeResourceManager, id.resourceItemPath())
-            val size = OH_ResourceManager_GetRawFileSize(rawFile)
+    val resourcePath = id.resourceItemPath() ?: ""
 
-            val buffer = ByteArray(size.toInt())
-            buffer.usePinned { pinnedBuffer ->
-                OH_ResourceManager_ReadRawFile(rawFile, pinnedBuffer.addressOf(0), size.toULong())
+    // 先检查缓存
+    val cachedImage = imageCache[resourcePath]
+    var imageBitmap: ImageBitmap by remember(resourcePath) {
+        mutableStateOf(cachedImage ?: emptyImageBitmap)
+    }
+
+    // 如果缓存中没有，异步加载
+    if (cachedImage == null && resourcePath.isNotEmpty()) {
+        LaunchedEffect(resourcePath) {
+            withContext(Dispatchers.IO) {
+                try {
+                    val rawFile = OH_ResourceManager_OpenRawFile(nativeResourceManager, resourcePath)
+                    val size = OH_ResourceManager_GetRawFileSize(rawFile)
+
+                    val buffer = ByteArray(size.toInt())
+                    buffer.usePinned { pinnedBuffer ->
+                        OH_ResourceManager_ReadRawFile(rawFile, pinnedBuffer.addressOf(0), size.toULong())
+                    }
+                    OH_ResourceManager_CloseRawFile(rawFile)
+
+                    val loadedBitmap = Image.makeFromEncoded(buffer).toComposeImageBitmap()
+                    // 存入缓存
+                    imageCache.put(resourcePath, loadedBitmap)
+                    imageBitmap = loadedBitmap
+                } catch (e: Exception) {
+                    println("Failed to load image from $resourcePath: ${e.message}")
+                }
             }
-            OH_ResourceManager_CloseRawFile(rawFile)
-
-            imageBitmap = Image.makeFromEncoded(buffer).toComposeImageBitmap()
         }
     }
+
     return imageBitmap
 }
 

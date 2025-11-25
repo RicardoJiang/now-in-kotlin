@@ -114,6 +114,8 @@ kotlin {
             implementation(libs.atomicFu)
             implementation(libs.network)
             implementation(libs.kotlinx.serialization.json)
+            implementation(libs.coil)
+            implementation(libs.coil.compose)
         }
 
         commonTest.dependencies {
@@ -173,6 +175,20 @@ android {
 
 dependencies {
     debugImplementation(libs.compose.ui.tooling)
+
+    // Force Compose version to 1.6.3 (corresponds to 1.6.1-KBA-007)
+    // to prevent upgrade to 1.7.0 which breaks HorizontalPager API
+    configurations.all {
+        resolutionStrategy {
+            force("androidx.compose.foundation:foundation:1.6.3")
+            force("androidx.compose.ui:ui:1.6.3")
+            force("androidx.compose.runtime:runtime:1.6.3")
+            force("androidx.compose.runtime:runtime-saveable:1.6.3")
+            force("androidx.compose.material:material:1.6.3")
+            // Force activity-compose to version compatible with Compose 1.6.3
+            force("androidx.activity:activity-compose:1.9.0")
+        }
+    }
 }
 
 arrayOf("debug", "release").forEach { type ->
