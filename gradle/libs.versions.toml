@@ -23,7 +23,7 @@ kotlin-stdlib-platform-ext = "0.1.0"
 media3 = "1.7.1"
 kotlinxDatetime = "0.7.1-0.6.x-compat"
 kermit = "2.0.6"
-coil = "3.0.4-KBA-001"
+coil = "3.0.4-KBA-003"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
